@@ -1,20 +1,7 @@
-<h1>Desks List</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Number</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($desks as $desk): ?>
-    <tr>
-      <td><a href="<?php echo url_for('desk_show', $desk) ?>"><?php echo $desk->getId() ?></a></td>
-      <td><?php echo $desk->getNumber() ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
+<h1>Столы</h1>
+<ul class="desks">
+<?php foreach ($desks as $desk): ?>
+  <li><?php echo link_to($desk->getNumber(),'desk_show',$desk) ?></li>
+<?php endforeach; ?>
 
   <a href="<?php echo url_for('desk_new') ?>">New</a>

@@ -12,4 +12,13 @@
  */
 class Bill extends BaseBill
 {
+  public function getTotal()
+  {
+    $total = 0;
+    foreach ($this->getItems() as $item)
+    {
+      $total += $item->getMenuItem()->getPrice() * $item->getQuantity();
+    }
+    return $total;
+  }
 }
