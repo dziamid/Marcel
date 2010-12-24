@@ -1,0 +1,34 @@
+Bill:
+  columns:
+    number: integer
+    desk_id: integer
+  relations:
+    Desk:
+      local: desk_id
+      foreign: id
+      type: one
+      foreignType: one
+
+Item:
+  columns:
+    menu_item_id: integer
+    bill_id: integer
+    quantity: integer
+  relations:
+    Bill:
+      local: bill_id
+      foreign: id
+    MenuItem:
+      local: menu_item_id
+      foreign: id
+      type: one
+      foreignType: one
+
+Desk:
+  columns:
+    number: integer
+    
+MenuItem:
+  columns:
+    name: string(255)
+    price: intger(10)
