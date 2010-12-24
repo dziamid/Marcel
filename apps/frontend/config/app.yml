@@ -2,4 +2,20 @@
 # http://www.symfony-project.org/reference/1_4/en/11-App
 
 # default values
-#all:
+all:
+  menus:
+    frontend:
+      #child_class:  ioMenuItem (already set in ioMenu class by default)
+      children:
+        home:
+          name:    home
+          label:   Главная
+          route:   homepage
+        desk:
+          name:    desk
+          label:   Столы
+          route:   desk
+        menu_item:
+          name:    menu_item
+          label:   Меню
+          route:   menu_item
