@@ -8,6 +8,16 @@ bill:
   options:
     model: Bill
     module: bill
+item:
+  class: sfDoctrineRouteCollection
+  options:
+    model: Item
+    module: item
+menu_item:
+  class: sfDoctrineRouteCollection
+  options:
+    model: MenuItem
+    module: menu_item
     
 homepage:
   url:   /
