@@ -6,8 +6,7 @@ Bill:
     Desk:
       local: desk_id
       foreign: id
-      type: one
-      foreignType: one
+      foreignAlias: Bills
 
 Item:
   columns:
@@ -18,6 +17,7 @@ Item:
     Bill:
       local: bill_id
       foreign: id
+      foreignAlias: Items
     MenuItem:
       local: menu_item_id
       foreign: id

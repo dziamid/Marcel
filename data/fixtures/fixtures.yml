@@ -45,9 +45,12 @@ Item:
   1:
     Bill: 1
     MenuItem: 1
+    quantity: 3
   2:
     Bill: 1
     MenuItem: 2
+    quantity: 10
   3:
     Bill: 2
     MenuItem: 1
+    quantity: 1
