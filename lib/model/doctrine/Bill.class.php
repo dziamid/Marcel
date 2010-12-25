@@ -21,4 +21,35 @@ class Bill extends BaseBill
     }
     return $total;
   }
+  public function addMenuItem(MenuItem $menu_item, $quantity = 1)
+  {
+    if ($item = $this->hasMenuItem($menu_item))
+    {
+      $item->setQuantity($item->getQuantity() + $quantity);
+    }
+    else
+    {
+      $item = new Item();
+      $item->setMenuItem($menu_item);
+      $item->setQuantity($quantity);
+      $item->setBill($this);
+    }
+    $item->save();
+  }
+  public function hasMenuItem(MenuItem $menu_item)
+  {
+    $items = $this->getItems();
+    foreach ($items as $item)
+    {
+      if ($item->getMenuItem() == $menu_item)
+      {
+        return $item;
+      }
+    }
+    return false;
+  }
+  public function isOpen()
+  {
+    return $this->getOpen() == true;
+  }
 }

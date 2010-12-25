@@ -31,9 +31,11 @@ Bill:
   2:
     number: 101
     Desk: 1
+    open: true
   3:
     number: 102
     Desk: 2
+    open: true
 MenuItem:
   1:
     name: Суп гороховый

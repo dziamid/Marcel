@@ -2,6 +2,10 @@ Bill:
   columns:
     number: integer
     desk_id: integer
+    open:
+      type: boolean
+      notnull: true
+      default: false
   relations:
     Desk:
       local: desk_id

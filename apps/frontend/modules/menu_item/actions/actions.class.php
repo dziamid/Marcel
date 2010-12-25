@@ -14,7 +14,13 @@ class menu_itemActions extends sfActions
   {
     $this->menu_items = $this->getRoute()->getObjects();
   }
-
+  public function executeSelect(sfWebRequest $request)
+  {
+    $menu_item = $this->getRoute()->getObject();
+    $bill = Doctrine::getTable('Bill')->findOneById($request->getParameter('open_bill_id'));
+    $bill->addMenuItem($menu_item);
+    $this->redirect('desk_show', $bill->getDesk());
+  }
   public function executeShow(sfWebRequest $request)
   {
     $this->menu_item = $this->getRoute()->getObject();

@@ -9,15 +9,12 @@
   </head>
   <body>
     <div id="container">
-      <div id="header" class="<?php echo $sf_user->getCulture() ?>">
-        <h1>MARCEL</h1>
-      </div>
 
       <div id="menu">
         <ul class="stick_right">
 
         </ul>
-        <?php //include_component('home', 'menu') ?>
+        <?php include_component('home', 'menu') ?>
 
       </div>
 

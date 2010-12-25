@@ -12,4 +12,17 @@
  */
 class Desk extends BaseDesk
 {
+  public function getOpenBill()
+  {
+    $bills = $this->getBills();
+
+    foreach ($bills as $bill)
+    {
+      if ($bill->isOpen())
+      {
+        return $bill;
+      }
+    }
+    return false;
+  }
 }

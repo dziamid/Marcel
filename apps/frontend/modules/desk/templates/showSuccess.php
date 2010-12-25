@@ -4,23 +4,19 @@
 &nbsp;
 <a href="<?php echo url_for('desk') ?>">List</a>
 
-<h1>Счета</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Number</th>
-      <th>Desk</th>
-    </tr>
-  </thead>
-  <tbody>
-    <?php foreach ($desk->getBills() as $bill): ?>
-    <tr>
-      <td><a href="<?php echo url_for('bill_show', $bill) ?>"><?php echo $bill->getId() ?></a></td>
-      <td><?php echo $bill->getNumber() ?></td>
-      <td><?php echo $bill->getDeskId() ?></td>
-    </tr>
-    <?php endforeach; ?>
-  </tbody>
-</table>
+<?php if ($open_bill = $desk->getOpenBill()): ?>
+  <h1>Текущий счет #<?php echo $open_bill->getNumber() ?></h1>
+  <?php include_partial('bill/show',array('bill'=>$desk->getOpenBill())) ?>
+<?php endif; ?>
+
+<h1>Меню:</h1>
+<ul class="list">
+  <?php include_component('menu_item','list',array('open_bill'=>$open_bill)) ?>
+</ul>
+<h1>Счета</h1>
+<ul>
+  <?php foreach ($desk->getBills() as $bill): ?>
+    <li><a href="<?php echo url_for('bill_show', $bill) ?>">Счёт №<?php echo $bill->getNumber() ?></a></li>
+  <?php endforeach; ?>
+</ul>
