@@ -36,3 +36,19 @@ MenuItem:
   columns:
     name: string(255)
     price: intger(10)
+    menu_group_id: integer
+  relations:
+    MenuGroup:
+      local: menu_group_id
+      foreign: id
+      foreignAlias: Items
+      alias: Group
+MenuGroup:
+  columns:
+    name: string(255)
+    slug: string(255)
+    # type - kitchen (1), bar (2)
+    type:
+      type: integer
+      default: 1
+      notnull: true

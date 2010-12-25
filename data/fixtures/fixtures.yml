@@ -36,13 +36,36 @@ Bill:
     number: 102
     Desk: 2
     open: true
+MenuGroup:
+  1:
+    name: Супы
+    slug: soup
+    type: 1
+  2:
+    name: Салаты
+    slug: salad
+    type: 1
+  3:
+    name: Десерты
+    slug: desert
+    type: 1
+  4:
+    name: Напитки
+    slug: drink
+    type: 2
+  5:
+    name: Спиртные напитки
+    slug: alcohol
+    type: 2
 MenuItem:
   1:
     name: Суп гороховый
     price: 4500
+    Group: 1
   2:
     name: Креветки в соусе
     price: 25000
+    Group: 2
 Item:
   1:
     Bill: 1
