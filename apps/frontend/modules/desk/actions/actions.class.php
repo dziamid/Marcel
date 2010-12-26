@@ -18,11 +18,27 @@ class deskActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->desk = $this->getRoute()->getObject();
+    $this->openbill = $this->desk->getOpenBill();
   }
 
   public function executeNew(sfWebRequest $request)
   {
     $this->form = new DeskForm();
+  }
+  
+  public function executeOpen(sfWebRequest $request)
+  {
+    $desk = $this->getRoute()->getObject();
+    if ($desk && $desk->getOpenBill()->isNotNull())
+    {
+      $this->getUser()->setFlash('error', 'На данном столе уже открыт счёт', false);
+      $this->redirect('desk_show', $desk);
+    }
+    $bill = new Bill();
+    $bill->setOpen(true);
+    $bill->setDesk($desk);
+    $bill->save();
+    $this->redirect('desk_show', $desk);
   }
 
   public function executeCreate(sfWebRequest $request)

@@ -23,6 +23,6 @@ class Desk extends BaseDesk
         return $bill;
       }
     }
-    return false;
+    return new myNull();
   }
 }

@@ -13,7 +13,11 @@ $(function() {
     <div id='<?php echo sprintf('tabs-%s',$k) ?>' class='<?php echo $menu_group->getSlug() ?>'>
       <?php foreach ($menu_group->getItems() as $menu_item): ?>
         <div class='menu_item'>
-          <?php echo link_to($menu_item->getName(), 'menu_item_select', array('sf_subject'=>$menu_item,'open_bill_id'=>$open_bill_id),array('method'=>'post')) ?>
+          <?php if ($open_bill->isNotNull()): ?>
+            <?php echo link_to($menu_item->getName(), 'menu_item_select', array('sf_subject'=>$menu_item,'open_bill_id'=>$open_bill->getId()),array('method'=>'post')) ?>
+          <?php else: ?>
+            <?php echo $menu_item->getName() ?>
+          <?php endif; ?>
         </div>
       <?php endforeach; ?>
     </div>

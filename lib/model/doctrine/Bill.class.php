@@ -12,6 +12,14 @@
  */
 class Bill extends BaseBill
 {
+  public function save(Doctrine_Connection $conn = null)
+  {
+    if (!$this->getNumber())
+    {
+      $this->setNumber($this->getTable()->getMaxNumber());
+    }
+    return parent::save($conn);
+  }
   public function getTotal()
   {
     $total = 0;

@@ -5,4 +5,4 @@
 
 <h1>Счёт №<?php echo $bill->getNumber() ?> (стол <?php echo $bill->getDeskId() ?>)</h1>
 
-<?php include_partial('bill_show', array('bill'=>$bill)) ?>
+<?php include_partial('show', array('bill'=>$bill)) ?>

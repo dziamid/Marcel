@@ -1,6 +1,10 @@
 Bill:
+  actAs:
+    Timestampable: ~
   columns:
-    number: integer
+    number:
+      type: integer
+      unique: true
     desk_id: integer
     open:
       type: boolean
@@ -13,6 +17,8 @@ Bill:
       foreignAlias: Bills
 
 Item:
+  actAs:
+    Timestampable: ~
   columns:
     menu_item_id: integer
     bill_id: integer
@@ -29,10 +35,14 @@ Item:
       foreignType: one
 
 Desk:
+  actAs:
+    Timestampable: ~
   columns:
     number: integer
     
 MenuItem:
+  actAs:
+    Timestampable: ~
   columns:
     name: string(255)
     price: intger(10)
@@ -44,6 +54,8 @@ MenuItem:
       foreignAlias: Items
       alias: Group
 MenuGroup:
+  actAs:
+    Timestampable: ~
   columns:
     name: string(255)
     slug: string(255)

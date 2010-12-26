@@ -3,11 +3,14 @@ desk:
   options:
     model: Desk
     module: desk
+    object_actions: {open: post}
+
 bill:
   class: sfDoctrineRouteCollection
   options:
     model: Bill
     module: bill
+
 item:
   class: sfDoctrineRouteCollection
   options:
