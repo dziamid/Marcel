@@ -34,11 +34,15 @@ class deskActions extends sfActions
       $this->getUser()->setFlash('error', 'На данном столе уже открыт счёт', false);
       $this->redirect('desk_show', $desk);
     }
-    $bill = new Bill();
-    $bill->setOpen(true);
-    $bill->setDesk($desk);
-    $bill->save();
+    $desk->open();
     $this->redirect('desk_show', $desk);
+  }
+  public function executeClose(sfWebRequest $request)
+  {
+    $desk = $this->getRoute()->getObject();
+    $desk->close();
+    $this->redirect('desk_show', $desk);
+
   }
 
   public function executeCreate(sfWebRequest $request)

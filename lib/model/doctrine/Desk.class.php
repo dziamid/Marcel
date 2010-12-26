@@ -25,4 +25,20 @@ class Desk extends BaseDesk
     }
     return new myNull();
   }
+  public function open()
+  {
+    $bill = new Bill();
+    $bill->setOpen(true);
+    $bill->setDesk($this);
+    $bill->save();
+  }
+  public function close()
+  {
+    if ($this->getOpenBill()->isNotNull())
+    {
+      $bill = $this->getOpenBill();
+      $bill->setOpen(false);
+      $bill->save();
+    }
+  }
 }

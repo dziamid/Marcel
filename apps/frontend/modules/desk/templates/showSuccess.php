@@ -3,9 +3,10 @@
   <?php if ($openbill->isNotNull()): ?>
     <h1>Стол №<?php echo $desk->getNumber() ?>, счет #<?php echo $openbill->getNumber() ?></h1>
     <?php include_partial('bill/show',array('bill'=>$openbill)) ?>
+    <?php echo link_to('Закрыть стол', 'desk_close', $desk, array('method'=>'post')) ?>
   <?php else: ?>
     <h1>Стол №<?php echo $desk->getNumber() ?></h1>
-    <?php echo link_to('Создать счёт', 'desk_open', $desk, array('method'=>'post')) ?>
+    <?php echo link_to('Открыть стол', 'desk_open', $desk, array('method'=>'post')) ?>
   <?php endif ?>
 </div>
 
