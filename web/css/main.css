@@ -16,6 +16,7 @@ version: 2.6.0
 */
 body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;outline: none;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
+/* layout */
 a
 {
   color: #524F46;
@@ -33,44 +34,44 @@ html, body {
   position: relative;
 }
 
-#menu {
+#mainmenu {
   background-color: #fff;
 }
-#menu div.submenu {
+#mainmenu div.submenu {
   background-color: #D7EAF0;
 }
-#menu ul {
+#mainmenu ul {
   display: inline;
 }
-#menu li
+#mainmenu li
 {
   padding: 8px 10px;
   display: inline;
   line-height: 33px;
   font-size: larger;
 }
-#menu li.current {
+#mainmenu li.current {
   background: url(../images/bg_body.png);
   border: none;
 }
-#menu ul.stick_right {
+#mainmenu ul.stick_right {
   float: right;
   color: #176F94;
 }
 
 #content > .content {
-  width: 950px;
-  margin: 0 auto;
+  margin: 10px;
   padding-bottom: 160px;
 }
 
 #content h1
 {
-  margin: 10px 0;
   padding: 0px 15px;
   font-size: 124%;
   text-transform: uppercase;
-  background: url(../images/bg-listheader.gif) no-repeat;
+  background: #176F94;
+  border-radius: 4px;
+  -moz-border-radius: 4px;
   line-height: 32px;
   color: #fff;
 }
@@ -109,18 +110,6 @@ html, body {
   color: #fff;
 }
 
-#content .content td,
-#content .content th,
-#content .content li
-{
-  padding: 5px;
-}
-
-#content p
-{
-  margin: 5px;
-}
-
 #signin input[type=text],
 #signin input[type=password]
 {
@@ -137,7 +126,7 @@ fieldset.sfguarduser ul.error_list {
   left: 34em;
 }
 
-/* desks */
+/* desk list */
 div.desk {
   height: 80px;
   width: 100px;
@@ -173,4 +162,72 @@ ul.list li a {
 }
 table.bill td {
   border: 1px solid #ccc;
+}
+
+/* menu */
+#menulist h1 {
+  background: none;
+}
+
+#menulist div.menu_item {
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  background-color: #176F94;
+  color: white;
+  font-size: large;
+  text-align: left;
+  vertical-align: middle;
+  margin: 5px;
+  padding: 3px 5px;
+  width: 200px;
+}
+#menulist div.menu_item a {
+  text-decoration: none;
+  color: white;
+}
+#menulist div.menu_group {
+  background-color: #99cc66;
+  overflow: hidden;
+  width: 200px;
+  float: left;
+  min-height: 200px;
+}
+
+/* desk show */
+#openbill {
+  width: 390px;
+  float: left;
+  padding: 0.2em;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#menu {
+  padding-left: 400px;
+}
+table.bill {
+  padding: 5px;
+  width: 100%;
+}
+table.bill tr {
+  border-bottom: 1px solid #ABDAFB;
+  background-color: #E3F4FF;
+}
+table.bill td,
+table.bill th {
+  border: none;
+  padding: 3px 2px;
+}
+table.bill th {
+  font-weight: bold;
+}
+table.bill .name {
+  width: 50%;
+}
+table.bill .price {
+  width: 25%;
+  text-align: right;
+}
+table.bill .quantity {
+  width: 25%;
+  text-align: right;
 }

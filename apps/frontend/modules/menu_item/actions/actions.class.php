@@ -12,7 +12,7 @@ class menu_itemActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->menu_items = $this->getRoute()->getObjects();
+    $this->menu_groups = Doctrine::getTable('MenuGroup')->findAll();
   }
   public function executeSelect(sfWebRequest $request)
   {

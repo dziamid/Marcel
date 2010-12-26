@@ -66,6 +66,14 @@ MenuItem:
     name: Креветки в соусе
     price: 25000
     Group: 2
+  3:
+    name: Суп харчо
+    price: 2000
+    Group: 1
+  4:
+    name: Суп Ролтон
+    price: 500
+    Group: 1
 Item:
   1:
     Bill: 1

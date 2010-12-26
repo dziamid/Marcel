@@ -10,7 +10,7 @@
   <body>
     <div id="container">
 
-      <div id="menu">
+      <div id="mainmenu">
         <ul class="stick_right">
 
         </ul>
