@@ -12,6 +12,6 @@ class menu_itemComponents extends sfComponents
 {
   public function executeList(sfWebRequest $request)
   {
-    $this->menu_groups = Doctrine::getTable('MenuGroup')->findAll();
+    $this->menu_groups = Doctrine::getTable('MenuGroup')->getForList();
   }
 }

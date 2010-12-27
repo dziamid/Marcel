@@ -17,7 +17,7 @@ class deskActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->desk = $this->getRoute()->getObject();
+    $this->desk = Doctrine::getTable('Desk')->getForIndex();
     $this->openbill = $this->desk->getOpenBill();
   }
 

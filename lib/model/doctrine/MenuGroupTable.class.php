@@ -7,13 +7,20 @@
  */
 class MenuGroupTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object MenuGroupTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('MenuGroup');
-    }
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object MenuGroupTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('MenuGroup');
+  }
+  public function getForList()
+  {
+    $q = $this->createQuery('g')
+      ->leftJoin('g.Items i');
+    
+    return $q->execute();
+  }
 }

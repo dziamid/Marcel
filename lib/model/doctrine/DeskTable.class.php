@@ -7,13 +7,21 @@
  */
 class DeskTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object DeskTable
-     */
-    public static function getInstance()
-    {
-        return Doctrine_Core::getTable('Desk');
-    }
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object DeskTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('Desk');
+  }
+  public function getForIndex()
+  {
+    $q = $this->createQuery('d')
+      ->leftJoin('d.Bills b')
+      ->leftJoin('b.Items i');
+      
+    return $q->fetchOne();
+  }
 }
