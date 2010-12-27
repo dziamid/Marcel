@@ -1,0 +1,25 @@
+syntax: glob
+
+# [symfony]
+
+cache/*
+log/*
+web/uploads/*
+
+#ignore sql generated queries and database files
+data/db/*
+data/sql/*
+
+# ignore custom base classes
+lib/filter/doctrine/base/*
+lib/form/doctrine/base/*
+lib/model/doctrine/base/*
+
+#ignore plugin base classes
+lib/filter/doctrine/*/base/*
+lib/form/doctrine/*/base/*
+lib/model/doctrine/*/base/*
+
+# [ide]
+*.komodoproject
+*.kpf
