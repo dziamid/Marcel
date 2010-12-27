@@ -67,4 +67,11 @@ class billActions extends sfActions
       $this->redirect('@bill_edit?id='.$bill->getId());
     }
   }
+  public function executeSelect(sfWebRequest $request)
+  {
+    $bill = $this->getRoute()->getObject();
+    $menu_item = Doctrine::getTable('MenuItem')->findOneById($request->getParameter('menu_item_id'));
+    $bill->addMenuItem($menu_item);
+    $this->redirect('desk_show', $bill->getDesk());
+  }
 }

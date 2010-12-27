@@ -10,6 +10,7 @@ bill:
   options:
     model: Bill
     module: bill
+    object_actions: {select: post}
 
 item:
   class: sfDoctrineRouteCollection
@@ -22,7 +23,6 @@ menu_item:
   options:
     model: MenuItem
     module: menu_item
-    object_actions: {select: post}
     
 homepage:
   url:   /
