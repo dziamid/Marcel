@@ -4,12 +4,13 @@
       <th class='name'>Наименование</th>
       <th class='price'>Цена</th>
       <th class='quantity'>Кол-во</th>
-      <th></th>
+      <th class='delete'></th>
     </tr>
   </thead>
   <tfoot>
     <tr>
       <td colspan='3' class='quantity'>Всего: <?php echo $bill->getTotal() ?></td>
+      <td class='delete'></td>
     </tr>
   </tfoot>
   <tbody>

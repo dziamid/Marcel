@@ -1,0 +1,55 @@
+/*
+Reset CSS
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+html{color:#000;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}del,ins{text-decoration:none;}
+
+/*
+Fonts CSS
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;outline: none;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+body {
+  font-size: 12pt;
+}
+#header, #footer, #mainmenu, #menu {
+  display: none;
+}
+#openbill div.tools,
+#openbill table .delete {
+  display: none;
+}
+#openbill h1 {
+  font-size: 16pt;
+}
+table.bill {
+  width: 300px;
+}
+table.bill tr {
+}
+table.bill td,
+table.bill th {
+  border: 1px solid #ccc;
+  padding: 3px 2px;
+}
+table.bill th {
+  font-weight: bold;
+}
+table.bill .name {
+  width: 50%;
+}
+table.bill .price {
+  width: 25%;
+  text-align: right;
+}
+table.bill .quantity {
+  width: 25%;
+  text-align: right;
+}
