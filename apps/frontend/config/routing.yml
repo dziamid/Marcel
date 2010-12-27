@@ -16,6 +16,7 @@ item:
   options:
     model: Item
     module: item
+    object_actions: {unselect: post}
 menu_item:
   class: sfDoctrineRouteCollection
   options:

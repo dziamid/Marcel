@@ -67,4 +67,11 @@ class itemActions extends sfActions
       $this->redirect('@item_edit?id='.$item->getId());
     }
   }
+
+  public function executeUnselect(sfWebRequest $request)
+  {
+    $item = $this->getRoute()->getObject();
+    $item->unselect();
+    $this->redirect('desk_show', $item->getBill()->getDesk());
+  }
 }

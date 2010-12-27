@@ -12,4 +12,17 @@
  */
 class Item extends BaseItem
 {
+  public function unselect()
+  {
+    $q = $this->getQuantity();
+    if ($q > 1)
+    {
+      $this->setQuantity($q - 1);
+      $this->save();
+    }
+    else
+    {
+      $this->delete();
+    }
+  }
 }
