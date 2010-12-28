@@ -14,16 +14,14 @@ class Desk extends BaseDesk
 {
   public function getOpenBill()
   {
-    $bills = $this->getBills();
-
-    foreach ($bills as $bill)
-    {
-      if ($bill->isOpen())
-      {
-        return $bill;
-      }
-    }
-    return new myNull();
+    $q = Doctrine::getTable('Bill')
+      ->createQuery('b')
+      ->leftJoin('b.Items i')
+      ->leftJoin('i.MenuItem')
+      ->where('b.open = ?', true)
+      ->andWhere('b.desk_id = ?', $this->getId());
+    $bill = $q->fetchOne();
+    return $bill ? $bill : new myNull();
   }
   public function open()
   {

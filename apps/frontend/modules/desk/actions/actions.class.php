@@ -12,12 +12,13 @@ class deskActions extends sfActions
 {
   public function executeIndex(sfWebRequest $request)
   {
-    $this->desks = $this->getRoute()->getObjects();
+    $desks = Doctrine::getTable('Desk')->getForIndex();
+    $this->desks = $desks;
   }
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->desk = Doctrine::getTable('Desk')->getForIndex();
+    $this->desk = $this->getRoute()->getObject();
     $this->openbill = $this->desk->getOpenBill();
   }
 

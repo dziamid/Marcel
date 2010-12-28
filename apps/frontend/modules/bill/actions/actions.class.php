@@ -17,7 +17,7 @@ class billActions extends sfActions
 
   public function executeShow(sfWebRequest $request)
   {
-    $this->bill = $this->getRoute()->getObject();
+    $this->bill = Doctrine::getTable('Bill')->getForShow();
   }
 
   public function executeNew(sfWebRequest $request)

@@ -60,4 +60,14 @@ class Bill extends BaseBill
   {
     return $this->getOpen() == true;
   }
+  public function getForShow()
+  {
+    $q = $this->getTable()
+      ->createQuery('b')
+      ->leftJoin('b.Items i')
+      ->leftJoin('i.MenuItem')
+      ->where('b.id = ?', $this->getId());
+    
+    return $q->fetchOne();
+  }
 }
