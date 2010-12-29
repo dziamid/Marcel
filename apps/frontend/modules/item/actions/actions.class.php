@@ -72,6 +72,10 @@ class itemActions extends sfActions
   {
     $item = $this->getRoute()->getObject();
     $item->unselect();
+    if ($request->isXmlHttpRequest())
+    {
+      return $this->renderPartial('bill/show', array('bill' => $item->getBill()));
+    }
     $this->redirect('desk_show', $item->getBill()->getDesk());
   }
 }

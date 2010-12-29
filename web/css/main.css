@@ -17,10 +17,12 @@ version: 2.6.0
 body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;outline: none;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
 /* layout */
-a
+a, span.link
 {
   color: #524F46;
   outline: none;
+  text-decoration: none;
+  cursor: pointer;
 }
 html, body {
   height: 100%;
@@ -192,8 +194,8 @@ table.bill td {
   padding: 3px 5px;
   width: 200px;
 }
-#menulist div.menu_item a {
-  text-decoration: none;
+#menulist div.menu_item a,
+#menulist div.menu_item span.link {
   color: white;
 }
 #menulist div.menu_group {
