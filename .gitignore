@@ -5,6 +5,9 @@ syntax: glob
 cache/*
 log/*
 web/uploads/*
+config/databases.yml
+web/sfDoctrinePlugin
+web/sfFormExtraPlugin
 
 #ignore sql generated queries and database files
 data/db/*
