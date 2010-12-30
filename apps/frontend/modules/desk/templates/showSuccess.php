@@ -17,7 +17,7 @@
 </div>
 
 <div id='menu'>
-<?php include_component('menu_item','list', array(
+<?php include_component('desk','list', array(
   'open_bill'=> $openbill
 )) ?>
 </div>

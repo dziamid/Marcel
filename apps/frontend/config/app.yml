@@ -17,8 +17,8 @@ all:
           route:   desk
         menu_item:
           name:    menu_item
-          label:   Меню
+          label:   Меню (блюда)
           route:   menu_item
         menu_group:
-          label:   Меню (админ)
+          label:   Меню (разделы)
           route:   menu_group

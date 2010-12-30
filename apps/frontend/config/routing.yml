@@ -23,7 +23,9 @@ menu_item:
   class: sfDoctrineRouteCollection
   options:
     model: MenuItem
-    module: menu_item
+    module: MenuItem
+    with_wildcard_routes: true
+
 
 menu_group:
   class: sfDoctrineRouteCollection
