@@ -1,3 +1,7 @@
+stats:
+  url: /stats
+  param: { module: home, action: stats}
+
 desk:
   class: sfDoctrineRouteCollection
   options:
@@ -19,11 +23,16 @@ item:
     module: item
     object_actions: {unselect: post}
     
+admin:
+  url:   /admin
+  param: { module: home, action: admin }
+  
 menu_item:
   class: sfDoctrineRouteCollection
   options:
     model: MenuItem
     module: MenuItem
+    prefix_path: /admin/menu/item
     with_wildcard_routes: true
 
 
@@ -32,7 +41,16 @@ menu_group:
   options:
     model: MenuGroup
     module: MenuGroup
+    prefix_path: /admin/menu/group
     with_wildcard_routes: true
+
+admin_desk:
+  class: sfDoctrineRouteCollection
+  options:
+    model: Desk
+    module: adminDesk
+    prefix_path: /admin/desk
+    with_wildcard_routes: true 
     
 homepage:
   url:   /

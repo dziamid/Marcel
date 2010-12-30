@@ -1,28 +1,26 @@
 generator:
   class: sfDoctrineGenerator
   param:
-    model_class:           MenuItem
+    model_class:           Desk
     theme:                 admin
     non_verbose_templates: true
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          menu_item
+    route_prefix:          admin_desk
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
     config:
       actions: ~
       fields:
-        name: {label: Наименование}
-        price: {label: Цена}
-        Group: {label: Раздел}
+        number: {label: Номер}
         created_at: {label: Добавлено}
         updated_at: {label: Изменено}
       list:
-        display: [name, price, Group, created_at, updated_at]
+        display: [number, created_at, updated_at]
       filter:
-        display: [name, menu_group_id]
+        display: [number]
       form:    ~
       edit:    ~
       new:     ~

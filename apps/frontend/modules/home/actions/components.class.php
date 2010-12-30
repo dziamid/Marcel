@@ -23,6 +23,8 @@ class homeComponents extends sfComponents
     $menu->hideCurrentUrl(true);
     
     $this->menu = $menu;
+    $this->submenu = $menu->getCurrent(1);
+
   }
   
   public function executePager()

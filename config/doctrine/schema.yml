@@ -38,7 +38,9 @@ Desk:
   actAs:
     Timestampable: ~
   columns:
-    number: integer
+    number:
+      type: integer
+      unique: true
     
 MenuItem:
   actAs:

@@ -40,14 +40,15 @@ html, body {
   background-color: #fff;
 }
 #mainmenu div.submenu {
-  background-color: #D7EAF0;
+  background: url(../images/bg_body.png);
+
 }
 #mainmenu ul {
   display: inline;
 }
 #mainmenu li
 {
-  padding: 8px 10px;
+  padding: 6px 10px;
   display: inline;
   line-height: 33px;
   font-size: larger;

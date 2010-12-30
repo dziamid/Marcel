@@ -15,10 +15,22 @@ all:
           name:    desk
           label:   Столы
           route:   desk
-        menu_item:
-          name:    menu_item
-          label:   Меню (блюда)
-          route:   menu_item
-        menu_group:
-          label:   Меню (разделы)
-          route:   menu_group
+        admin:
+          label:   Администрирование
+          route:   admin
+          children:
+            menu_item:
+              name:    menu_item
+              label:   Блюда
+              route:   menu_item
+            menu_group:
+              label:   Разделы
+              route:   menu_group
+            admin_desk:
+              label:   Столы
+              route:   admin_desk
+        stats:
+          label: Статистика
+          route: stats
+          
+  use_ajax: true

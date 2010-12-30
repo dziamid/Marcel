@@ -13,4 +13,9 @@ require_once dirname(__FILE__).'/../lib/MenuGroupGeneratorHelper.class.php';
  */
 class MenuGroupActions extends autoMenuGroupActions
 {
+  public function preExecute()
+  {
+    parent::preExecute();
+    $this->getUser()->setCulture('ru');
+  }
 }
