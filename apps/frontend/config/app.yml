@@ -31,6 +31,6 @@ all:
               route:   admin_desk
         stats:
           label: Статистика
-          route: stats
+          route: admin_item
           
   use_ajax: true

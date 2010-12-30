@@ -50,7 +50,15 @@ admin_desk:
     model: Desk
     module: adminDesk
     prefix_path: /admin/desk
-    with_wildcard_routes: true 
+    with_wildcard_routes: true
+
+admin_item:
+  class: sfDoctrineRouteCollection
+  options:
+    model: Item
+    module: adminItem
+    prefix_path: /admin/item
+    with_wildcard_routes: true  
     
 homepage:
   url:   /

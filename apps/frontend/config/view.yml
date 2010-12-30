@@ -15,11 +15,13 @@ default:
   stylesheets:
     - admin.css
     - main.css
-    - jquery-ui.css
+    - jquery-ui-1.8.7.custom.css
 
   javascripts:
     - jquery-1.4.4.min.js
     - jquery-ui-1.8.7.custom.min.js
+    - jquery.ui.datepicker-ru.js
+
 
   has_layout:     true
   layout:         layout

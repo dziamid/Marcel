@@ -39,4 +39,12 @@ class ItemTable extends Doctrine_Table
         
       return $q->execute();
     }
+    public function getForStat($query)
+    {
+      $q = $this->createQuery('i')
+        ->select('i.*,SUM(quantity) as total')
+        ->groupBy('i.menu_item_id');
+    return $q;
+    }
+
 }

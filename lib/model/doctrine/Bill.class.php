@@ -12,6 +12,10 @@
  */
 class Bill extends BaseBill
 {
+  public function __toString()
+  {
+    return $this->getNumber();
+  }
   public function save(Doctrine_Connection $conn = null)
   {
     if (!$this->getNumber())
