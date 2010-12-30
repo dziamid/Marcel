@@ -13,6 +13,7 @@ default:
     #robots:       index, follow
 
   stylesheets:
+    - admin.css
     - main.css
     - jquery-ui.css
 

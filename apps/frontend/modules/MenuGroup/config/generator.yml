@@ -1,0 +1,27 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           MenuGroup
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          menu_group
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        items_total: {label: Всего }
+        name: {label: Наименование }
+      list:
+        title: Разделы меню
+        display: [name, items_total]
+        batch_actions: []
+      filter:
+        display: [name]
+      form:    ~
+      edit:    ~
+      new:     ~

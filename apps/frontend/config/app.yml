@@ -19,3 +19,6 @@ all:
           name:    menu_item
           label:   Меню
           route:   menu_item
+        menu_group:
+          label:   Меню (админ)
+          route:   menu_group

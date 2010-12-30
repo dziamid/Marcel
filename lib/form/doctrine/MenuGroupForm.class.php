@@ -12,5 +12,10 @@ class MenuGroupForm extends BaseMenuGroupForm
 {
   public function configure()
   {
+    unset($this['created_at'], $this['updated_at'], $this['slug']);
+    $this->setWidget('type', new sfWidgetFormChoice(array(
+      'expanded' => true,
+      'choices' => array('1' => 'Кухня', '2' => 'Бар')
+    )));
   }
 }

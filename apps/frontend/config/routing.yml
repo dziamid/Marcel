@@ -18,11 +18,19 @@ item:
     model: Item
     module: item
     object_actions: {unselect: post}
+    
 menu_item:
   class: sfDoctrineRouteCollection
   options:
     model: MenuItem
     module: menu_item
+
+menu_group:
+  class: sfDoctrineRouteCollection
+  options:
+    model: MenuGroup
+    module: MenuGroup
+    with_wildcard_routes: true
     
 homepage:
   url:   /

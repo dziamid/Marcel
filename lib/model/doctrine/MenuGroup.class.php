@@ -12,4 +12,8 @@
  */
 class MenuGroup extends BaseMenuGroup
 {
+  public function getItemsTotal()
+  {
+    return $this->getItems()->count();
+  }
 }
