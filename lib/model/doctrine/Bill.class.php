@@ -47,6 +47,7 @@ class Bill extends BaseBill
       $item->setBill($this);
     }
     $item->save();
+    $this->refresh(true);
   }
   public function hasMenuItem(MenuItem $menu_item)
   {
