@@ -12,5 +12,7 @@ abstract class BaseFormDoctrine extends sfFormDoctrine
 {
   public function setup()
   {
+    $this->widgetSchema->getFormFormatter()->setTranslationCatalogue('sf_admin');
+
   }
 }

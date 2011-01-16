@@ -23,5 +23,7 @@ generator:
       filter:
         display: [name]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Редактирование раздела "%%name%%"
+      new:
+        title: Новый раздел

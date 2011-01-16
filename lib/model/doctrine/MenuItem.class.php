@@ -12,4 +12,8 @@
  */
 class MenuItem extends BaseMenuItem
 {
+  public function __toString()
+  {
+    return $this->getName();
+  }
 }

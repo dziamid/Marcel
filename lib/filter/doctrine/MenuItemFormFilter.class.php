@@ -12,5 +12,6 @@ class MenuItemFormFilter extends BaseMenuItemFormFilter
 {
   public function configure()
   {
+
   }
 }

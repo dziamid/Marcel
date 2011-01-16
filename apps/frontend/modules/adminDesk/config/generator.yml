@@ -19,8 +19,11 @@ generator:
         updated_at: {label: Изменено}
       list:
         display: [number, created_at, updated_at]
+        title: Список столов
       filter:
         display: [number]
       form:    ~
-      edit:    ~
-      new:     ~
+      edit:
+        title: Редактирование стола "%%number%%"
+      new:
+        title: Новый стол

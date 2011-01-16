@@ -14,15 +14,18 @@ generator:
     config:
       actions: ~
       fields:
-        Bill: {label: № счёта}
+        Bill: {label: № счёта }
+        bill_id: {label: № счёта }
         MenuItem: {label: Наименование }
         total: {label: Кол-во}
         created_at: {label: Добавлено}
+        quantity: {label: Кол-во }
 
       list:
-        title: Статистика по наименованию
-        display: [MenuItem, total]
-        table_method: getForStat
+        display: [Bill, MenuItem, quantity, created_at]
+        #title is overriden in indexSuccess
+        #title: Статистика
+        #table_method: getForStat
         object_actions: []
         batch_actions: []
         actions: []

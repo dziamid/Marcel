@@ -17,12 +17,17 @@ generator:
         name: {label: Наименование}
         price: {label: Цена}
         Group: {label: Раздел}
+        menu_group_id: {label: Раздел }
         created_at: {label: Добавлено}
         updated_at: {label: Изменено}
       list:
         display: [name, price, Group, created_at, updated_at]
+        title: Список блюд
       filter:
         display: [name, menu_group_id]
-      form:    ~
-      edit:    ~
-      new:     ~
+      form:
+        display: [name, price, menu_group_id]
+      edit:
+        title: Редактирование блюда "%%name%%"
+      new:
+        title: Новое блюдо

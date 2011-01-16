@@ -12,5 +12,7 @@ abstract class BaseFormFilterDoctrine extends sfFormFilterDoctrine
 {
   public function setup()
   {
+    $this->widgetSchema->getFormFormatter()->setTranslationCatalogue('sf_admin');
+
   }
 }
