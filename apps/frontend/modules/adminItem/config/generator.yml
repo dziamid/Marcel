@@ -31,7 +31,7 @@ generator:
         batch_actions: []
         actions: []
       filter:
-        display: [created_at]
+        display: [~filterToday]
       form:    ~
       edit:    ~
       new:     ~

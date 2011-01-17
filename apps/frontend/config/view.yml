@@ -21,6 +21,7 @@ default:
     - jquery-1.4.4.min.js
     - jquery-ui-1.8.7.custom.min.js
     - jquery.ui.datepicker-ru.js
+    - main.js
 
 
   has_layout:     true

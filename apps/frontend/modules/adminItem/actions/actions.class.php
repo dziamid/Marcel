@@ -13,4 +13,17 @@ require_once dirname(__FILE__).'/../lib/adminItemGeneratorHelper.class.php';
  */
 class adminItemActions extends autoAdminItemActions
 {
+  public function executeIndex(sfWebRequest $request)
+  {
+    parent::executeIndex($request);
+
+        $results = $this->pager->getResults();
+    $total = 0;
+    foreach ($results as $res)
+    {
+      $total += $res->getTotal();
+    }
+    $this->results_total = $total;
+  }
+
 }
