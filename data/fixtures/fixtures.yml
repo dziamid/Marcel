@@ -79,11 +79,14 @@ Item:
     Bill: 1
     MenuItem: 1
     quantity: 3
+    price: 4500
   2:
     Bill: 1
     MenuItem: 2
     quantity: 10
+    price: 25000
   3:
     Bill: 2
     MenuItem: 1
     quantity: 1
+    price: 4500

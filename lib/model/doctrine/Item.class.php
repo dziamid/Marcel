@@ -25,4 +25,8 @@ class Item extends BaseItem
       $this->delete();
     }
   }
+  public function getTotal()
+  {
+    return $this->getPrice() * $this->getQuantity();
+  }
 }

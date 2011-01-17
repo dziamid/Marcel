@@ -236,10 +236,17 @@ table.bill .name {
   width: 50%;
 }
 table.bill .price {
-  width: 25%;
+  width: 15%;
   text-align: right;
 }
 table.bill .quantity {
-  width: 25%;
+  width: 15%;
   text-align: right;
+}
+table.bill .total {
+  width: 15%;
+  text-align: right;
+}
+table.bill .delete {
+  width: 5%;
 }

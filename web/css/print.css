@@ -53,3 +53,6 @@ table.bill .quantity {
   width: 25%;
   text-align: right;
 }
+#sfWebDebug {
+  display: none;
+}

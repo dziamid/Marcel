@@ -23,6 +23,7 @@ Item:
     menu_item_id: integer
     bill_id: integer
     quantity: integer
+    price: integer(10)
   relations:
     Bill:
       local: bill_id

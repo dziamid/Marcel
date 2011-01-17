@@ -17,12 +17,13 @@ generator:
         Bill: {label: № счёта }
         bill_id: {label: № счёта }
         MenuItem: {label: Наименование }
-        total: {label: Кол-во}
+        total: {label: Всего }
+        price: {label: Цена }
         created_at: {label: Добавлено}
         quantity: {label: Кол-во }
 
       list:
-        display: [Bill, MenuItem, quantity, created_at]
+        display: [Bill, MenuItem, quantity, price, total, created_at]
         #title is overriden in indexSuccess
         #title: Статистика
         #table_method: getForStat

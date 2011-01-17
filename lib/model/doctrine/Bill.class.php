@@ -44,6 +44,7 @@ class Bill extends BaseBill
       $item = new Item();
       $item->setMenuItem($menu_item);
       $item->setQuantity($quantity);
+      $item->setPrice($menu_item->getPrice());
       $item->setBill($this);
     }
     $item->save();
