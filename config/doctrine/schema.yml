@@ -67,3 +67,10 @@ MenuGroup:
       type: integer
       default: 1
       notnull: true
+      
+Component:
+  actAs:
+    Timestampable: ~
+  columns:
+    name: string(255)
+    amount: integer
