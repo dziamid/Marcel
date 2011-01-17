@@ -28,8 +28,13 @@ body {
 }
 #openbill h1 {
   font-size: 16pt;
+  text-align: center;
+}
+#openbill {
+  width: 100%;
 }
 table.bill {
+  margin: 0 auto;
   width: 300px;
 }
 table.bill tr {
