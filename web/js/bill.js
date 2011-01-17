@@ -1,8 +1,8 @@
 $(document).ready(function(){
   //select links in menu
-  $('#menulist a').bind('click',function(e){
+  $('#menulist').bind('click',function(e){
+    var target = $(e.target).closest('div.menu_item a');    
     e.preventDefault();
-    var target = $(e.target).closest('a');
     if (target.length)
     {
       $.post(target.attr('href'), function(data) {
