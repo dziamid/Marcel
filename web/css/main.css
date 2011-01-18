@@ -216,37 +216,45 @@ table.bill td {
   padding-left: 400px;
   min-height: 200px;
 }
-table.bill {
+#openbill table.bill {
   padding: 5px;
   width: 100%;
 }
-table.bill tr {
+#openbill table.bill tr {
   border-bottom: 1px solid #ABDAFB;
   background-color: #E3F4FF;
 }
-table.bill td,
-table.bill th {
+#openbill table.bill td,
+#openbill table.bill th {
   border: none;
   padding: 3px 2px;
 }
-table.bill th {
-  font-weight: bold;
+#openbill table.bill th {
+  font-size: 10px;
+  text-align: center;
 }
-table.bill .name {
-  width: 50%;
-}
-table.bill .price {
-  width: 15%;
-  text-align: right;
-}
-table.bill .quantity {
-  width: 15%;
-  text-align: right;
-}
-table.bill .total {
-  width: 15%;
-  text-align: right;
-}
-table.bill .delete {
+#openbill table.bill .index {
   width: 5%;
+}
+#openbill table.bill .name {
+  width: 45%;
+}
+#openbill table.bill .price {
+  width: 15%;
+  text-align: right;
+}
+#openbill table.bill .quantity {
+  width: 15%;
+  text-align: right;
+}
+#openbill table.bill .total {
+  width: 15%;
+  text-align: right;
+}
+#openbill table.bill .delete {
+  width: 5%;
+}
+#openbill div.header,
+#openbill div.footer {
+  display: none;
 }

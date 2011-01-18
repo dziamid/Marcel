@@ -26,37 +26,49 @@ body {
 #openbill table .delete {
   display: none;
 }
-#openbill h1 {
-  font-size: 16pt;
-  text-align: center;
-}
 #openbill {
-  width: 100%;
-}
-table.bill {
   margin: 0 auto;
   width: 300px;
 }
-table.bill tr {
+#openbill table.bill tr {
 }
-table.bill td,
-table.bill th {
+#openbill table.bill td,
+#openbill table.bill th {
   border: 1px solid #ccc;
   padding: 3px 2px;
 }
-table.bill th {
-  font-weight: bold;
+#openbill table.bill th {
+  font-size: 8pt;
+  text-align: center;
 }
-table.bill .name {
+#openbill table.bill .name {
   width: 50%;
 }
-table.bill .price {
-  width: 25%;
+#openbill table.bill .price {
+  width: 15%;
   text-align: right;
 }
-table.bill .quantity {
-  width: 25%;
+#openbill table.bill .quantity {
+  width: 15%;
   text-align: right;
+}
+#openbill table.bill .total {
+  width: 20%;
+  text-align: right;
+}
+#openbill > h1 {
+  display: none;
+}
+#openbill h1 {
+  font-size: 16pt;
+  text-align: center;
+  padding: 5px 0;
+}
+#openbill small {
+  font-size: 8pt;
+}
+#openbill div.footer {
+  padding-top: 5px;
 }
 #sfWebDebug {
   display: none;

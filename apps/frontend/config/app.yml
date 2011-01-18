@@ -34,3 +34,6 @@ all:
           route: admin_item
           
   use_ajax: true
+
+  billheader_company: ООО "Смарт Фуд"
+  billheader_cafe: Кафе "Марсель"
