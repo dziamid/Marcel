@@ -17,5 +17,7 @@ class MenuItemActions extends autoMenuItemActions
   {
     parent::preExecute();
     $this->getUser()->setCulture('ru');
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
+    //$this->getContext()->getDatabaseManager()->setAttribute();
   }
 }

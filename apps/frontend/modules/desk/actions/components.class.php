@@ -12,6 +12,10 @@ class deskComponents extends sfComponents
 {
   public function executeList(sfWebRequest $request)
   {
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
     $this->menu_groups = Doctrine::getTable('MenuGroup')->getForList();
+    //not sure if it is needed, but to be on a safe side
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
+
   }
 }

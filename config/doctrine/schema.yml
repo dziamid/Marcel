@@ -46,19 +46,16 @@ Desk:
 MenuItem:
   actAs:
     Timestampable: ~
+    SoftDelete: ~
   columns:
     name: string(255)
     price: intger(10)
     menu_group_id: integer
-  relations:
-    MenuGroup:
-      local: menu_group_id
-      foreign: id
-      foreignAlias: Items
-      alias: Group
+
 MenuGroup:
   actAs:
     Timestampable: ~
+    SoftDelete: ~
   columns:
     name: string(255)
     slug: string(255)
@@ -67,6 +64,15 @@ MenuGroup:
       type: integer
       default: 1
       notnull: true
+  relations:
+    MenuItem:
+      type: many
+      foreignType: one
+      local: id
+      foreign: menu_group_id
+      alias: Items
+      foreignAlias: Group
+      cascade: [delete]
       
 Component:
   actAs:
