@@ -1,0 +1,29 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Bill
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          admin_bill
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
+        number: {label: № счёта }
+        desk_id: {label: № стола }
+        open: {label: Счёт открыт? }
+      list:
+        title: Счета
+        sort: ['number','desc']
+        display: [number, desk_id, open, created_at]
+      filter:
+        display: [number, desk_id, open, created_at]
+      form:    ~
+      edit:    ~
+      new:     ~

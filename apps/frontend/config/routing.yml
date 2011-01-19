@@ -58,8 +58,16 @@ admin_item:
     model: Item
     module: adminItem
     prefix_path: /admin/item
-    with_wildcard_routes: true  
-    
+    with_wildcard_routes: true
+
+admin_bill:
+  class: sfDoctrineRouteCollection
+  options:
+    model: Bill
+    module: adminBill
+    prefix_path: /admin/bill
+    with_wildcard_routes: true
+
 homepage:
   url:   /
   param: { module: home, action: index }
