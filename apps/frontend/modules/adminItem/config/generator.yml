@@ -19,7 +19,8 @@ generator:
         MenuItem: {label: Наименование }
         total: {label: Всего }
         price: {label: Цена }
-        created_at: {label: Добавлено}
+        created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
+
         quantity: {label: Кол-во }
 
       list:

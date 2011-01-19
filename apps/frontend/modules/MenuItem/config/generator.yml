@@ -18,8 +18,8 @@ generator:
         price: {label: Цена}
         Group: {label: Раздел}
         menu_group_id: {label: Раздел }
-        created_at: {label: Добавлено}
-        updated_at: {label: Изменено}
+        created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
+        updated_at: {date_format: dd/MM/yyyy HH:mm, label: Дата изменения }
       list:
         display: [name, price, Group, created_at, updated_at]
         title: Список блюд

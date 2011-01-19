@@ -15,8 +15,8 @@ generator:
       actions: ~
       fields:
         number: {label: Номер}
-        created_at: {label: Добавлено}
-        updated_at: {label: Изменено}
+        created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
+        updated_at: {date_format: dd/MM/yyyy HH:mm, label: Дата изменения }
       list:
         display: [number, created_at, updated_at]
         title: Список столов
