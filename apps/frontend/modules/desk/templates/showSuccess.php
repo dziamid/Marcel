@@ -10,7 +10,7 @@
       <p><small>Торговый объект общественного питания</small>
       <p><span><?php echo sfConfig::get('app_billheader_cafe') ?></span></p>
       <h1>CЧЁТ № <span><?php echo $openbill->getNumber() ?></span></h1>
-      <p><small>Официант (бармен): </small> <span>Ефименко К.Б.</span></p>
+      <p><small>Официант (бармен): </small> <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
       <p><small>Дата выдачи счёта: </small> <span><?php echo $today ?></span></p>  
     </div>
     <?php include_partial('bill/show',array('bill'=>$openbill)) ?>
