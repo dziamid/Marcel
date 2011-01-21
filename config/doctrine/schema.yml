@@ -11,6 +11,14 @@ Bill:
       notnull: true
       default: false
   relations:
+    Item:
+      local: id
+      foreign: bill_id
+      alias: Items
+      foreignAlias: Bill
+      type: many
+      foreignType: one
+      #cascade: [delete]
     Desk:
       local: desk_id
       foreign: id
@@ -25,10 +33,6 @@ Item:
     quantity: integer
     price: integer(10)
   relations:
-    Bill:
-      local: bill_id
-      foreign: id
-      foreignAlias: Items
     MenuItem:
       local: menu_item_id
       foreign: id

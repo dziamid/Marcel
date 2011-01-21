@@ -29,4 +29,9 @@ class Item extends BaseItem
   {
     return $this->getPrice() * $this->getQuantity();
   }
+  public function getBill()
+  {
+    $bill = $this->_get('Bill');
+    return null !== $bill->getId() ? $bill : new myNull();
+  }
 }
