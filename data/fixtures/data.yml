@@ -1,0 +1,1186 @@
+MenuGroup:
+  MenuGroup_1:
+    name: Супы
+    slug: soup
+    type: '1'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+    deleted_at: null
+  MenuGroup_2:
+    name: Салаты
+    slug: salad
+    type: '1'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+    deleted_at: null
+  MenuGroup_3:
+    name: Десерты
+    slug: desert
+    type: '1'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+    deleted_at: null
+  MenuGroup_4:
+    name: Напитки
+    slug: drink
+    type: '2'
+    created_at: '2011-01-17 22:24:30'
+    updated_at: '2011-01-17 22:24:30'
+    deleted_at: null
+  MenuGroup_5:
+    name: 'Спиртные напитки'
+    slug: alcohol
+    type: '2'
+    created_at: '2011-01-17 22:24:30'
+    updated_at: '2011-01-17 22:24:30'
+    deleted_at: null
+  MenuGroup_6:
+    name: Гарниры
+    slug: null
+    type: '1'
+    created_at: '2011-01-17 23:31:54'
+    updated_at: '2011-01-17 23:31:54'
+    deleted_at: null
+  MenuGroup_7:
+    name: Горячее
+    slug: null
+    type: '1'
+    created_at: '2011-01-17 23:32:04'
+    updated_at: '2011-01-17 23:32:04'
+    deleted_at: null
+  MenuGroup_8:
+    name: Завтраки
+    slug: null
+    type: '1'
+    created_at: '2011-01-17 23:34:20'
+    updated_at: '2011-01-17 23:34:20'
+    deleted_at: null
+  MenuGroup_9:
+    name: 'Холодные закуски'
+    slug: null
+    type: '1'
+    created_at: '2011-01-17 23:37:37'
+    updated_at: '2011-01-17 23:37:37'
+    deleted_at: null
+  MenuGroup_10:
+    name: 'Горячие закуски'
+    slug: null
+    type: '1'
+    created_at: '2011-01-17 23:39:33'
+    updated_at: '2011-01-17 23:39:33'
+    deleted_at: null
+  MenuGroup_11:
+    name: 'Закуски к пиву'
+    slug: null
+    type: '1'
+    created_at: '2011-01-18 00:07:47'
+    updated_at: '2011-01-18 00:07:47'
+    deleted_at: null
+  MenuGroup_12:
+    name: Пасты
+    slug: null
+    type: '1'
+    created_at: '2011-01-18 00:17:20'
+    updated_at: '2011-01-18 00:17:20'
+    deleted_at: null
+  MenuGroup_13:
+    name: 'Хлебобулочные изделия'
+    slug: null
+    type: '2'
+    created_at: '2011-01-18 00:22:21'
+    updated_at: '2011-01-18 00:22:21'
+    deleted_at: null
+  MenuGroup_14:
+    name: Сигареты
+    slug: null
+    type: '2'
+    created_at: '2011-01-18 00:56:01'
+    updated_at: '2011-01-18 00:56:01'
+    deleted_at: null
+  MenuGroup_15:
+    name: 'Штучная продукция'
+    slug: null
+    type: '2'
+    created_at: '2011-01-18 00:59:06'
+    updated_at: '2011-01-18 00:59:06'
+    deleted_at: null
+MenuItem:
+  MenuItem_1:
+    name: 'Яичница с добрым утром'
+    price: '8430'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:34:47'
+    updated_at: '2011-01-17 23:34:47'
+    deleted_at: null
+  MenuItem_2:
+    name: 'Омлет Французский'
+    price: '4750'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:35:11'
+    updated_at: '2011-01-17 23:35:11'
+    deleted_at: null
+  MenuItem_3:
+    name: 'Омлет Морской'
+    price: '5930'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:35:29'
+    updated_at: '2011-01-17 23:35:29'
+    deleted_at: null
+  MenuItem_4:
+    name: 'Омлет gust'
+    price: '5120'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:36:00'
+    updated_at: '2011-01-17 23:36:00'
+    deleted_at: null
+  MenuItem_5:
+    name: 'Омлет грибной с беконом'
+    price: '5640'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:36:28'
+    updated_at: '2011-01-17 23:36:28'
+    deleted_at: null
+  MenuItem_6:
+    name: 'Омлет со шпинатом и ветчиной'
+    price: '5430'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:36:50'
+    updated_at: '2011-01-17 23:36:50'
+    deleted_at: null
+  MenuItem_7:
+    name: 'Овсянка с яблоком и корицей'
+    price: '4270'
+    Group: MenuGroup_8
+    created_at: '2011-01-17 23:37:10'
+    updated_at: '2011-01-17 23:37:10'
+    deleted_at: null
+  MenuItem_8:
+    name: 'Фрегат овощной'
+    price: '14320'
+    Group: MenuGroup_9
+    created_at: '2011-01-17 23:38:05'
+    updated_at: '2011-01-17 23:38:05'
+    deleted_at: null
+  MenuItem_9:
+    name: 'Фрегат мясной'
+    price: '17150'
+    Group: MenuGroup_9
+    created_at: '2011-01-17 23:38:26'
+    updated_at: '2011-01-17 23:38:26'
+    deleted_at: null
+  MenuItem_10:
+    name: 'Фрегат деревенский'
+    price: '18510'
+    Group: MenuGroup_9
+    created_at: '2011-01-17 23:38:51'
+    updated_at: '2011-01-17 23:38:51'
+    deleted_at: null
+  MenuItem_11:
+    name: 'Помидор с сыром фета и базеликом'
+    price: '5300'
+    Group: MenuGroup_9
+    created_at: '2011-01-17 23:39:15'
+    updated_at: '2011-01-17 23:39:15'
+    deleted_at: null
+  MenuItem_12:
+    name: 'Крылья Souse de soya'
+    price: '8390'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:04:38'
+    updated_at: '2011-01-18 00:04:38'
+    deleted_at: null
+  MenuItem_13:
+    name: 'сыр жареный'
+    price: '5700'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:04:58'
+    updated_at: '2011-01-18 00:04:58'
+    deleted_at: null
+  MenuItem_14:
+    name: 'Жульен из курицы'
+    price: '15420'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:05:24'
+    updated_at: '2011-01-18 00:05:24'
+    deleted_at: null
+  MenuItem_15:
+    name: 'Блинчики с семгой'
+    price: '16300'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:05:44'
+    updated_at: '2011-01-18 00:05:44'
+    deleted_at: null
+  MenuItem_16:
+    name: 'Тост нежный'
+    price: '4200'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:06:05'
+    updated_at: '2011-01-18 00:06:05'
+    deleted_at: null
+  MenuItem_17:
+    name: 'Тост Мясной'
+    price: '3380'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:06:23'
+    updated_at: '2011-01-18 00:06:23'
+    deleted_at: null
+  MenuItem_18:
+    name: 'Тост Мясной'
+    price: '3380'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:06:23'
+    updated_at: '2011-01-18 00:06:23'
+    deleted_at: null
+  MenuItem_19:
+    name: 'Тост Мужской'
+    price: '4190'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:06:41'
+    updated_at: '2011-01-18 00:06:41'
+    deleted_at: null
+  MenuItem_20:
+    name: 'Тост Сладкий'
+    price: '3500'
+    Group: MenuGroup_10
+    created_at: '2011-01-18 00:07:29'
+    updated_at: '2011-01-18 00:07:29'
+    deleted_at: null
+  MenuItem_21:
+    name: 'Сухари к пиву'
+    price: '7550'
+    Group: MenuGroup_11
+    created_at: '2011-01-18 00:09:22'
+    updated_at: '2011-01-18 00:09:22'
+    deleted_at: null
+  MenuItem_22:
+    name: 'Креветки в панцире отварные'
+    price: '14190'
+    Group: MenuGroup_11
+    created_at: '2011-01-18 00:10:01'
+    updated_at: '2011-01-18 00:10:01'
+    deleted_at: null
+  MenuItem_23:
+    name: 'Креветки в панцире жаренные'
+    price: '17200'
+    Group: MenuGroup_11
+    created_at: '2011-01-18 00:11:00'
+    updated_at: '2011-01-18 00:11:00'
+    deleted_at: null
+  MenuItem_24:
+    name: 'Хворост с тмином и солью'
+    price: '6120'
+    Group: MenuGroup_11
+    created_at: '2011-01-18 00:11:23'
+    updated_at: '2011-01-18 00:11:23'
+    deleted_at: null
+  MenuItem_25:
+    name: 'Хворост с чесноком и укропом'
+    price: '5990'
+    Group: MenuGroup_11
+    created_at: '2011-01-18 00:11:49'
+    updated_at: '2011-01-18 00:11:49'
+    deleted_at: null
+  MenuItem_26:
+    name: 'Гренки с чесноком'
+    price: '5040'
+    Group: MenuGroup_11
+    created_at: '2011-01-18 00:12:11'
+    updated_at: '2011-01-18 00:12:11'
+    deleted_at: null
+  MenuItem_27:
+    name: Теплый
+    price: '9090'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:12:31'
+    updated_at: '2011-01-18 00:12:31'
+    deleted_at: null
+  MenuItem_28:
+    name: Цезарь
+    price: '12300'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:12:45'
+    updated_at: '2011-01-18 00:12:45'
+    deleted_at: null
+  MenuItem_29:
+    name: Греческий
+    price: '8940'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:13:02'
+    updated_at: '2011-01-18 00:13:02'
+    deleted_at: null
+  MenuItem_30:
+    name: 'Коктейль с креветками'
+    price: '13330'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:13:20'
+    updated_at: '2011-01-18 00:13:20'
+    deleted_at: null
+  MenuItem_31:
+    name: Прованс
+    price: '9270'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:13:37'
+    updated_at: '2011-01-18 00:13:37'
+    deleted_at: null
+  MenuItem_32:
+    name: 'Рулетик из курицы'
+    price: '12340'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:14:00'
+    updated_at: '2011-01-18 00:14:00'
+    deleted_at: null
+  MenuItem_33:
+    name: 'Стейк из свинины в винном соусе'
+    price: '13470'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:14:26'
+    updated_at: '2011-01-18 00:14:26'
+    deleted_at: null
+  MenuItem_34:
+    name: 'Стейк из говядины в горчичном соусе'
+    price: '18310'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:15:15'
+    updated_at: '2011-01-18 00:15:15'
+    deleted_at: null
+  MenuItem_35:
+    name: 'Суприме из курицы'
+    price: '11320'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:15:41'
+    updated_at: '2011-01-18 00:15:41'
+    deleted_at: null
+  MenuItem_36:
+    name: 'Ризотто с грибами'
+    price: '9530'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:16:06'
+    updated_at: '2011-01-18 00:16:06'
+    deleted_at: null
+  MenuItem_37:
+    name: 'Ризотто с креветками'
+    price: '12140'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:16:36'
+    updated_at: '2011-01-18 00:16:36'
+    deleted_at: null
+  MenuItem_38:
+    name: 'Семга в шпинатном соусе'
+    price: '19350'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:17:00'
+    updated_at: '2011-01-18 00:17:00'
+    deleted_at: null
+  MenuItem_39:
+    name: Куршавель
+    price: '13770'
+    Group: MenuGroup_12
+    created_at: '2011-01-18 00:17:48'
+    updated_at: '2011-01-18 00:17:48'
+    deleted_at: null
+  MenuItem_40:
+    name: 'Паста founds marins'
+    price: '15830'
+    Group: MenuGroup_12
+    created_at: '2011-01-18 00:18:34'
+    updated_at: '2011-01-18 00:18:34'
+    deleted_at: null
+  MenuItem_41:
+    name: 'Паста Карбонара'
+    price: '12300'
+    Group: MenuGroup_12
+    created_at: '2011-01-18 00:18:52'
+    updated_at: '2011-01-18 00:18:52'
+    deleted_at: null
+  MenuItem_42:
+    name: 'Паста неаполитана'
+    price: '13380'
+    Group: MenuGroup_12
+    created_at: '2011-01-18 00:19:16'
+    updated_at: '2011-01-18 00:19:16'
+    deleted_at: null
+  MenuItem_43:
+    name: 'Грибная со шпинатом'
+    price: '14540'
+    Group: MenuGroup_12
+    created_at: '2011-01-18 00:19:37'
+    updated_at: '2011-01-18 00:19:37'
+    deleted_at: null
+  MenuItem_44:
+    name: 'Овощи гриль'
+    price: '6890'
+    Group: MenuGroup_6
+    created_at: '2011-01-18 00:21:03'
+    updated_at: '2011-01-18 00:21:03'
+    deleted_at: null
+  MenuItem_45:
+    name: 'Фасоль спаржевая в сливочном соусе'
+    price: '5200'
+    Group: MenuGroup_6
+    created_at: '2011-01-18 00:21:31'
+    updated_at: '2011-01-18 00:21:31'
+    deleted_at: null
+  MenuItem_46:
+    name: 'Рис со шпинатом'
+    price: '4780'
+    Group: MenuGroup_6
+    created_at: '2011-01-18 00:21:49'
+    updated_at: '2011-01-18 00:21:49'
+    deleted_at: null
+  MenuItem_47:
+    name: 'Французская булочка'
+    price: '1050'
+    Group: MenuGroup_13
+    created_at: '2011-01-18 00:22:55'
+    updated_at: '2011-01-18 00:22:55'
+    deleted_at: null
+  MenuItem_48:
+    name: 'Хлеб черный'
+    price: '300'
+    Group: MenuGroup_13
+    created_at: '2011-01-18 00:23:15'
+    updated_at: '2011-01-18 00:23:15'
+    deleted_at: null
+  MenuItem_49:
+    name: 'Салат Слоеный'
+    price: '4450'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:24:06'
+    updated_at: '2011-01-18 00:24:06'
+    deleted_at: null
+  MenuItem_50:
+    name: Легкий
+    price: '4650'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:24:21'
+    updated_at: '2011-01-18 00:24:21'
+    deleted_at: null
+  MenuItem_51:
+    name: 'Елисейские поля'
+    price: '4350'
+    Group: MenuGroup_2
+    created_at: '2011-01-18 00:24:40'
+    updated_at: '2011-01-18 00:24:40'
+    deleted_at: null
+  MenuItem_52:
+    name: 'Бульон куриный'
+    price: '3950'
+    Group: MenuGroup_1
+    created_at: '2011-01-18 00:24:58'
+    updated_at: '2011-01-18 00:24:58'
+    deleted_at: null
+  MenuItem_53:
+    name: Солянка
+    price: '4720'
+    Group: MenuGroup_1
+    created_at: '2011-01-18 00:25:11'
+    updated_at: '2011-01-18 00:25:11'
+    deleted_at: null
+  MenuItem_54:
+    name: 'Грибной с лапшой'
+    price: '3840'
+    Group: MenuGroup_1
+    created_at: '2011-01-18 00:25:34'
+    updated_at: '2011-01-18 00:25:34'
+    deleted_at: null
+  MenuItem_55:
+    name: 'Куриное филе нежное'
+    price: '6700'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:26:17'
+    updated_at: '2011-01-18 00:26:17'
+    deleted_at: null
+  MenuItem_56:
+    name: 'Свинина с грибами'
+    price: '7320'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:26:37'
+    updated_at: '2011-01-18 00:26:37'
+    deleted_at: null
+  MenuItem_57:
+    name: 'Рыба в шпинатном соусе'
+    price: '6720'
+    Group: MenuGroup_7
+    created_at: '2011-01-18 00:27:23'
+    updated_at: '2011-01-18 00:27:23'
+    deleted_at: null
+  MenuItem_58:
+    name: 'Фасоль спаржевая'
+    price: '4610'
+    Group: MenuGroup_6
+    created_at: '2011-01-18 00:27:46'
+    updated_at: '2011-01-18 00:27:46'
+    deleted_at: null
+  MenuItem_59:
+    name: 'Спагетти с сыром'
+    price: '3330'
+    Group: MenuGroup_6
+    created_at: '2011-01-18 00:28:05'
+    updated_at: '2011-01-18 00:28:05'
+    deleted_at: null
+  MenuItem_60:
+    name: 'Картофель с грудинкой'
+    price: '3280'
+    Group: MenuGroup_6
+    created_at: '2011-01-18 00:28:23'
+    updated_at: '2011-01-18 00:28:23'
+    deleted_at: null
+  MenuItem_61:
+    name: 'Шоколад Идеал молочный'
+    price: '3830'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:29:03'
+    updated_at: '2011-01-18 00:29:03'
+    deleted_at: null
+  MenuItem_62:
+    name: 'Шоколад Идеал молочный с орехами'
+    price: '4490'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:29:24'
+    updated_at: '2011-01-18 00:29:24'
+    deleted_at: null
+  MenuItem_63:
+    name: Мороженное
+    price: '5570'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:29:39'
+    updated_at: '2011-01-18 00:29:39'
+    deleted_at: null
+  MenuItem_64:
+    name: 'Торт Чиз- кейк'
+    price: '7340'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:30:00'
+    updated_at: '2011-01-18 00:30:00'
+    deleted_at: null
+  MenuItem_65:
+    name: 'Молочный коктейль внильный'
+    price: '3910'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:30:27'
+    updated_at: '2011-01-18 00:30:27'
+    deleted_at: null
+  MenuItem_66:
+    name: 'Молочный коктейль Лакомка'
+    price: '3230'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:30:48'
+    updated_at: '2011-01-18 00:30:48'
+    deleted_at: null
+  MenuItem_67:
+    name: 'Молочный коктейль Смородина'
+    price: '3680'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:31:10'
+    updated_at: '2011-01-18 00:31:10'
+    deleted_at: null
+  MenuItem_68:
+    name: 'Фрешь Морковный'
+    price: '3500'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:32:33'
+    updated_at: '2011-01-18 00:32:33'
+    deleted_at: null
+  MenuItem_69:
+    name: 'Фрешь Морковный со сливками'
+    price: '4230'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:33:01'
+    updated_at: '2011-01-18 00:33:01'
+    deleted_at: null
+  MenuItem_70:
+    name: 'Фрешь Апельсиновый'
+    price: '4760'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:33:34'
+    updated_at: '2011-01-18 00:33:34'
+    deleted_at: null
+  MenuItem_71:
+    name: 'Фрешь Яблочный'
+    price: '3920'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:34:07'
+    updated_at: '2011-01-18 00:34:07'
+    deleted_at: null
+  MenuItem_72:
+    name: Апельсин
+    price: '790'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:34:26'
+    updated_at: '2011-01-18 00:34:26'
+    deleted_at: null
+  MenuItem_73:
+    name: Яблоко
+    price: '720'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:34:41'
+    updated_at: '2011-01-18 00:34:41'
+    deleted_at: null
+  MenuItem_74:
+    name: Чай
+    price: '3100'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:35:03'
+    updated_at: '2011-01-18 00:35:03'
+    deleted_at: null
+  MenuItem_75:
+    name: Лимон
+    price: '150'
+    Group: MenuGroup_3
+    created_at: '2011-01-18 00:35:34'
+    updated_at: '2011-01-18 00:35:34'
+    deleted_at: null
+  MenuItem_76:
+    name: 'Кофе эспрессо'
+    price: '3300'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:40:59'
+    updated_at: '2011-01-18 00:40:59'
+    deleted_at: null
+  MenuItem_77:
+    name: 'Кофе Капучино'
+    price: '4000'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:41:19'
+    updated_at: '2011-01-18 00:41:19'
+    deleted_at: null
+  MenuItem_78:
+    name: 'Кофе Американо'
+    price: '3300'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:41:50'
+    updated_at: '2011-01-18 00:41:50'
+    deleted_at: null
+  MenuItem_79:
+    name: 'Кофе Латте'
+    price: '4300'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:42:08'
+    updated_at: '2011-01-18 00:42:08'
+    deleted_at: null
+  MenuItem_80:
+    name: 'Кофе с молоком'
+    price: '4500'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:42:27'
+    updated_at: '2011-01-18 00:42:27'
+    deleted_at: null
+  MenuItem_81:
+    name: 'Кофе Марсель'
+    price: '4990'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:42:48'
+    updated_at: '2011-01-18 00:42:48'
+    deleted_at: null
+  MenuItem_82:
+    name: Кока-кола
+    price: '2460'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:43:29'
+    updated_at: '2011-01-18 00:43:29'
+    deleted_at: null
+  MenuItem_83:
+    name: Бонаква
+    price: '1950'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:43:42'
+    updated_at: '2011-01-18 00:43:42'
+    deleted_at: null
+  MenuItem_84:
+    name: Нести
+    price: '2840'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:43:56'
+    updated_at: '2011-01-18 00:43:56'
+    deleted_at: null
+  MenuItem_85:
+    name: Берн
+    price: '6500'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:44:10'
+    updated_at: '2011-01-18 00:44:10'
+    deleted_at: null
+  MenuItem_86:
+    name: 'Морс чудо- ягода'
+    price: '2450'
+    Group: MenuGroup_4
+    created_at: '2011-01-18 00:44:47'
+    updated_at: '2011-01-18 00:44:47'
+    deleted_at: null
+  MenuItem_87:
+    name: 'Вино Роман бианко'
+    price: '1690'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:45:33'
+    updated_at: '2011-01-18 00:45:33'
+    deleted_at: null
+  MenuItem_88:
+    name: 'Вино Кастелли Романи Россо'
+    price: '1690'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:46:10'
+    updated_at: '2011-01-18 00:46:10'
+    deleted_at: null
+  MenuItem_89:
+    name: 'Вино Hoch'
+    price: '1850'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:46:57'
+    updated_at: '2011-01-18 00:46:57'
+    deleted_at: null
+  MenuItem_90:
+    name: 'Вино Дорнфельдер Ротвильд'
+    price: '2010'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:47:46'
+    updated_at: '2011-01-18 00:47:46'
+    deleted_at: null
+  MenuItem_91:
+    name: Шампанское
+    price: '26360'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:48:11'
+    updated_at: '2011-01-18 00:48:11'
+    deleted_at: null
+  MenuItem_92:
+    name: 'Водка Бульбашъ особая'
+    price: '3100'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:48:45'
+    updated_at: '2011-01-18 00:48:45'
+    deleted_at: null
+  MenuItem_93:
+    name: 'Водка sky'
+    price: '7390'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:49:15'
+    updated_at: '2011-01-18 00:49:15'
+    deleted_at: null
+  MenuItem_94:
+    name: 'Настойка Сваяк'
+    price: '4050'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:49:36'
+    updated_at: '2011-01-18 00:49:36'
+    deleted_at: null
+  MenuItem_95:
+    name: 'Джин Лариос'
+    price: '8570'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:49:59'
+    updated_at: '2011-01-18 00:49:59'
+    deleted_at: null
+  MenuItem_96:
+    name: 'Коньяк старая крепость'
+    price: '5800'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:50:31'
+    updated_at: '2011-01-18 00:50:31'
+    deleted_at: null
+  MenuItem_97:
+    name: 'Виски Дюварс уайт лэйбл'
+    price: '8270'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:51:12'
+    updated_at: '2011-01-18 00:51:12'
+    deleted_at: null
+  MenuItem_98:
+    name: 'Ром Бакарди лимон'
+    price: '9000'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:51:36'
+    updated_at: '2011-01-18 00:51:36'
+    deleted_at: null
+  MenuItem_99:
+    name: 'Текила Сауза бланко'
+    price: '10610'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:52:15'
+    updated_at: '2011-01-18 00:52:15'
+    deleted_at: null
+  MenuItem_100:
+    name: 'Пиво karlsberg  разл. 0.3'
+    price: '4500'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:53:14'
+    updated_at: '2011-01-18 00:53:14'
+    deleted_at: null
+  MenuItem_101:
+    name: 'Пиво karlsberg  разл. 0.5'
+    price: '7500'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:53:44'
+    updated_at: '2011-01-18 00:53:44'
+    deleted_at: null
+  MenuItem_102:
+    name: 'Пиво Tuborg green'
+    price: '5050'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:54:35'
+    updated_at: '2011-01-18 00:54:35'
+    deleted_at: null
+  MenuItem_103:
+    name: 'балтика 3'
+    price: '4320'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:54:54'
+    updated_at: '2011-01-18 00:54:54'
+    deleted_at: null
+  MenuItem_104:
+    name: 'Балтика 0'
+    price: '3600'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:55:15'
+    updated_at: '2011-01-18 00:55:15'
+    deleted_at: null
+  MenuItem_105:
+    name: 'Аливария Портер'
+    price: '4300'
+    Group: MenuGroup_5
+    created_at: '2011-01-18 00:55:33'
+    updated_at: '2011-01-18 00:55:33'
+    deleted_at: null
+  MenuItem_106:
+    name: Dunhil
+    price: '4800'
+    Group: MenuGroup_14
+    created_at: '2011-01-18 00:56:37'
+    updated_at: '2011-01-18 00:56:37'
+    deleted_at: null
+  MenuItem_107:
+    name: 'Kent HD'
+    price: '4100'
+    Group: MenuGroup_14
+    created_at: '2011-01-18 00:57:19'
+    updated_at: '2011-01-18 00:57:19'
+    deleted_at: null
+  MenuItem_108:
+    name: 'Lucky Strike'
+    price: '4100'
+    Group: MenuGroup_14
+    created_at: '2011-01-18 00:57:49'
+    updated_at: '2011-01-18 00:57:49'
+    deleted_at: null
+  MenuItem_109:
+    name: 'Pall Mall'
+    price: '2200'
+    Group: MenuGroup_14
+    created_at: '2011-01-18 00:58:11'
+    updated_at: '2011-01-18 00:58:11'
+    deleted_at: null
+  MenuItem_110:
+    name: Сахар
+    price: '150'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 00:59:31'
+    updated_at: '2011-01-18 00:59:31'
+    deleted_at: null
+  MenuItem_111:
+    name: Вилка
+    price: '100'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:00:17'
+    updated_at: '2011-01-18 01:00:17'
+    deleted_at: null
+  MenuItem_112:
+    name: Нож
+    price: '100'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:00:29'
+    updated_at: '2011-01-18 01:00:29'
+    deleted_at: null
+  MenuItem_113:
+    name: Стакан
+    price: '300'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:00:41'
+    updated_at: '2011-01-18 01:00:41'
+    deleted_at: null
+  MenuItem_114:
+    name: 'Бокс для горячего'
+    price: '750'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:01:00'
+    updated_at: '2011-01-18 01:01:00'
+    deleted_at: null
+  MenuItem_115:
+    name: Ложка
+    price: '150'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:01:12'
+    updated_at: '2011-01-18 01:01:12'
+    deleted_at: null
+  MenuItem_116:
+    name: 'Бокс для супа'
+    price: '700'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:01:33'
+    updated_at: '2011-01-18 01:01:33'
+    deleted_at: null
+  MenuItem_117:
+    name: Пакет
+    price: '170'
+    Group: MenuGroup_15
+    created_at: '2011-01-18 01:01:53'
+    updated_at: '2011-01-18 01:01:53'
+    deleted_at: null
+Item:
+  Item_3:
+    MenuItem: MenuItem_54
+    Bill: myNull_7
+    quantity: '1'
+    price: '3840'
+    created_at: '2011-01-19 22:24:06'
+    updated_at: '2011-01-19 22:24:06'
+  Item_4:
+    MenuItem: MenuItem_28
+    Bill: myNull_7
+    quantity: '2'
+    price: '12300'
+    created_at: '2011-01-19 22:24:11'
+    updated_at: '2011-01-19 22:24:12'
+  Item_37:
+    MenuItem: MenuItem_52
+    Bill: myNull_12
+    quantity: '1'
+    price: '3950'
+    created_at: '2011-01-21 16:26:31'
+    updated_at: '2011-01-21 16:26:31'
+  Item_38:
+    MenuItem: MenuItem_106
+    Bill: myNull_12
+    quantity: '2'
+    price: '4800'
+    created_at: '2011-01-21 16:26:39'
+    updated_at: '2011-01-21 16:26:39'
+  Item_39:
+    MenuItem: MenuItem_10
+    Bill: myNull_12
+    quantity: '2'
+    price: '18510'
+    created_at: '2011-01-21 16:26:43'
+    updated_at: '2011-01-21 16:26:43'
+  Item_40:
+    MenuItem: MenuItem_40
+    Bill: myNull_12
+    quantity: '1'
+    price: '15830'
+    created_at: '2011-01-21 16:27:43'
+    updated_at: '2011-01-21 16:27:43'
+  Item_41:
+    MenuItem: MenuItem_52
+    Bill: Bill_13
+    quantity: '1'
+    price: '3950'
+    created_at: '2011-01-21 18:02:21'
+    updated_at: '2011-01-21 18:02:21'
+  Item_42:
+    MenuItem: MenuItem_53
+    Bill: Bill_13
+    quantity: '1'
+    price: '4720'
+    created_at: '2011-01-21 18:02:22'
+    updated_at: '2011-01-21 18:02:22'
+  Item_43:
+    MenuItem: MenuItem_54
+    Bill: Bill_13
+    quantity: '1'
+    price: '3840'
+    created_at: '2011-01-21 18:02:24'
+    updated_at: '2011-01-21 18:02:24'
+  Item_44:
+    MenuItem: MenuItem_111
+    Bill: Bill_13
+    quantity: '1'
+    price: '100'
+    created_at: '2011-01-21 18:02:28'
+    updated_at: '2011-01-21 18:02:28'
+  Item_45:
+    MenuItem: MenuItem_112
+    Bill: Bill_13
+    quantity: '1'
+    price: '100'
+    created_at: '2011-01-21 18:02:29'
+    updated_at: '2011-01-21 18:02:29'
+  Item_46:
+    MenuItem: MenuItem_1
+    Bill: Bill_14
+    quantity: '1'
+    price: '8430'
+    created_at: '2011-01-21 18:22:08'
+    updated_at: '2011-01-21 18:22:08'
+  Item_47:
+    MenuItem: MenuItem_2
+    Bill: Bill_14
+    quantity: '1'
+    price: '4750'
+    created_at: '2011-01-21 18:22:09'
+    updated_at: '2011-01-21 18:22:09'
+  Item_48:
+    MenuItem: MenuItem_3
+    Bill: Bill_14
+    quantity: '1'
+    price: '5930'
+    created_at: '2011-01-21 18:22:10'
+    updated_at: '2011-01-21 18:22:10'
+  Item_49:
+    MenuItem: MenuItem_28
+    Bill: Bill_15
+    quantity: '1'
+    price: '12300'
+    created_at: '2011-01-21 18:22:53'
+    updated_at: '2011-01-21 18:22:53'
+Desk:
+  Desk_1:
+    number: '1'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+  Desk_2:
+    number: '2'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+  Desk_3:
+    number: '3'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+  Desk_4:
+    number: '4'
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+  Desk_5:
+    number: '5'
+    created_at: '2011-01-19 22:36:48'
+    updated_at: '2011-01-20 09:19:29'
+  Desk_6:
+    number: '6'
+    created_at: '2011-01-20 09:19:49'
+    updated_at: '2011-01-20 09:19:49'
+  Desk_7:
+    number: '7'
+    created_at: '2011-01-20 09:19:59'
+    updated_at: '2011-01-20 09:19:59'
+  Desk_8:
+    number: '8'
+    created_at: '2011-01-20 09:20:01'
+    updated_at: '2011-01-20 09:20:01'
+  Desk_9:
+    number: '9'
+    created_at: '2011-01-20 09:20:03'
+    updated_at: '2011-01-20 09:20:03'
+  Desk_10:
+    number: '10'
+    created_at: '2011-01-20 09:20:09'
+    updated_at: '2011-01-20 09:20:09'
+  Desk_11:
+    number: '11'
+    created_at: '2011-01-20 09:20:14'
+    updated_at: '2011-01-20 09:20:14'
+  Desk_12:
+    number: '12'
+    created_at: '2011-01-20 09:20:17'
+    updated_at: '2011-01-20 09:20:17'
+  Desk_13:
+    number: '13'
+    created_at: '2011-01-20 09:20:20'
+    updated_at: '2011-01-20 09:20:20'
+  Desk_14:
+    number: '14'
+    created_at: '2011-01-20 09:20:23'
+    updated_at: '2011-01-20 09:20:23'
+  Desk_15:
+    number: '15'
+    created_at: '2011-01-20 09:20:26'
+    updated_at: '2011-01-20 09:20:26'
+  Desk_16:
+    number: '16'
+    created_at: '2011-01-21 18:32:26'
+    updated_at: '2011-01-21 18:32:26'
+  Desk_17:
+    number: '17'
+    created_at: '2011-01-21 18:32:32'
+    updated_at: '2011-01-21 18:32:32'
+Bill:
+  Bill_1:
+    number: '100'
+    Desk: Desk_1
+    open: false
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:24:29'
+  Bill_2:
+    number: '101'
+    Desk: Desk_1
+    open: false
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:37:46'
+  Bill_3:
+    number: '102'
+    Desk: Desk_2
+    open: false
+    created_at: '2011-01-17 22:24:29'
+    updated_at: '2011-01-17 22:33:18'
+  Bill_4:
+    number: '103'
+    Desk: Desk_1
+    open: false
+    created_at: '2011-01-17 22:43:12'
+    updated_at: '2011-01-19 22:14:26'
+  Bill_5:
+    number: '104'
+    Desk: Desk_2
+    open: false
+    created_at: '2011-01-18 01:02:57'
+    updated_at: '2011-01-19 22:14:31'
+  Bill_6:
+    number: '105'
+    Desk: Desk_4
+    open: false
+    created_at: '2011-01-18 01:07:27'
+    updated_at: '2011-01-20 09:18:50'
+  Bill_8:
+    number: '107'
+    Desk: Desk_3
+    open: false
+    created_at: '2011-01-19 22:25:00'
+    updated_at: '2011-01-20 09:18:40'
+  Bill_9:
+    number: '108'
+    Desk: Desk_5
+    open: false
+    created_at: '2011-01-19 22:37:19'
+    updated_at: '2011-01-20 09:19:07'
+  Bill_10:
+    number: '109'
+    Desk: Desk_1
+    open: false
+    created_at: '2011-01-20 09:22:00'
+    updated_at: '2011-01-20 09:31:01'
+  Bill_11:
+    number: '110'
+    Desk: Desk_1
+    open: false
+    created_at: '2011-01-20 09:38:31'
+    updated_at: '2011-01-20 09:39:16'
+  Bill_13:
+    number: '111'
+    Desk: Desk_1
+    open: true
+    created_at: '2011-01-21 18:02:00'
+    updated_at: '2011-01-21 18:21:53'
+  Bill_14:
+    number: '112'
+    Desk: Desk_1
+    open: true
+    created_at: '2011-01-21 18:22:00'
+    updated_at: '2011-01-21 18:22:00'
+  Bill_15:
+    number: '113'
+    Desk: Desk_1
+    open: true
+    created_at: '2011-01-21 18:22:00'
+    updated_at: '2011-01-21 18:22:00'
+  Bill_16:
+    number: '114'
+    Desk: Desk_16
+    open: true
+    created_at: '2011-01-21 18:34:25'
+    updated_at: '2011-01-21 18:34:25'
