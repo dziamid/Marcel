@@ -18,7 +18,7 @@ Bill:
       foreignAlias: Bill
       type: many
       foreignType: one
-      #cascade: [delete]
+      cascade: [delete]
     Desk:
       local: desk_id
       foreign: id
