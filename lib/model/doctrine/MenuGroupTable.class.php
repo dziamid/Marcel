@@ -19,7 +19,8 @@ class MenuGroupTable extends Doctrine_Table
   public function getForList()
   {
     $q = $this->createQuery('g')
-      ->leftJoin('g.Items i');
+      ->leftJoin('g.Items i')
+      ->orderBy('g.type');
     
     return $q->execute();
   }

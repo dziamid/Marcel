@@ -12,8 +12,17 @@
  */
 class MenuGroup extends BaseMenuGroup
 {
+  protected
+    $types = array(
+      1 => 'kitchen',
+      2 => 'bar'
+    );
   public function getItemsTotal()
   {
     return $this->getItems()->count();
+  }
+  public function getTypeString()
+  {
+    return $this->types[$this->getType()];
   }
 }

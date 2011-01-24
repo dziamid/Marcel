@@ -9,7 +9,7 @@ $(function() {
 <div id='menulist'>
 	<ul>
     <?php foreach ($menu_groups as $k => $menu_group): ?>
-  		<li><a href="<?php echo sprintf('#tabs-%s',$k) ?>"><?php echo $menu_group->getName() ?></a></li>
+  		<li class='<?php echo $menu_group->getTypeString() ?>'><a href="<?php echo sprintf('#tabs-%s',$k) ?>"><?php echo $menu_group->getName() ?></a></li>
     <?php endforeach; ?>
   </ul>
   <?php foreach ($menu_groups as $k => $menu_group): ?>
