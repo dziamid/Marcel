@@ -21,7 +21,7 @@ class deskActions extends sfActions
     $this->desk = $this->getRoute()->getObject();
     $this->openbill = $this->desk->getOpenBill();
     $date = new DateTime();
-    $this->today = $date->format('d M Y');
+    $this->today = $date->format('d/m/Y');
   }
 
   public function executeNew(sfWebRequest $request)
