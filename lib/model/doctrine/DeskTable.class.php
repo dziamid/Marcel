@@ -19,7 +19,8 @@ class DeskTable extends Doctrine_Table
   public function getForIndex()
   {
     $q = $this->createQuery('d')
-      ->leftJoin('d.Bills b');
+      ->leftJoin('d.Bills b')
+      ->orderBy('d.number');
       
     return $q->execute();
   }
