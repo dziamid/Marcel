@@ -18,8 +18,8 @@
       <p><small>Подпись официанта (бармена)</small> ______________</p>
     </div>
     <div class='tools'>
-      <?php echo link_to('Закрыть стол', 'desk_close', $desk, array('method'=>'post')) ?>
       <a href="javascript:window.print()">Распечатать счёт</a>
+      <?php echo link_to('Закрыть стол', 'desk_close', $desk, array('method'=>'post')) ?>
     </div>
   <?php else: ?>
     <h1>Стол №<?php echo $desk->getNumber() ?></h1>

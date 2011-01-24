@@ -24,6 +24,9 @@ a, span.link
   text-decoration: none;
   cursor: pointer;
 }
+a:hover {
+  color: black;
+}
 html, body {
   height: 100%;
   font: 14px "Lucida Grande", Lucida, Verdana, sans-serif;
@@ -257,4 +260,9 @@ table.bill td {
 #openbill div.header,
 #openbill div.footer {
   display: none;
+}
+div.tools a {
+  display: block;
+  margin: 5px;
+  font-size: larger;
 }
