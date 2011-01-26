@@ -261,6 +261,10 @@ table.bill td {
 #openbill div.footer {
   display: none;
 }
+#openbill .bill_total {
+  text-align: right;
+  padding-right: 22px;
+}
 div.tools a {
   display: block;
   margin: 5px;

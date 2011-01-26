@@ -1,11 +1,11 @@
   <table class="bill">
     <thead>
       <tr>
-        <th class='index'>№ п/п</th>
-        <th class='name'>Наименование продукции</th>
-        <th class='quantity'>Кол-во (единиц)</th>
-        <th class='price'>Цена за 1 единицу продукции</th>
-        <th class='total'>Стоимость продукции (рублей)</th>
+        <th class='index'></th>
+        <th class='name'>Название блюда</th>
+        <th class='price'>Цена</th>
+        <th class='quantity'>К-во</th>
+        <th class='total'>Сумма</th>
         <th class='delete'></th>
       </tr>
     </thead>
@@ -26,4 +26,4 @@
     </tbody>
   </table>
   <?php endif; ?>
-  <div class='total'>Сумма (рублей): <?php echo $bill->getTotal() ?></div>
+  <div class='bill_total'>Всего: <?php echo $bill->getTotal() ?></div>

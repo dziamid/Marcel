@@ -30,7 +30,8 @@ body {
   margin: 0 auto;
   width: 300px;
 }
-#openbill table.bill tr {
+#openbill table.bill {
+  width: 100%;
 }
 #openbill table.bill td,
 #openbill table.bill th {
@@ -39,20 +40,22 @@ body {
 }
 #openbill table.bill th {
   font-size: 8pt;
-  text-align: center;
 }
-#openbill table.bill .name {
+#openbill .index {
+  width: 5%;
+}
+#openbill .name {
   width: 50%;
 }
-#openbill table.bill .price {
+#openbill .price {
   width: 15%;
   text-align: right;
 }
-#openbill table.bill .quantity {
-  width: 15%;
+#openbill .quantity {
+  width: 10%;
   text-align: right;
 }
-#openbill table.bill .total {
+#openbill .total {
   width: 20%;
   text-align: right;
 }
@@ -69,6 +72,9 @@ body {
 }
 #openbill div.footer {
   padding-top: 5px;
+}
+#openbill .bill_total {
+  text-align: right;
 }
 #sfWebDebug {
   display: none;

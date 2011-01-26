@@ -12,9 +12,11 @@
       <p><span><?php echo sfConfig::get('app_billheader_company') ?></span></p>
       <p><small>Торговый объект общественного питания</small>
       <p><span><?php echo sfConfig::get('app_billheader_cafe') ?></span></p>
-      <h1>CЧЁТ № <span><?php echo $bill->getNumber() ?></span></h1>
-      <p><small>Официант (бармен): </small> <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
-      <p><small>Дата выдачи счёта: </small> <span><?php echo $today ?></span></p>  
+      <h1>CЧЁТ # <span><?php echo $bill->getNumber() ?></span></h1>
+      <p>Стол: #<span><?php echo $desk ?></span></p>
+      <p>Дата: <span><?php echo $today ?></span></p>  
+      <p>Официант (бармен): <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
+
     </div>
     <div id="bill_body">
       <?php include_partial('bill/show',array('bill'=>$bill, 'kitchen_items'=>$kitchen_items, 'bar_items'=>$bar_items)) ?>
