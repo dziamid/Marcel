@@ -20,7 +20,8 @@ class Desk extends BaseDesk
       ->leftJoin('i.MenuItem m')
       ->leftJoin('m.Group')
       ->where('b.open = ?', true)
-      ->andWhere('b.desk_id = ?', $this->getId());
+      ->andWhere('b.desk_id = ?', $this->getId())
+      ->orderBy('i.created_at');
     $bill = $q->fetchOne();
     return $bill ? $bill : new myNull();
   }

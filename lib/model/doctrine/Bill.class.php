@@ -72,7 +72,8 @@ class Bill extends BaseBill
       ->createQuery('b')
       ->leftJoin('b.Items i')
       ->leftJoin('i.MenuItem')
-      ->where('b.id = ?', $this->getId());
+      ->where('b.id = ?', $this->getId())
+      ->orderBy('i.created_at');
     
     return $q->fetchOne();
   }
