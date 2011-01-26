@@ -17,7 +17,8 @@ class Desk extends BaseDesk
     $q = Doctrine::getTable('Bill')
       ->createQuery('b')
       ->leftJoin('b.Items i')
-      ->leftJoin('i.MenuItem')
+      ->leftJoin('i.MenuItem m')
+      ->leftJoin('m.Group')
       ->where('b.open = ?', true)
       ->andWhere('b.desk_id = ?', $this->getId());
     $bill = $q->fetchOne();

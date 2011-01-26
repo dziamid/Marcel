@@ -1,19 +1,24 @@
 <?php use_stylesheet('print.css', '', array('media'=>'print')) ?>
+<?php if (sfConfig::get('app_use_ajax',false)): ?>
+  <?php use_javascript('bill.js') ?>
+<?php endif; ?>
 
 <div id='openbill' class='area'>
-  <?php if ($openbill->isNotNull()): ?>
-    <h1>CЧЁТ № <span><?php echo $openbill->getNumber() ?></span></h1>
+  <?php if ($bill->isNotNull()): ?>
+    <h1>CЧЁТ № <span><?php echo $bill->getNumber() ?></span></h1>
       
     <div class="header">
       <p><small>Юридическое лицо, индивидуальный предприниматель</small></p>
       <p><span><?php echo sfConfig::get('app_billheader_company') ?></span></p>
       <p><small>Торговый объект общественного питания</small>
       <p><span><?php echo sfConfig::get('app_billheader_cafe') ?></span></p>
-      <h1>CЧЁТ № <span><?php echo $openbill->getNumber() ?></span></h1>
+      <h1>CЧЁТ № <span><?php echo $bill->getNumber() ?></span></h1>
       <p><small>Официант (бармен): </small> <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
       <p><small>Дата выдачи счёта: </small> <span><?php echo $today ?></span></p>  
     </div>
-    <?php include_partial('bill/show',array('bill'=>$openbill)) ?>
+    <div id="bill_body">
+      <?php include_partial('bill/show',array('bill'=>$bill, 'kitchen_items'=>$kitchen_items, 'bar_items'=>$bar_items)) ?>
+    </div>
     <div class="footer">
       <p><small>Подпись официанта (бармена)</small> ______________</p>
     </div>
@@ -31,6 +36,6 @@
 
 <div id='menu'>
 <?php include_component('desk','list', array(
-  'open_bill'=> $openbill
+  'open_bill'=> $bill
 )) ?>
 </div>

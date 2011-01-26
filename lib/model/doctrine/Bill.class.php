@@ -76,4 +76,21 @@ class Bill extends BaseBill
     
     return $q->fetchOne();
   }
+  /**
+  * Fetch all items of the bill that relate to certain menu_item type (kitchen or bar)
+  *
+  */
+  public function getItemsByType($type)
+  {
+    $items = $this->getItems();
+    $arr = array();
+    foreach ($items as $item)
+    {
+      if ($item->getMenuItem()->getGroup()->getType() == $type)
+      {
+        $arr[] = $item;
+      }
+    }
+    return $arr;
+  }
 }

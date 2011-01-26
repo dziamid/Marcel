@@ -72,9 +72,11 @@ class billActions extends sfActions
     $bill = $this->getRoute()->getObject();
     $menu_item = Doctrine::getTable('MenuItem')->findOneById($request->getParameter('menu_item_id'));
     $bill->addMenuItem($menu_item);
+    $kitchen_items = $bill->getItemsByType(1);
+    $bar_items = $bill->getItemsByType(2);
     if ($request->isXmlHttpRequest())
     {
-      return $this->renderPartial('bill/show', array('bill' => $bill));
+      return $this->renderPartial('bill/show', array('bill' => $bill, 'kitchen_items'=>$kitchen_items, 'bar_items'=>$bar_items));
     }
     $this->redirect('desk_show', $bill->getDesk());
   }

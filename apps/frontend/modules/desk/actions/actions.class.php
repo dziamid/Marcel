@@ -19,7 +19,9 @@ class deskActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->desk = $this->getRoute()->getObject();
-    $this->openbill = $this->desk->getOpenBill();
+    $this->bill = $this->desk->getOpenBill();
+    $this->kitchen_items = $this->bill->getItemsByType(1);
+    $this->bar_items = $this->bill->getItemsByType(2);
     $date = new DateTime();
     $this->today = $date->format('d/m/Y');
   }

@@ -72,9 +72,17 @@ class itemActions extends sfActions
   {
     $item = $this->getRoute()->getObject();
     $item->unselect();
+    $bill = $item->getBill();
+    $kitchen_items = $bill->getItemsByType(1);
+    $bar_items = $bill->getItemsByType(2);
+    
     if ($request->isXmlHttpRequest())
     {
-      return $this->renderPartial('bill/show', array('bill' => $item->getBill()));
+      return $this->renderPartial('bill/show', array(
+        'bill' => $bill,
+        'kitchen_items'=>$kitchen_items,
+        'bar_items'=>$bar_items
+      ));
     }
     $this->redirect('desk_show', $item->getBill()->getDesk());
   }

@@ -6,18 +6,18 @@ $(document).ready(function(){
     if (target.length)
     {
       $.post(target.attr('href'), function(data) {
-        $('#openbill table.bill').html(data);
+        $('#bill_body').html(data);
       });
     }
   });
   //delete links in bill
-  $('#openbill table.bill').bind('click',function(e){
+  $('#bill_body').bind('click',function(e){
     e.preventDefault();
     var target = $(e.target).closest('a');
     if (target.length)
     {
       $.post(target.attr('href'), function(data) {
-        $('#openbill table.bill').html(data);
+        $('#bill_body').html(data);
       });      
     }
   });
