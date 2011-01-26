@@ -181,11 +181,11 @@ table.bill td {
 /* menu */
 #menulist {
   min-height: 200px;
+  overflow: hidden;
 }
 #menulist h1 {
   background: none;
 }
-
 #menulist div.menu_item {
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -197,10 +197,15 @@ table.bill td {
   margin: 5px;
   padding: 3px 5px;
   width: 200px;
+  height: 45px;
+  float: left;
 }
 #menulist div.menu_item a,
 #menulist div.menu_item span.link {
   color: white;
+  display: block;
+  height: 100%;
+  text-align: center;
 }
 #menulist div.menu_group {
   background-color: #99cc66;
