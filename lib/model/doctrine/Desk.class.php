@@ -12,6 +12,10 @@
  */
 class Desk extends BaseDesk
 {
+  public function __toString()
+  {
+    return $this->getNumber();
+  }
   /**
   * Returs bills currently opened on the table (usually one)
   *

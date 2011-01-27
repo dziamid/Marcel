@@ -16,12 +16,13 @@ generator:
       fields:
         created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
         number: {label: № счёта }
+        Desk: {label: № стола }
         desk_id: {label: № стола }
         open: {label: Счёт открыт? }
       list:
         title: Счета
         sort: ['number','desc']
-        display: [number, desk_id, open, created_at]
+        display: [number, Desk, open, created_at]
       filter:
         display: [number, desk_id, open, created_at]
       form:    ~
