@@ -16,66 +16,85 @@ version: 2.6.0
 */
 body{font:13px/1.231 arial,helvetica,clean,sans-serif;*font-size:small;*font:x-small;}select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;outline: none;}table{font-size:inherit;font:100%;}pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
 
+/* hide all children that are not #container */
+body > *:not(#container) {
+  display: none;
+}
+/* hide all children that are not #content */
+#container > *:not(#content) {
+  display: none;
+}
+/* hide all children that are not #bills */
+#content > .content > *:not(#bills) {
+  display: none;
+}
+/* hide everything that is not a bill div */
+#bills > *:not(.bill) {
+  display: none;
+}
+/* hide all inactive tabs */
+#bills > .ui-tabs-hide {
+  display: none;
+}
+/* hide tools div */
+#bills .tools {
+  display: none;
+}
+/* hide delete buttons */
+#bills .delete {
+  display: none;
+}
+
+/* layout enhancements */
+
 body {
-  font-size: 12pt;
+  font-size: 10pt;
 }
-#header, #footer, #mainmenu, #menu {
-  display: none;
-}
-#openbill div.tools,
-#openbill table .delete {
-  display: none;
-}
-#openbill {
+#bills {
   margin: 0 auto;
   width: 300px;
 }
-#openbill table.bill {
+#bills table {
   width: 100%;
 }
-#openbill table.bill td,
-#openbill table.bill th {
+#bills table td,
+#bills table th {
   border: 1px solid #ccc;
   padding: 3px 2px;
+  vertical-align: top;
 }
-#openbill table.bill th {
+#bills table th {
   font-size: 8pt;
 }
-#openbill .index {
+#bills .index {
   width: 5%;
 }
-#openbill .name {
+#bills .name {
   width: 50%;
 }
-#openbill .price {
+#bills .price {
   width: 15%;
   text-align: right;
 }
-#openbill .quantity {
+#bills .quantity {
   width: 10%;
   text-align: right;
 }
-#openbill .total {
+#bills .total {
   width: 20%;
   text-align: right;
 }
-#openbill > h1 {
-  display: none;
-}
-#openbill h1 {
+#bills h1 {
   font-size: 16pt;
   text-align: center;
   padding: 5px 0;
 }
-#openbill small {
+#bills small {
   font-size: 8pt;
 }
-#openbill div.footer {
+#bills div.footer {
   padding-top: 5px;
 }
-#openbill .bill_total {
+#bills .bill_total {
   text-align: right;
-}
-#sfWebDebug {
-  display: none;
 }

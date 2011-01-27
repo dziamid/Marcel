@@ -18,10 +18,15 @@ class MenuGroupTable extends Doctrine_Table
   }
   public function getForList()
   {
-    $q = $this->createQuery('g')
+    //don't show soft deleted groups and items
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
+    $return = $this->createQuery('g')
       ->leftJoin('g.Items i')
-      ->orderBy('g.type');
-    
-    return $q->execute();
+      ->orderBy('g.type')
+      ->execute();
+      
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
+
+    return $return;
   }
 }

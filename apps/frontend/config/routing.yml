@@ -7,14 +7,14 @@ desk:
   options:
     model: Desk
     module: desk
-    object_actions: {open: post, close: post}
+    object_actions: {open: post}
 
 bill:
   class: sfDoctrineRouteCollection
   options:
     model: Bill
     module: bill
-    object_actions: {select: post}
+    object_actions: {close: post}
 
 item:
   class: sfDoctrineRouteCollection
@@ -34,7 +34,7 @@ menu_item:
     module: MenuItem
     prefix_path: /admin/menu/item
     with_wildcard_routes: true
-
+    object_actions: {select: post}
 
 menu_group:
   class: sfDoctrineRouteCollection

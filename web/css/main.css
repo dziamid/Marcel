@@ -174,99 +174,88 @@ ul.list li {
 ul.list li a {
   padding: 20px;
 }
-table.bill td {
-  border: 1px solid #ccc;
-}
 
 /* menu */
-#menulist {
+#menu {
   min-height: 200px;
   overflow: hidden;
 }
-#menulist h1 {
+#menu h1 {
   background: none;
 }
-#menulist div.menu_item {
+#menu .item {
   -moz-border-radius: 4px;
   border-radius: 4px;
   background-color: #176F94;
   color: white;
   font-size: large;
-  text-align: left;
-  vertical-align: middle;
+  text-align: center;
   margin: 5px;
   padding: 3px 5px;
   width: 200px;
   height: 45px;
   float: left;
+  cursor: pointer;
+  display: table;
 }
-#menulist div.menu_item a,
-#menulist div.menu_item span.link {
-  color: white;
-  display: block;
-  height: 100%;
-  text-align: center;
-}
-#menulist div.menu_group {
-  background-color: #99cc66;
-  overflow: hidden;
-  width: 200px;
-  float: left;
-  min-height: 200px;
+#menu .item div {
+  display: table-cell;
+  vertical-align: middle;
 }
 
+
 /* desk show */
-#openbill {
+#bills {
   width: 390px;
   float: left;
 }
-#menu {
-  padding-left: 400px;
-  min-height: 200px;
+#bills div.bill {
+  padding: 0;
 }
-#openbill table.bill {
+div.bill table {
   padding: 5px;
   width: 100%;
 }
-#openbill table.bill tr {
+div.bill table tr {
   border-bottom: 1px solid #ABDAFB;
   background-color: #E3F4FF;
 }
-#openbill table.bill td,
-#openbill table.bill th {
+div.bill table td,
+div.bill table th {
   border: none;
   padding: 3px 2px;
 }
-#openbill table.bill th {
+
+div.bill table th {
   font-size: 10px;
   text-align: center;
 }
-#openbill table.bill .index {
+div.bill table .index {
   width: 5%;
 }
-#openbill table.bill .name {
+div.bill table .name {
   width: 45%;
 }
-#openbill table.bill .price {
+div.bill table .price {
   width: 15%;
   text-align: right;
 }
-#openbill table.bill .quantity {
+div.bill table .quantity {
   width: 15%;
   text-align: right;
 }
-#openbill table.bill .total {
+div.bill table .total {
   width: 15%;
   text-align: right;
 }
-#openbill table.bill .delete {
+div.bill table .delete {
   width: 5%;
 }
-#openbill div.header,
-#openbill div.footer {
+div.bill div.header,
+div.bill div.footer {
   display: none;
 }
-#openbill .bill_total {
+div.bill .bill_total {
   text-align: right;
   padding-right: 22px;
 }

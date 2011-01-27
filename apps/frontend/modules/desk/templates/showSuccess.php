@@ -1,43 +1,55 @@
 <?php use_stylesheet('print.css', '', array('media'=>'print')) ?>
-<?php if (sfConfig::get('app_use_ajax',false)): ?>
-  <?php use_javascript('bill.js') ?>
+<?php use_javascript('bill.js') ?>
+
+<div id='bills' class='area'>
+
+<?php if (count($bills)): ?>
+  <script>
+  $(function() {
+    $( "#bills" ).tabs();
+  });
+  </script>
+  <ul>
+    <?php foreach ($bills as $bill): ?>
+      <li data-id='<?php echo $bill->getId() ?>'><a href="<?php echo sprintf('#bill-%s',$bill->getId()) ?>">CЧЁТ #<?php echo $bill->getNumber() ?></a></li>
+    <?php endforeach; ?>
+  </ul>
+
+  <?php foreach ($bills as $bill): ?>
+    <div id='<?php echo sprintf('bill-%s',$bill->getId()) ?>' class='bill'>
+      <div class="header">
+        <p><small>Юридическое лицо, индивидуальный предприниматель</small></p>
+        <p><span><?php echo sfConfig::get('app_billheader_company') ?></span></p>
+        <p><small>Торговый объект общественного питания</small>
+        <p><span><?php echo sfConfig::get('app_billheader_cafe') ?></span></p>
+        <h1>CЧЁТ # <span><?php echo $bill->getNumber() ?></span></h1>
+        <p>Стол: #<span><?php echo $desk ?></span></p>
+        <p>Дата: <span><?php echo $today ?></span></p>  
+        <p>Официант (бармен): <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
+      </div>
+      
+      <div class="body">
+        <?php include_partial('bill/show',array('bill'=>$bill)) ?>
+      </div>
+      
+      <div class="footer">
+        <p><small>Подпись официанта (бармена)</small> ______________</p>
+      </div>
+      <div class='tools'>
+        <a href="javascript:window.print()">Распечатать счёт</a>
+        <?php echo link_to('Открыть ещё счёт', 'desk_open', $desk, array('method'=>'post')) ?>
+        <?php echo link_to('Закрыть счёт', 'bill_close', $bill, array('method'=>'post')) ?>
+      </div>
+    </div>
+  <?php endforeach; ?>
+
+<?php else: ?>
+  <h1>Стол №<?php echo $desk->getNumber() ?></h1>
+  <div class='tools'>
+    <?php echo link_to('Открыть счёт', 'desk_open', $desk, array('method'=>'post')) ?>
+  </div>
 <?php endif; ?>
 
-<div id='openbill' class='area'>
-  <?php if ($bill->isNotNull()): ?>
-    <h1>CЧЁТ № <span><?php echo $bill->getNumber() ?></span></h1>
-      
-    <div class="header">
-      <p><small>Юридическое лицо, индивидуальный предприниматель</small></p>
-      <p><span><?php echo sfConfig::get('app_billheader_company') ?></span></p>
-      <p><small>Торговый объект общественного питания</small>
-      <p><span><?php echo sfConfig::get('app_billheader_cafe') ?></span></p>
-      <h1>CЧЁТ # <span><?php echo $bill->getNumber() ?></span></h1>
-      <p>Стол: #<span><?php echo $desk ?></span></p>
-      <p>Дата: <span><?php echo $today ?></span></p>  
-      <p>Официант (бармен): <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
-
-    </div>
-    <div id="bill_body">
-      <?php include_partial('bill/show',array('bill'=>$bill, 'kitchen_items'=>$kitchen_items, 'bar_items'=>$bar_items)) ?>
-    </div>
-    <div class="footer">
-      <p><small>Подпись официанта (бармена)</small> ______________</p>
-    </div>
-    <div class='tools'>
-      <a href="javascript:window.print()">Распечатать счёт</a>
-      <?php echo link_to('Закрыть стол', 'desk_close', $desk, array('method'=>'post')) ?>
-    </div>
-  <?php else: ?>
-    <h1>Стол №<?php echo $desk->getNumber() ?></h1>
-    <div class='tools'>
-      <?php echo link_to('Открыть стол', 'desk_open', $desk, array('method'=>'post')) ?>
-    </div>
-  <?php endif ?>
 </div>
 
-<div id='menu'>
-<?php include_component('desk','list', array(
-  'open_bill'=> $bill
-)) ?>
-</div>
+<?php include_component('desk','list') ?>

@@ -12,7 +12,11 @@
  */
 class Desk extends BaseDesk
 {
-  public function getOpenBill()
+  /**
+  * Returs bills currently opened on the table (usually one)
+  *
+  */
+  public function getOpenBills()
   {
     $q = Doctrine::getTable('Bill')
       ->createQuery('b')
@@ -22,9 +26,13 @@ class Desk extends BaseDesk
       ->where('b.open = ?', true)
       ->andWhere('b.desk_id = ?', $this->getId())
       ->orderBy('i.created_at');
-    $bill = $q->fetchOne();
-    return $bill ? $bill : new myNull();
+    
+    return $q->execute();
   }
+  /**
+  * Add an open bill to a table
+  *
+  */
   public function open()
   {
     $bill = new Bill();
@@ -32,13 +40,21 @@ class Desk extends BaseDesk
     $bill->setDesk($this);
     $bill->save();
   }
-  public function close()
+  /**
+  * Desk has open bills ?
+  *
+  */
+  public function isOpen()
   {
-    if ($this->getOpenBill()->isNotNull())
+    $bills = $this->getBills();
+    foreach ($bills as $bill)
     {
-      $bill = $this->getOpenBill();
-      $bill->setOpen(false);
-      $bill->save();
+      if ($bill->getOpen())
+      {
+        return true;
+      }
     }
+    return false;
   }
+
 }

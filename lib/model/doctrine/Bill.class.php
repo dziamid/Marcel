@@ -94,4 +94,13 @@ class Bill extends BaseBill
     }
     return $arr;
   }
+  /**
+  * Close an open bill
+  *
+  */
+  public function close()
+  {
+    $this->setOpen(false);
+    $this->save();
+  }
 }

@@ -6,11 +6,7 @@
   <td class='quantity'><?php echo $item->getQuantity() ?></td>
   <td class='total'><?php echo $item->getTotal() ?></td>
   <td class="delete">
-    <?php if (sfConfig::get('app_use_ajax', false)): ?>
-      <?php echo link_to (image_tag('delete.png'), 'item_unselect', $item) ?>
-    <?php else: ?>
-      <?php echo link_to (image_tag('delete.png'), 'item_unselect', $item, array('method'=>'post')) ?>
-    <?php endif; ?>
+      <a class="unselect" href="<?php echo url_for('item_unselect', $item) ?>"><?php echo image_tag('delete.png') ?></a>
   </td>
 </tr>
 <?php endforeach; ?>

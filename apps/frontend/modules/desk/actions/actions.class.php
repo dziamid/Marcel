@@ -19,9 +19,7 @@ class deskActions extends sfActions
   public function executeShow(sfWebRequest $request)
   {
     $this->desk = $this->getRoute()->getObject();
-    $this->bill = $this->desk->getOpenBill();
-    $this->kitchen_items = $this->bill->getItemsByType(1);
-    $this->bar_items = $this->bill->getItemsByType(2);
+    $this->bills = $this->desk->getOpenBills();
     $date = new DateTime();
     $this->today = $date->format('d/m/Y');
   }
@@ -34,20 +32,8 @@ class deskActions extends sfActions
   public function executeOpen(sfWebRequest $request)
   {
     $desk = $this->getRoute()->getObject();
-    if ($desk && $desk->getOpenBill()->isNotNull())
-    {
-      $this->getUser()->setFlash('error', 'На данном столе уже открыт счёт', false);
-      $this->redirect('desk_show', $desk);
-    }
     $desk->open();
     $this->redirect('desk_show', $desk);
-  }
-  public function executeClose(sfWebRequest $request)
-  {
-    $desk = $this->getRoute()->getObject();
-    $desk->close();
-    $this->redirect('desk_show', $desk);
-
   }
 
   public function executeCreate(sfWebRequest $request)

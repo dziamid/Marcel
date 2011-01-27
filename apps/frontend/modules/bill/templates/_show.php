@@ -1,4 +1,4 @@
-  <table class="bill">
+  <table>
     <thead>
       <tr>
         <th class='index'></th>
@@ -10,19 +10,19 @@
       </tr>
     </thead>
   </table>
-  <?php if (count($kitchen_items)): ?>
+  <?php if (count($bill->getItemsByType(1))): ?>
   Кухня:
-  <table class="bill">
+  <table>
     <tbody>
-      <?php include_partial('bill/type', array('items'=>$kitchen_items)) ?>
+      <?php include_partial('bill/items', array('items'=>$bill->getItemsByType(1))) ?>
     </tbody>
   </table>
   <?php endif; ?>
-  <?php if (count($bar_items)): ?>
+  <?php if (count($bill->getItemsByType(2))): ?>
   Бар:
-  <table class="bill">
+  <table>
     <tbody>
-      <?php include_partial('bill/type', array('items'=>$bar_items)) ?>
+      <?php include_partial('bill/items', array('items'=>$bill->getItemsByType(2))) ?>
     </tbody>
   </table>
   <?php endif; ?>

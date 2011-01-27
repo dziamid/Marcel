@@ -18,6 +18,21 @@ class MenuItemActions extends autoMenuItemActions
     parent::preExecute();
     $this->getUser()->setCulture('ru');
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
-    //$this->getContext()->getDatabaseManager()->setAttribute();
+
+  }
+  /**
+  * Add a menu item to a bill
+  */
+  public function executeSelect(sfWebRequest $request)
+  {
+    $item = $this->getRoute()->getObject();
+    $bill = Doctrine::getTable('Bill')->findOneById($request->getParameter('bill_id'));
+    $bill->addMenuItem($item);
+
+    if ($request->isXmlHttpRequest())
+    {
+      return $this->renderPartial('bill/show', array('bill' => $bill));
+    }
+    $this->redirect('desk_show', $bill->getDesk());
   }
 }

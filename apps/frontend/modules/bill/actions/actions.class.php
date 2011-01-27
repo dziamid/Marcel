@@ -67,17 +67,16 @@ class billActions extends sfActions
       $this->redirect('@bill_edit?id='.$bill->getId());
     }
   }
-  public function executeSelect(sfWebRequest $request)
+  
+  /**
+  * Close an opened bill (from desk show)
+  *
+  */
+  public function executeClose(sfWebRequest $request)
   {
     $bill = $this->getRoute()->getObject();
-    $menu_item = Doctrine::getTable('MenuItem')->findOneById($request->getParameter('menu_item_id'));
-    $bill->addMenuItem($menu_item);
-    $kitchen_items = $bill->getItemsByType(1);
-    $bar_items = $bill->getItemsByType(2);
-    if ($request->isXmlHttpRequest())
-    {
-      return $this->renderPartial('bill/show', array('bill' => $bill, 'kitchen_items'=>$kitchen_items, 'bar_items'=>$bar_items));
-    }
+    $bill->close();
     $this->redirect('desk_show', $bill->getDesk());
+
   }
 }
