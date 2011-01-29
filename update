@@ -1,7 +1,4 @@
-cd ~/dev/marcel;
+cd /c/marseille;
 ./s cc;
-./s doctrine:data-dump;
 git pull origin master;
-./s doctrine:build --all --no-confirmation;
-./s doctrine:data-load data/fixtures/data.yml;
-mv data/fixtures/data.yml ~;
+./s doctrine:build --all-classes;
