@@ -10,6 +10,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     $this->enablePlugins('sfDoctrinePlugin');
     $this->enablePlugins('ioMenuPlugin');
     $this->enablePlugins('sfFormExtraPlugin');
+    $this->enablePlugins('sfDoctrineGuardPlugin');
   }
   public function configureDoctrine(Doctrine_Manager $manager)
   {

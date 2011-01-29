@@ -38,3 +38,10 @@ all:
     i18n:                   true
     default_culture:        ru
     charset:                utf-8
+    enabled_modules:        [default, sfGuardAuth]
+
+    login_module:           sfGuardAuth
+    login_action:           signin
+    secure_module:          sfGuardAuth
+    secure_action:          secure
+

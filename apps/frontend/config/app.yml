@@ -18,6 +18,7 @@ all:
         admin:
           label:   Администрирование
           route:   admin
+          credentials: [admin]
           children:
             menu_item:
               name:    menu_item
@@ -35,6 +36,8 @@ all:
         stats:
           label: Статистика
           route: admin_item
+          credentials: [admin]
+
           
   use_ajax: true
 
@@ -42,3 +45,8 @@ all:
     company: ООО "Смарт Фуд"
     cafe: Кафе "Марсель"
     waiter: Тишько А.Г.
+    
+  sf_guard_plugin:
+    success_signin_url: @homepage
+    success_signout_url: @homepage
+    routes_register: false
