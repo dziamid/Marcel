@@ -216,10 +216,11 @@ ul.list li a {
   margin: 5px;
   padding: 3px 5px;
   width: 200px;
-  height: 45px;
+  height: 50px;
   float: left;
   cursor: pointer;
   display: table;
+  overflow: hidden;
 }
 #menu .item div {
   display: table-cell;
