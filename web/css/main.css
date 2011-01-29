@@ -115,11 +115,34 @@ html, body {
   border-bottom: 1px solid #ddd;
   color: #fff;
 }
-
+#signin {
+  width: 350px;
+  min-height: 0;
+  margin-top: 10px;
+  padding: 10px;
+}
+#signin table th {
+  text-align: right;
+  width: 100px;
+}
+#signin table td {
+  padding: 5px;
+  text-align: left;
+}
+#signin table .error {
+  color: #CF0008;
+}
+#signin table {
+  width: 100%;
+}
 #signin input[type=text],
 #signin input[type=password]
 {
-  width: 15em;
+  width: 200px;
+}
+#signin input[type=submit]
+{
+  margin-left: 100px;
 }
 #content #links a {
   padding: 0 10px;
