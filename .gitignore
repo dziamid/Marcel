@@ -11,6 +11,7 @@ web/sfFormExtraPlugin
 #ignore sql generated queries and database files
 data/db/*
 data/sql/*
+data/fixtures/*
 
 # ignore custom base classes
 lib/filter/doctrine/base/*
