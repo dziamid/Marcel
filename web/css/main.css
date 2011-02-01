@@ -293,4 +293,21 @@ div.tools a {
   display: block;
   margin: 5px;
   font-size: larger;
+  line-height: 32px;
+}
+div.tools .icon {
+  height: 32px;
+  padding-left: 32px;
+}
+div.tools .open {
+  background: url('/images/add.png') no-repeat left center;
+}
+div.tools .print {
+  background: url('/images/printer2.png') no-repeat left center;
+}
+div.tools .close {
+  background: url('/images/lock.png') no-repeat left center;
+}
+div.tools .delete {
+  background: url('/images/trash.png') no-repeat left center;
 }

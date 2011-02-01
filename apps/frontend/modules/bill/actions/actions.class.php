@@ -54,7 +54,7 @@ class billActions extends sfActions
 
     $this->getRoute()->getObject()->delete();
 
-    $this->redirect('@bill');
+    $this->redirect('desk');
   }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
@@ -76,7 +76,7 @@ class billActions extends sfActions
   {
     $bill = $this->getRoute()->getObject();
     $bill->close();
-    $this->redirect('desk_show', $bill->getDesk());
+    $this->redirect('desk', $bill->getDesk());
 
   }
 }

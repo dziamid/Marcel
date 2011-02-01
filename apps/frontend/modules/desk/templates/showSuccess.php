@@ -38,9 +38,13 @@
         <p><small>Подпись официанта (бармена)</small> ______________</p>
       </div>
       <div class='tools'>
-        <a href="javascript:window.print()">Распечатать счёт</a>
-        <?php echo link_to('Открыть ещё счёт', 'desk_open', $desk, array('method'=>'post')) ?>
-        <?php echo link_to('Закрыть счёт', 'bill_close', $bill, array('method'=>'post')) ?>
+        <div class='icon print'><a href="javascript:window.print()">Распечатать счёт</a></div>
+        <div class='icon open'><?php echo link_to('Открыть ещё счёт', 'desk_open', $desk, array('method'=>'post')) ?></div>
+        <div class='icon close'><?php echo link_to('Закрыть счёт', 'bill_close', $bill, array('method'=>'post')) ?></div>
+        <div class='icon delete'><?php echo link_to('Удалить счёт', 'bill_delete', $bill, array(
+          'method'=>'delete',
+          'confirm'=>sprintf('Удалить счёт #%s?', $bill->getNumber())
+        )) ?></div>        
       </div>
     </div>
   <?php endforeach; ?>
@@ -48,7 +52,7 @@
 <?php else: ?>
   <h1>Стол №<?php echo $desk->getNumber() ?></h1>
   <div class='tools'>
-    <?php echo link_to('Открыть счёт', 'desk_open', $desk, array('method'=>'post')) ?>
+    <div class='icon open'><?php echo link_to('Открыть счёт', 'desk_open', $desk, array('method'=>'post')) ?></div>
   </div>
 <?php endif; ?>
 
