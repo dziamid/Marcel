@@ -1,5 +1,6 @@
 <?php use_stylesheet('print.css', '', array('media'=>'print')) ?>
 <?php use_javascript('bill.js') ?>
+        <h1>Стол #<?php echo $desk ?></h1>
 
 <div id='bills' class='area'>
 
@@ -30,7 +31,6 @@
       
       
       <div class="body">
-        <h1>Стол #<?php echo $desk ?></h1>
         <?php include_partial('bill/show',array('bill'=>$bill)) ?>
       </div>
       
@@ -50,7 +50,6 @@
   <?php endforeach; ?>
 
 <?php else: ?>
-  <h1>Стол №<?php echo $desk->getNumber() ?></h1>
   <div class='tools'>
     <div class='icon open'><?php echo link_to('Открыть счёт', 'desk_open', $desk, array('method'=>'post')) ?></div>
   </div>
