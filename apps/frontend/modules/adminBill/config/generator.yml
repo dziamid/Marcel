@@ -23,6 +23,7 @@ generator:
         title: Счета
         sort: ['number','desc']
         display: [number, Desk, open, created_at]
+        max_per_page: 10
       filter:
         display: [number, desk_id, open, created_at]
       form:    ~

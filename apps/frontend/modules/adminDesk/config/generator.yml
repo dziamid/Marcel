@@ -20,6 +20,7 @@ generator:
       list:
         display: [number, created_at, updated_at]
         title: Список столов
+        max_per_page: 10
       filter:
         display: [number]
       form:    ~
