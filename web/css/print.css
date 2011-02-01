@@ -56,6 +56,7 @@ body {
 }
 #bills table {
   width: 100%;
+  margin: 3px 0px;
 }
 #bills table td,
 #bills table th {
@@ -97,4 +98,5 @@ body {
 }
 #bills .bill_total {
   text-align: right;
+  font-size: 12pt;
 }
