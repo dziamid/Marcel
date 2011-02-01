@@ -227,6 +227,12 @@ ul.list li a {
   vertical-align: middle;
 }
 
+#menu li.bar a {
+  color: red;
+}
+#menu li.bar.ui-state-active a {
+  color: #EB8F00;
+}
 
 /* desk show */
 #bills {
@@ -287,13 +293,4 @@ div.tools a {
   display: block;
   margin: 5px;
   font-size: larger;
-}
-#menulist li.bar a {
-  color: red;
-}
-#menulist li.bar.ui-state-active a {
-  color: #EB8F00;
-}
-#menulist li.bar {
-
 }
