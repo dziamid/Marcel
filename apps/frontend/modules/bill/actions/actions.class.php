@@ -79,4 +79,21 @@ class billActions extends sfActions
     $this->redirect('desk', $bill->getDesk());
 
   }
+  
+  /**
+  * Mark a bill as printed (from desk show)
+  *
+  */
+  public function executePrint(sfWebRequest $request)
+  {
+    $bill = $this->getRoute()->getObject();
+    $bill->setIsPrinted(true);
+    $bill->save();
+    if ($request->isXmlHttpRequest())
+    {
+      return $this->renderText($bill->getIsPrinted());
+    }
+    $this->redirect('desk', $bill->getDesk());
+
+  }
 }

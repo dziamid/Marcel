@@ -14,7 +14,7 @@ bill:
   options:
     model: Bill
     module: bill
-    object_actions: {close: post}
+    object_actions: {close: post, print: post}
 
 item:
   class: sfDoctrineRouteCollection

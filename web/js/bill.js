@@ -14,14 +14,35 @@ $(document).ready(function(){
   });
   //delete links in bill
   $('#bills').bind('click',function(e){
-    var target = $(e.target).closest('a.unselect');
-    if (target.length)
+    var target = $(e.target);
+    if (target.closest('a.unselect').length)
     {
-      e.preventDefault();
-      $.post(target.attr('href'), function(data) {
-        var bill_id = $('#bills .ui-tabs-selected').attr('data-id');
-        $('#bill-'+bill_id+' div.body').html(data);
-      });      
+      unselectBillItem(e);
+    }
+    else if (target.closest('a.print').length)
+    {
+      printBill(e);
     }
   });
+
+  function unselectBillItem(e) {
+    e.preventDefault();
+    target = $(e.target).closest('a.unselect');
+    $.post(target.attr('href'), function(data) {
+      var bill_id = $('#bills .ui-tabs-selected').attr('data-id');
+      $('#bill-'+bill_id+' div.body').html(data);
+    });     
+  }
+  function printBill(e) {
+    e.preventDefault();
+    target = $(e.target);
+
+    window.print();
+    $.post(target.attr('href'), function(data) {
+      if (data == '1')
+      {
+        $('div.tools a.print').addClass('is_printed');
+      }
+    });    
+  }
 });

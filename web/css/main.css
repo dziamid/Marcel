@@ -24,7 +24,7 @@ a, span.link
   text-decoration: none;
   cursor: pointer;
 }
-a:hover {
+#content a:hover, span.link:hover {
   color: black;
 }
 html, body {
@@ -289,25 +289,27 @@ div.bill .bill_total {
   text-align: right;
   padding-right: 22px;
 }
-div.tools a {
-  display: block;
+div.tools a, div.tools span {
   margin: 5px;
   font-size: larger;
   line-height: 32px;
 }
-div.tools .icon {
+div.tools div.icon {
   height: 32px;
   padding-left: 32px;
 }
-div.tools .open {
+div.tools div.open {
   background: url('/images/add.png') no-repeat left center;
 }
-div.tools .print {
+div.tools div.print {
   background: url('/images/printer2.png') no-repeat left center;
 }
-div.tools .close {
+div.tools div.close {
   background: url('/images/lock.png') no-repeat left center;
 }
-div.tools .delete {
+div.tools div.delete {
   background: url('/images/trash.png') no-repeat left center;
+}
+div.tools .is_printed {
+  color: red;
 }

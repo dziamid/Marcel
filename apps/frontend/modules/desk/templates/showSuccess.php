@@ -38,7 +38,7 @@
         <p><small>Подпись официанта (бармена)</small> ______________</p>
       </div>
       <div class='tools'>
-        <div class='icon print'><a href="javascript:window.print()">Распечатать счёт</a></div>
+        <div class='icon print'><a href="<?php echo url_for('bill_print', $bill) ?>" class="print <?php echo $bill->getIsPrinted() ? 'is_printed':'' ?>">Распечатать счёт</a></div>
         <div class='icon open'><?php echo link_to('Открыть ещё счёт', 'desk_open', $desk, array('method'=>'post')) ?></div>
         <div class='icon close'><?php echo link_to('Закрыть счёт', 'bill_close', $bill, array('method'=>'post')) ?></div>
         <div class='icon delete'><?php echo link_to('Удалить счёт', 'bill_delete', $bill, array(

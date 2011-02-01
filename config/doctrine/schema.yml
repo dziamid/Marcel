@@ -10,6 +10,9 @@ Bill:
       type: boolean
       notnull: true
       default: false
+    is_printed:
+      type: boolean
+      default: false
   relations:
     Item:
       local: id
