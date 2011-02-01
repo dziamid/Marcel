@@ -44,6 +44,10 @@ body > *:not(#container) {
 #bills .delete {
   display: none;
 }
+/* hide desk header */
+#bills .body h1 {
+  display: none;
+}
 
 /* layout enhancements */
 

@@ -28,7 +28,9 @@
         <p>Официант (бармен): <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
       </div>
       
+      
       <div class="body">
+        <h1>Стол #<?php echo $desk ?></h1>
         <?php include_partial('bill/show',array('bill'=>$bill)) ?>
       </div>
       
