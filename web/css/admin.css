@@ -6,3 +6,11 @@
 #sf_admin_container ul.sf_admin_td_actions li {
   display: block;
 }
+
+#sf_admin_bar div.totalsum {
+  background-color: white;
+  padding: 10px 5px;
+  border: 1px solid #DDDDDD;
+  margin-bottom: 20px;
+  font-size: 18px;
+}

@@ -7,32 +7,27 @@ generator:
     with_show:             false
     singular:              ~
     plural:                ~
-    route_prefix:          admin_item
+    route_prefix:          stat_item
     with_doctrine_route:   true
     actions_base_class:    sfActions
 
     config:
       actions: ~
       fields:
-        Bill: {label: № счёта }
-        bill_id: {label: № счёта }
         MenuItem: {label: Наименование }
-        total: {label: Всего }
+        menu_item_id: {label: Наименование }
         price: {label: Цена }
-        created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
-
-        quantity: {label: Кол-во }
-
+        total_quantity: {label: Кол-во }
+        total_sum: {label: Сумма }
       list:
-        display: [Bill, MenuItem, quantity, price, total, created_at]
-        #title is overriden in indexSuccess
-        #title: Статистика
-        #table_method: getForStat
+        title: Статистика по наименованию
+        table_method: getGroupedByMenuItem
+        display: [MenuItem, price, total_quantity, total_sum ]
         object_actions: []
         batch_actions: []
         actions: []
         max_per_page: 10
-        sort: ['created_at','desc']
+        sort: ['total_sum','desc']
       filter:
         display: [~filterToday, menu_item_id]
       form:    ~

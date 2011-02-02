@@ -33,11 +33,20 @@ all:
             bill:
               label:   Счета
               route:   admin_bill
-        stats:
+        stat:
           label: Статистика
-          route: admin_item
+          route: stat
           credentials: [admin]
-
+          children:
+            admin_item:
+              label: Общая
+              route: admin_item
+            stat_item:
+              label: По наименованию
+              route: stat_item
+            #stat_group:
+            #  label: По разделам
+            #  route: stat_group
           
   use_ajax: true
 

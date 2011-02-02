@@ -16,35 +16,15 @@ class ItemTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Item');
     }
-    /*
-    * returns items of the given month (defaults to current month)
-    *
-    */
-    public function getForStatMonth($month = null)
-    {
-      if ($month == null)
-      {
-        $date = new DateTime();
-        $month = $date->format('m');
-      }
-      $first_day = new DateTime();
-      $first_day->setDate($date->format('Y'),$date->format('m'),1);
-      $first_day->setTime(0,0,0);
-      $last_day = clone $first_day;
-      $last_day->add(new DateInterval('P1M'));
-      
-      $q = $this->createQuery('i')
-        ->where('i.created_at > ?', $first_day->format('Y-m-d H:i:s'))
-        ->andWhere('i.created_at < ?', $last_day->format('Y-m-d H:i:s'));
-        
-      return $q->execute();
-    }
-    public function getForStat($query)
+    public function getGroupedByMenuItem($query)
     {
       $q = $this->createQuery('i')
-        ->select('i.*,SUM(quantity) as total')
-        ->groupBy('i.menu_item_id');
-    return $q;
+        ->select('i.*')
+        ->addSelect('SUM(i.quantity) as total_quantity')
+        ->addSelect('SUM(i.quantity * i.price) as total_sum')
+        ->groupBy('i.menu_item_id, i.price');
+        #->leftJoin('i.MenuItem m')
+        #->leftJoin('m.Group g');
+      return $q;
     }
-
 }

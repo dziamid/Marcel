@@ -23,9 +23,8 @@ class homeActions extends sfActions
   {
     $this->redirect('menu_item');
   }
-  public function executeStats(sfWebRequest $request)
+  public function executeStat(sfWebRequest $request)
   {
-    $this->items = Doctrine::getTable('Item')
-      ->getForStatMonth($request->getParameter('month'));
+    $this->redirect('stat_item');
   }
 }

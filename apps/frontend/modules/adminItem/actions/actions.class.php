@@ -17,13 +17,13 @@ class adminItemActions extends autoAdminItemActions
   {
     parent::executeIndex($request);
 
-        $results = $this->pager->getResults();
-    $total = 0;
+    $results = $this->pager->getCountQuery()->execute();
+    $totalsum = 0;
     foreach ($results as $res)
     {
-      $total += $res->getTotal();
+      $totalsum += $res->getTotal();
     }
-    $this->results_total = $total;
+    $this->totalsum = $totalsum;
   }
 
 }

@@ -19,4 +19,9 @@ require_once(dirname(__FILE__).'/../lib/BasesfGuardAuthActions.class.php');
  */
 class sfGuardAuthActions extends BasesfGuardAuthActions
 {
+  public function executeSignout($request)
+  {
+    $this->getUser()->getAttributeHolder()->clear();
+    parent::executeSignout($request);
+  }
 }
