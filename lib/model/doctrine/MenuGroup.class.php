@@ -17,6 +17,10 @@ class MenuGroup extends BaseMenuGroup
       1 => 'kitchen',
       2 => 'bar'
     );
+  public function __toString()
+  {
+    return (string)$this->getName();
+  }
   public function getItemsTotal()
   {
     return $this->getItems()->count();

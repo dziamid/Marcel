@@ -14,3 +14,11 @@
   margin-bottom: 20px;
   font-size: 18px;
 }
+
+/* prevent filter selects from changing width (dynamic content) */
+#item_filters_menu_group {
+  width: 260px;
+}
+#item_filters_menu_item_id {
+  width: 260px;
+}

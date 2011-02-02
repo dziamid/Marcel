@@ -19,6 +19,7 @@ generator:
         price: {label: Цена }
         total_quantity: {label: Кол-во }
         total_sum: {label: Сумма }
+        menu_group: {label: Раздел }
       list:
         title: Статистика по наименованию
         table_method: getGroupedByMenuItem
@@ -29,7 +30,7 @@ generator:
         max_per_page: 10
         sort: ['total_sum','desc']
       filter:
-        display: [~filterToday, menu_item_id]
+        display: [~filterToday, menu_group, menu_item_id]
       form:    ~
       edit:    ~
       new:     ~

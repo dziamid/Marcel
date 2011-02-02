@@ -7,13 +7,28 @@
  */
 class MenuItemTable extends Doctrine_Table
 {
-    /**
-     * Returns an instance of this class.
-     *
-     * @return object MenuItemTable
-     */
-    public static function getInstance()
+  /**
+   * Returns an instance of this class.
+   *
+   * @return object MenuItemTable
+   */
+  public static function getInstance()
+  {
+    return Doctrine_Core::getTable('MenuItem');
+  }
+  public function getChoices()
+  {
+    $q = $this->createQuery('i')
+      ->innerJoin('i.Group g');
+      
+    $items = $q->execute();
+    $empty = array('label'=>'','data-group'=>'');
+    $choices = array();
+    $choices[''] = $empty;
+    foreach ($items as $item)
     {
-        return Doctrine_Core::getTable('MenuItem');
+      $choices[$item->getId()] = array('label'=>(string)$item,'data-group'=>$item->getGroup()->getId());
     }
+    return $choices;
+  }
 }

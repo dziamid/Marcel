@@ -13,4 +13,23 @@ $(document).ready(function(){
     $("#item_filters_created_at_to_year").attr('value', year);
 
   });
+  
+  $('#item_filters_menu_group').change(function(e){
+    onMenuGroupChange($(e.target));
+  });
+  onMenuGroupChange('#item_filters_menu_group');
+
 });
+
+function onMenuGroupChange(target)
+{
+  var group = $(target).attr('value');
+  var all_options = $('#item_filters_menu_item_id option');
+  all_options.show();
+  if (group != '')
+  {
+    //hide all group unrelated items
+    var options = $('#item_filters_menu_item_id option[data-group!='+group+']');
+    options.hide();  
+  }    
+}
