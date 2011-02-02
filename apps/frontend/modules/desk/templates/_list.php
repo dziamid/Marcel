@@ -10,7 +10,7 @@ $(function() {
     <?php endforeach; ?>
   </ul>
   <?php foreach ($groups as $k => $group): ?>
-    <div id='<?php echo sprintf('tabs-%s',$k) ?>' class='<?php echo $group->getSlug() ?>'>
+    <div id='<?php echo sprintf('tabs-%s',$k) ?>' class='container'>
       <?php foreach ($group->getItems() as $menu_item): ?>
         <div class='item' data-href='<?php echo url_for ('menu_item_select', $menu_item) ?>'>
           <div><?php echo $menu_item->getName() ?></div>

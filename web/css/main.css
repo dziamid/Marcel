@@ -217,7 +217,7 @@ ul.list li a {
   padding: 3px 5px;
   width: 200px;
   height: 50px;
-  float: left;
+  /*float: left;*/
   cursor: pointer;
   display: table;
   overflow: hidden;
@@ -233,7 +233,9 @@ ul.list li a {
 #menu li.bar.ui-state-active a {
   color: #EB8F00;
 }
-
+#menu div.container {
+  -moz-column-count: 3;
+}
 /* desk show */
 #bills {
   width: 390px;
