@@ -12,10 +12,14 @@
  */
 class MenuGroup extends BaseMenuGroup
 {
-  protected
-    $types = array(
+  protected static
+    $type_string = array(
+      1 => 'Кухня',
+      2 => 'Бар'
+    ),
+    $type_classname = array(
       1 => 'kitchen',
-      2 => 'bar'
+      2 => 'bar'      
     );
   public function __toString()
   {
@@ -27,6 +31,14 @@ class MenuGroup extends BaseMenuGroup
   }
   public function getTypeString()
   {
-    return $this->types[$this->getType()];
+    return self::$type_string[$this->getType()];
+  }
+  public function getTypeClassname()
+  {
+    return self::$type_classname[$this->getType()];
+  }
+  public static function getTypes()
+  {
+    return self::$type_string;
   }
 }

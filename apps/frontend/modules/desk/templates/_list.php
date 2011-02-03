@@ -6,7 +6,7 @@ $(function() {
 <div id='menu'>
 	<ul>
     <?php foreach ($groups as $k => $group): ?>
-  		<li class='<?php echo $group->getTypeString() ?>'><a href="<?php echo sprintf('#tabs-%s',$k) ?>"><?php echo $group->getName() ?></a></li>
+  		<li class='<?php echo $group->getTypeClassname() ?>'><a href="<?php echo sprintf('#tabs-%s',$k) ?>"><?php echo $group->getName() ?></a></li>
     <?php endforeach; ?>
   </ul>
   <?php foreach ($groups as $k => $group): ?>

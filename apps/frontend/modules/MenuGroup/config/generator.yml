@@ -18,11 +18,11 @@ generator:
         name: {label: Наименование }
       list:
         title: Разделы меню
-        display: [name, items_total]
+        display: [name, _type, items_total]
         batch_actions: []
-        max_per_page: 10
+        max_per_page: 0
       filter:
-        display: [name]
+        display: [name, type]
       form:    ~
       edit:
         title: Редактирование раздела "%%name%%"

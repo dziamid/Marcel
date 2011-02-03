@@ -12,5 +12,18 @@ class MenuGroupFormFilter extends BaseMenuGroupFormFilter
 {
   public function configure()
   {
+    $this->setWidget('type', new sfWidgetFormChoice(array(
+      'choices' => array_merge(array(0 => ''), MenuGroup::getTypes())
+    )));
+    $this->setValidator('type', new sfValidatorChoice(array(
+      'choices' => array_keys(MenuGroup::getTypes())
+    )));
+  }
+  /* Why do I have to manually write this? */
+  public function addTypeColumnQuery($query, $field, $value)
+  {
+    $rootAlias = $query->getRootAlias();
+    $query->
+      addWhere($rootAlias.'.type = ?', $value);
   }
 }
