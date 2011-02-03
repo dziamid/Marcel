@@ -2,19 +2,18 @@
   <?php if (!$pager->getNbResults()): ?>
     <p><?php echo __('No result', array(), 'sf_admin') ?></p>
   <?php else: ?>
-    <table id='sf_admin_list_table' cellspacing="0">
+    <table id="sf_admin_list_table" cellspacing="0">
       <thead>
         <tr>
-          <th id="sf_admin_list_batch_actions"><input id="sf_admin_list_batch_checkbox" type="checkbox" onclick="checkAll();" /></th>
-          <?php include_partial('MenuItem/list_th_tabular', array('sort' => $sort)) ?>
+          <?php include_partial('MenuGroup/list_th_tabular', array('sort' => $sort)) ?>
           <th id="sf_admin_list_th_actions"><?php echo __('Actions', array(), 'sf_admin') ?></th>
         </tr>
       </thead>
       <tfoot>
         <tr>
-          <th colspan="8">
+          <th colspan="5">
             <?php if ($pager->haveToPaginate()): ?>
-              <?php include_partial('MenuItem/pagination', array('pager' => $pager)) ?>
+              <?php include_partial('MenuGroup/pagination', array('pager' => $pager)) ?>
             <?php endif; ?>
 
             <?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?>
@@ -25,11 +24,10 @@
         </tr>
       </tfoot>
       <tbody>
-        <?php foreach ($pager->getResults() as $i => $menu_item): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
-          <tr id='<?php echo $menu_item->getId() ?>' class="sf_admin_row <?php echo $odd ?>">
-            <?php include_partial('MenuItem/list_td_batch_actions', array('menu_item' => $menu_item, 'helper' => $helper)) ?>
-            <?php include_partial('MenuItem/list_td_tabular', array('menu_item' => $menu_item)) ?>
-            <?php include_partial('MenuItem/list_td_actions', array('menu_item' => $menu_item, 'helper' => $helper)) ?>
+        <?php foreach ($pager->getResults() as $i => $menu_group): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
+          <tr id="<?php echo $menu_group->getId() ?>" class="sf_admin_row <?php echo $odd ?>">
+            <?php include_partial('MenuGroup/list_td_tabular', array('menu_group' => $menu_group)) ?>
+            <?php include_partial('MenuGroup/list_td_actions', array('menu_group' => $menu_group, 'helper' => $helper)) ?>
           </tr>
         <?php endforeach; ?>
       </tbody>

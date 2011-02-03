@@ -20,6 +20,12 @@ all:
           route:   admin
           credentials: [admin]
           children:
+            bill:
+              label:   Счета
+              route:   admin_bill
+            admin_desk:
+              label:   Столы
+              route:   admin_desk
             menu_item:
               name:    menu_item
               label:   Блюда
@@ -27,12 +33,6 @@ all:
             menu_group:
               label:   Разделы
               route:   menu_group
-            admin_desk:
-              label:   Столы
-              route:   admin_desk
-            bill:
-              label:   Счета
-              route:   admin_bill
         stat:
           label: Статистика
           route: stat

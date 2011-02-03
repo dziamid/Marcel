@@ -20,4 +20,25 @@ class MenuGroupActions extends autoMenuGroupActions
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
 
   }
+  /**
+   * Save order of menu items (ajax)
+   */
+  public function executeListSaveOrder(sfWebRequest $request)
+  {
+    if ($request->isXmlHttpRequest())
+    {
+      $ids = $request->getParameter('sf_admin_list_table');
+      foreach ($ids as $index => $id)
+      {
+        if (empty($id))
+        {
+          continue;
+        }
+        $menu_group = Doctrine::getTable('MenuGroup')->findOneById($id);
+        $menu_group->setIndex($index);
+        $menu_group->save();
+      }
+    }
+    return $this->renderText(true);
+  }
 }

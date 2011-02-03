@@ -22,11 +22,20 @@ class MenuGroupTable extends Doctrine_Table
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
     $return = $this->createQuery('g')
       ->leftJoin('g.Items i')
-      ->orderBy('g.type, i.index')
+      ->orderBy('g.type, g.index, i.index')
       ->execute();
       
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
 
     return $return;
+  }
+  /**
+   * Efficiency query
+   *
+   */
+  public function getForAdmin(Doctrine_Query $q)
+  {
+    $alias = $q->getRootAlias();
+    $q->leftJoin($alias.'.Items i');
   }
 }

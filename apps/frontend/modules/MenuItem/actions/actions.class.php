@@ -43,7 +43,7 @@ class MenuItemActions extends autoMenuItemActions
   {
     if ($request->isXmlHttpRequest())
     {
-      $ids = $request->getParameter('menu_item_list');
+      $ids = $request->getParameter('sf_admin_list_table');
       foreach ($ids as $index => $id)
       {
         if (empty($id))

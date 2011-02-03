@@ -16,11 +16,20 @@ generator:
       fields:
         items_total: {label: Всего }
         name: {label: Наименование }
+        _type: {label: Кухня/бар }
+        index: {label: Индекс }
+
       list:
         title: Разделы меню
-        display: [name, _type, items_total]
+        display: [index, name, _type, items_total]
         batch_actions: []
         max_per_page: 0
+        actions:
+          _new: ~
+          save_order: {label: Сохранить индекс }
+        table_method: getForAdmin
+        sort: ['index', 'asc']
+
       filter:
         display: [name, type]
       form:    ~

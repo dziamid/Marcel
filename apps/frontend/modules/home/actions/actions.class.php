@@ -21,7 +21,7 @@ class homeActions extends sfActions
   }
   public function executeAdmin(sfWebRequest $request)
   {
-    $this->redirect('menu_item');
+    $this->redirect('admin_bill');
   }
   public function executeStat(sfWebRequest $request)
   {

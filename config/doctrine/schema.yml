@@ -65,6 +65,7 @@ MenuGroup:
     Timestampable: ~
     SoftDelete: ~
   columns:
+    index: integer
     name: string(255)
     slug: string(255)
     # type - kitchen (1), bar (2)
