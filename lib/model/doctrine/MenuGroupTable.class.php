@@ -22,7 +22,7 @@ class MenuGroupTable extends Doctrine_Table
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
     $return = $this->createQuery('g')
       ->leftJoin('g.Items i')
-      ->orderBy('g.type')
+      ->orderBy('g.type, i.index')
       ->execute();
       
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);

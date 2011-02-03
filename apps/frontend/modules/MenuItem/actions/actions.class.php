@@ -35,4 +35,26 @@ class MenuItemActions extends autoMenuItemActions
     }
     $this->redirect('desk_show', $bill->getDesk());
   }
+  
+  /**
+   * Save order of menu items (ajax)
+   */
+  public function executeListSaveOrder(sfWebRequest $request)
+  {
+    if ($request->isXmlHttpRequest())
+    {
+      $ids = $request->getParameter('menu_item_list');
+      foreach ($ids as $index => $id)
+      {
+        if (empty($id))
+        {
+          continue;
+        }
+        $menu_item = Doctrine::getTable('MenuItem')->findOneById($id);
+        $menu_item->setIndex($index);
+        $menu_item->save();
+      }
+    }
+    return $this->renderText(true);
+  }
 }

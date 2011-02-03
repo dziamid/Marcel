@@ -19,6 +19,20 @@ $(document).ready(function(){
   });
   onMenuGroupChange('#item_filters_menu_group');
 
+  /* sort menu item table rows */
+  if ($('#sf_admin_content table .sf_admin_list_td_index').length)
+  {
+    $('#menu_item_list').tableDnD({
+      dragHandle: 'sf_admin_list_td_index'
+    });
+    $('#sf_admin_content .sf_admin_action_save_order a').click(function(e){
+      e.preventDefault();
+      var index = $('#menu_item_list').tableDnDSerialize();
+      $.post($(e.target).attr('href'), index, function(data){
+        location.reload()
+      });
+    });
+  }
 });
 
 function onMenuGroupChange(target)

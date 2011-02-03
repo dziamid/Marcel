@@ -12,7 +12,6 @@ generator:
     actions_base_class:    sfActions
 
     config:
-      actions: ~
       fields:
         name: {label: Наименование}
         price: {label: Цена}
@@ -20,10 +19,15 @@ generator:
         menu_group_id: {label: Раздел }
         created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
         updated_at: {date_format: dd/MM/yyyy HH:mm, label: Дата изменения }
+        index: {label: Индекс }
       list:
-        display: [name, price, Group, created_at, updated_at]
+        display: [index, name, price, Group, created_at, updated_at]
         title: Список блюд
-        max_per_page: 10
+        max_per_page: 0
+        actions:
+          _new: ~
+          save_order: {label: Сохранить индекс }
+        table_method: getForAdmin
       filter:
         display: [name, menu_group_id]
       form:

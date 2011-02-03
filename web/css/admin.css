@@ -22,3 +22,6 @@
 #item_filters_menu_item_id {
   width: 260px;
 }
+#sf_admin_content table .sf_admin_list_td_index {
+  cursor: move;
+}

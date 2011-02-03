@@ -31,4 +31,12 @@ class MenuItemTable extends Doctrine_Table
     }
     return $choices;
   }
+  /**
+   * Efficiency query
+   *
+   */
+  public function getForAdmin(Doctrine_Query $q)
+  {
+    $q->leftJoin(sprintf('%s.Group',$q->getRootAlias()));
+  }
 }
