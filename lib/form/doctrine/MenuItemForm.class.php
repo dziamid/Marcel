@@ -12,7 +12,11 @@ class MenuItemForm extends BaseMenuItemForm
 {
   public function configure()
   {
-    unset($this['created_at'], $this['updated_at']);
-
+    unset($this['created_at'], $this['updated_at'], $this['index'], $this['deleted_at']);
+    $this->getValidator('name')->setOption('required', true);
+    $this->setValidator('price', new sfValidatorInteger(array(
+      'required' => true
+    )));
+    $this->getValidator('menu_group_id')->setOption('required', true);
   }
 }

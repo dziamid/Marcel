@@ -12,5 +12,7 @@ class BillForm extends BaseBillForm
 {
   public function configure()
   {
+    unset($this['number'], $this['updated_at']);
+    $this->getValidator('desk_id')->setOption('required', true);
   }
 }

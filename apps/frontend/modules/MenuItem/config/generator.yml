@@ -31,8 +31,7 @@ generator:
         sort: ['index','asc']
       filter:
         display: [name, menu_group_id]
-      form:
-        display: [name, price, menu_group_id]
+      form: ~
       edit:
         title: Редактирование блюда "%%name%%"
       new:

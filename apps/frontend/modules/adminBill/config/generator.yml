@@ -19,13 +19,16 @@ generator:
         Desk: {label: № стола }
         desk_id: {label: № стола }
         open: {label: Счёт открыт? }
+        is_printed: {label: Счёт распечатан? }
       list:
         title: Счета
         sort: ['number','desc']
         display: [number, Desk, open, created_at]
         max_per_page: 10
+        actions: []
       filter:
         display: [number, desk_id, open, created_at]
       form:    ~
-      edit:    ~
+      edit:
+        title: Редактирование счета №%%number%%
       new:     ~
