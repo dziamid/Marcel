@@ -34,6 +34,12 @@ class ItemFormFilter extends BaseItemFormFilter
       'add_empty' => true,
       'renderer_class' => 'myWidgetFormSelectItem'
     )));
+    
+    $this->setWidget('type', new sfWidgetFormChoice(array(
+      'choices' => array_merge(array(0=>''),MenuGroup::getTypes())
+    )));
+    
+    $this->setValidator('type', new sfValidatorPass());
 
   }
   
@@ -48,5 +54,12 @@ class ItemFormFilter extends BaseItemFormFilter
     $rootAlias = $query->getRootAlias();
     $query->
       addWhere('g.id = ?', $value);
+  }
+  public function addTypeColumnQuery($query, $field, $value)
+  {
+    if (!empty($value))
+    {
+      $query->addWhere('g.type = ?', $value);      
+    }
   }
 }
