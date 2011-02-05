@@ -6,7 +6,7 @@
         <th class='price'>Цена</th>
         <th class='quantity'>К-во</th>
         <th class='total'>Сумма</th>
-        <th class='delete'></th>
+        <th class='tools'></th>
       </tr>
     </thead>
   </table>

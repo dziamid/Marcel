@@ -25,6 +25,14 @@ class Item extends BaseItem
       $this->delete();
     }
   }
+  /**
+   * Increase quantity of an item by one
+   */
+  public function increaseQuantity()
+  {
+    $this->setQuantity($this->getQuantity() + 1);
+    $this->save();
+  }
   public function getTotal()
   {
     return $this->getPrice() * $this->getQuantity();

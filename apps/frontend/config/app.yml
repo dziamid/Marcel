@@ -53,7 +53,7 @@ all:
   billheader:
     company: ООО "Смарт Фуд"
     cafe: Кафе "Марсель"
-    waiter: Тишько А.Г.
+    waiter: Тишко А.Г.
     
   sf_guard_plugin:
     success_signin_url: @homepage

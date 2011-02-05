@@ -19,6 +19,10 @@ $(document).ready(function(){
     {
       unselectBillItem(e);
     }
+    else if (target.closest('a.add').length)
+    {
+      addBillItem(e);
+    }
     else if (target.closest('a.print').length)
     {
       printBill(e);
@@ -32,6 +36,14 @@ $(document).ready(function(){
       var bill_id = $('#bills .ui-tabs-selected').attr('data-id');
       $('#bill-'+bill_id+' div.body').html(data);
     });     
+  }
+  function addBillItem(e) {
+    e.preventDefault();
+    target = $(e.target).closest('a.add');
+    $.post(target.attr('href'), function(data) {
+      var bill_id = $('#bills .ui-tabs-selected').attr('data-id');
+      $('#bill-'+bill_id+' div.body').html(data);      
+    });
   }
   function printBill(e) {
     e.preventDefault();

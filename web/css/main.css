@@ -238,7 +238,7 @@ ul.list li a {
 }
 /* desk show */
 #bills {
-  width: 390px;
+  width: 420px;
   float: left;
 }
 #bills div.bill {
@@ -260,28 +260,30 @@ div.bill table th {
 
 div.bill table th {
   font-size: 10px;
-  text-align: center;
 }
 div.bill table .index {
-  width: 5%;
+  width: 20px;
 }
 div.bill table .name {
-  width: 45%;
+  width: auto;
 }
 div.bill table .price {
-  width: 15%;
+  width: 50px;
   text-align: right;
 }
 div.bill table .quantity {
-  width: 15%;
+  width: 30px;
   text-align: right;
 }
 div.bill table .total {
-  width: 15%;
+  width: 50px;
   text-align: right;
 }
-div.bill table .delete {
-  width: 5%;
+div.bill table .tools {
+  width: 55px;
+}
+div.bill table .tools img {
+  vertical-align: middle;
 }
 div.bill div.header,
 div.bill div.footer {
@@ -301,7 +303,7 @@ div.tools div.icon {
   padding-left: 32px;
 }
 div.tools div.open {
-  background: url('/images/add.png') no-repeat left center;
+  background: url('/images/add_32.png') no-repeat left center;
 }
 div.tools div.print {
   background: url('/images/printer2.png') no-repeat left center;

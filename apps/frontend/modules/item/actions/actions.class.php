@@ -82,4 +82,19 @@ class itemActions extends sfActions
     }
     $this->redirect('desk_show', $item->getBill()->getDesk());
   }
+  
+  public function executeAdd(sfWebRequest $request)
+  {
+    $item = $this->getRoute()->getObject();
+    $item->increaseQuantity();
+    $bill = $item->getBill();
+    
+    if ($request->isXmlHttpRequest())
+    {
+      return $this->renderPartial('bill/show', array(
+        'bill' => $bill
+      ));
+    }
+    $this->redirect('desk_show', $item->getBill()->getDesk());
+  }
 }

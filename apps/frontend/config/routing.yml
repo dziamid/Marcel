@@ -21,7 +21,7 @@ item:
   options:
     model: Item
     module: item
-    object_actions: {unselect: post}
+    object_actions: {unselect: post, add: post}
     
 admin:
   url:   /admin
