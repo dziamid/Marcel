@@ -16,6 +16,7 @@ generator:
       fields:
         items_total: {label: Всего }
         name: {label: Наименование }
+        type: {label: Кухня/бар }
         _type: {label: Кухня/бар }
         index: {label: Индекс }
 
