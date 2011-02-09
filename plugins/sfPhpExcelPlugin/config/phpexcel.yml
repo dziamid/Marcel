@@ -1,0 +1,8 @@
+all:
+  meta:
+    creator:      Кафе Marseille
+    title:        Статистика продаж
+#    subject:      subject
+#    description:  description
+#    keywords:     keywords
+#    category:     category
