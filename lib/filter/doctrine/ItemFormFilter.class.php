@@ -40,6 +40,9 @@ class ItemFormFilter extends BaseItemFormFilter
     )));
     
     $this->setValidator('type', new sfValidatorPass());
+    
+    $this->setWidget('bill_id', new sfWidgetFormInput());
+    $this->setValidator('bill_id', new sfValidatorPass());
 
   }
   
@@ -48,6 +51,14 @@ class ItemFormFilter extends BaseItemFormFilter
     $fields = parent::getFields();
     $fields['menu_group'] = 'menu_group';
     return $fields;
+  }
+  public function addBillIdColumnQuery($query, $field, $value)
+  {
+    $rootAlias = $query->getRootAlias();
+    //assume that query is left joined on Bill as b
+    //see ItemTable::getItems
+    $query->
+      addWhere('b.number = ?', $value);
   }
   public function addMenuGroupColumnQuery($query, $field, $value)
   {

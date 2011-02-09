@@ -27,14 +27,14 @@ generator:
         display: [Bill, MenuItem, quantity, price, total, created_at]
         #title is overriden in indexSuccess
         #title: Статистика
-        #table_method: getForStat
+        table_method: getItems
         object_actions: []
         batch_actions: []
         actions: []
-        max_per_page: 10
+        max_per_page: 20
         sort: ['created_at','desc']
       filter:
-        display: [~filterToday, menu_item_id]
+        display: [~filterToday, bill_id]
       form:    ~
       edit:    ~
       new:     ~

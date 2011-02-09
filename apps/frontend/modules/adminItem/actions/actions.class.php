@@ -19,10 +19,23 @@ class adminItemActions extends autoAdminItemActions
 
     $results = $this->pager->getCountQuery()->execute();
     $totalsum = 0;
+    $total_kitchen = 0;
+    $total_bar = 0;
     foreach ($results as $res)
     {
       $totalsum += $res->getTotal();
+      $type = $res->getMenuItem()->getGroup()->getType();
+      if ($type == 1)
+      {
+        $total_kitchen += $res->getTotal();
+      }
+      else if ($type == 2)
+      {
+        $total_bar += $res->getTotal();
+      }
     }
+    $this->total_bar = $total_bar;
+    $this->total_kitchen = $total_kitchen;
     $this->totalsum = $totalsum;
   }
 

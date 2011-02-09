@@ -1,4 +1,4 @@
-<?php use_helper('I18N', 'Date') ?>
+<?php use_helper('I18N', 'Date', 'Number') ?>
 <?php include_partial('adminItem/assets') ?>
 <?php use_javascript('jquery.jqplot.min.js') ?>
 <?php use_javascript('jqplot.barRenderer.min.js') ?>
@@ -17,7 +17,15 @@
 
   <div id="sf_admin_bar">
     <div class="sf_admin_filter totalsum">
-      Общая сумма: <?php echo $totalsum ?>
+      <?php if ($total_kitchen > 0): ?>
+        Кухня: <?php echo format_number($total_kitchen) ?>
+        <br />
+      <?php endif; ?>
+      <?php if ($total_bar > 0): ?>
+        Бар: <?php echo format_number($total_bar) ?>
+        <br />
+      <?php endif; ?>
+      Общая сумма: <?php echo format_number($totalsum) ?>
     </div>
     <?php include_partial('adminItem/filters', array('form' => $filters, 'configuration' => $configuration)) ?>
   </div>

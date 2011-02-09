@@ -16,6 +16,15 @@ class ItemTable extends Doctrine_Table
     {
         return Doctrine_Core::getTable('Item');
     }
+    public function getItems($query)
+    {
+      $q = $this->createQuery('i')
+        ->leftJoin('i.MenuItem m')
+        ->leftJoin('m.Group g')
+        ->leftJoin('i.Bill b');
+        
+      return $q;
+    }
     public function getGroupedByMenuItem($query)
     {
       $q = $this->createQuery('i')
