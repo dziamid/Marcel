@@ -20,8 +20,10 @@ generator:
         created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
         updated_at: {date_format: dd/MM/yyyy HH:mm, label: Дата изменения }
         index: {label: Индекс }
+        is_active: {label: Есть в наличии? }
+
       list:
-        display: [index, name, price, Group, created_at, updated_at]
+        display: [index, name, is_active, price, Group, created_at]
         title: Список блюд
         max_per_page: 0
         actions:

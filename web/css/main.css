@@ -222,6 +222,10 @@ ul.list li a {
   display: table;
   overflow: hidden;
 }
+#menu .item.inactive {
+  color: grey;
+  cursor: default;
+}
 #menu .item div {
   display: table-cell;
   vertical-align: middle;

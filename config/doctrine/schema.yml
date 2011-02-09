@@ -59,6 +59,9 @@ MenuItem:
     price: intger(10)
     menu_group_id: integer
     index: integer
+    is_active:
+      type: boolean
+      default: true
 
 MenuGroup:
   actAs:
