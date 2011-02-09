@@ -43,6 +43,9 @@ class ItemFormFilter extends BaseItemFormFilter
     
     $this->setWidget('bill_id', new sfWidgetFormInput());
     $this->setValidator('bill_id', new sfValidatorPass());
+    
+    $this->setWidget('bill_is_hidden', new sfWidgetFormInputCheckbox());
+    $this->setValidator('bill_is_hidden', new sfValidatorPass());
 
   }
   
@@ -59,6 +62,16 @@ class ItemFormFilter extends BaseItemFormFilter
     //see ItemTable::getItems
     $query->
       addWhere('b.number = ?', $value);
+  }
+  public function addBillIsHiddenColumnQuery($query, $field, $value)
+  {
+    //assume that query is left joined on Bill as b
+    //see ItemTable::getItems
+    if ($value == 'on')
+    {
+      //show all that are not hidden
+      $query->addWhere('b.is_hidden = ?',false);      
+    }
   }
   public function addMenuGroupColumnQuery($query, $field, $value)
   {

@@ -30,4 +30,11 @@ class BillTable extends Doctrine_Table
     
     return $max !== null ? $max + 1 : 1;
   }
+  public function getForAdminBill()
+  {
+    $q = $this->createQuery('b')
+      ->leftJoin('b.Desk d')
+      ->leftJoin('b.Items i');
+    return $q;
+  }
 }

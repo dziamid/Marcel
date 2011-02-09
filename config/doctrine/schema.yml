@@ -13,6 +13,10 @@ Bill:
     is_printed:
       type: boolean
       default: false
+    # don't display in 'special' statistics
+    is_hidden:
+      type: boolean
+      default: false
   relations:
     Item:
       local: id

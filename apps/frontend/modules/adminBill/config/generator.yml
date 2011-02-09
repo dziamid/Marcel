@@ -20,12 +20,17 @@ generator:
         desk_id: {label: № стола }
         open: {label: Счёт открыт? }
         is_printed: {label: Счёт распечатан? }
+        is_hidden: {label: Счёт скрыт? }
+        total: {label: Сумма }
       list:
         title: Счета
         sort: ['number','desc']
-        display: [number, Desk, open, created_at]
+        display: [number, Desk, total, open, is_hidden, created_at]
         max_per_page: 10
         actions: []
+        table_method: getForAdminBill
+        batch_actions:
+          hide: {label: Скрыть счета }
       filter:
         display: [number, desk_id, open, created_at]
       form:    ~

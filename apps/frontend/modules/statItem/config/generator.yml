@@ -21,18 +21,19 @@ generator:
         total_sum: {label: Сумма }
         menu_group: {label: Раздел }
         type: {label: Кухня/бар }
+        bill_is_hidden: {label: Для бухгалтера }
 
       list:
         title: Статистика по наименованию
         table_method: getGroupedByMenuItem
-        display: [MenuItem, _type, price, total_quantity, total_sum ]
+        display: [MenuItem, _type, price, total_quantity, total_sum]
         object_actions: []
         batch_actions: []
         actions: []
         max_per_page: 0
         sort: ['total_sum','desc']
       filter:
-        display: [~filterToday, type, menu_group, menu_item_id]
+        display: [~filterToday, type, menu_group, menu_item_id, bill_is_hidden]
       form:    ~
       edit:    ~
       new:     ~

@@ -20,8 +20,9 @@ generator:
         total: {label: Всего }
         price: {label: Цена }
         created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
-
         quantity: {label: Кол-во }
+        bill_is_hidden: {label: Для бухгалтера }
+
 
       list:
         display: [Bill, MenuItem, quantity, price, total, created_at]
@@ -34,7 +35,7 @@ generator:
         max_per_page: 20
         sort: ['created_at','desc']
       filter:
-        display: [~filterToday, bill_id]
+        display: [~filterToday, bill_id, bill_is_hidden]
       form:    ~
       edit:    ~
       new:     ~

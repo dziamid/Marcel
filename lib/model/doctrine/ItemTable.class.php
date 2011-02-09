@@ -22,7 +22,6 @@ class ItemTable extends Doctrine_Table
         ->leftJoin('i.MenuItem m')
         ->leftJoin('m.Group g')
         ->leftJoin('i.Bill b');
-        
       return $q;
     }
     public function getGroupedByMenuItem($query)
@@ -33,7 +32,9 @@ class ItemTable extends Doctrine_Table
         ->addSelect('SUM(i.quantity * i.price) as total_sum')
         ->groupBy('i.menu_item_id, i.price')
         ->leftJoin('i.MenuItem m')
-        ->leftJoin('m.Group g');
+        ->leftJoin('m.Group g')
+        ->leftJoin('i.Bill b');
+
       return $q;
     }
 }

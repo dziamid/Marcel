@@ -13,4 +13,13 @@ require_once dirname(__FILE__).'/../lib/adminBillGeneratorHelper.class.php';
  */
 class adminBillActions extends autoAdminBillActions
 {
+  public function executeBatchHide(sfWebRequest $request)
+  {
+    $bills = $this->getRoute()->getObjects();
+    foreach ($bills as $bill)
+    {
+      $bill->setIsHidden(true);
+      $bill->save();
+    }
+  }
 }
