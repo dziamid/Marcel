@@ -15,9 +15,10 @@ class adminBillActions extends autoAdminBillActions
 {
   public function executeBatchHide(sfWebRequest $request)
   {
-    $bills = $this->getRoute()->getObjects();
-    foreach ($bills as $bill)
+    $ids = $request->getParameter('ids');
+    foreach ($ids as $id)
     {
+      $bill = Doctrine::getTable('Bill')->find($id);
       $bill->setIsHidden(true);
       $bill->save();
     }
