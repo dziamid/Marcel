@@ -2,7 +2,7 @@ generator:
   class: sfDoctrineGenerator
   param:
     model_class:           Item
-    theme:                 admin
+    theme:                 dziamid
     non_verbose_templates: true
     with_show:             false
     singular:              ~

@@ -55,4 +55,34 @@ class statItemActions extends autoStatItemActions
     $this->redirect('statItem/index');
   }
   
+  /* Overrides auto to enable sort by custom fields */
+  protected function isValidSortColumn($column)
+  {
+    return true;
+  }
+
+  /* Overrides auto to enable sort by custom fields  */
+  protected function addSortQuery($query)
+  {
+    if (array(null, null) == ($sort = $this->getSort()))
+    {
+      return;
+    }
+
+    if (!in_array(strtolower($sort[1]), array('asc', 'desc')))
+    {
+      $sort[1] = 'asc';
+    }
+    
+    switch ($sort[0]) {
+      case 'MenuItem':
+        $sort[0] = 'm.name';
+        break;
+      case 'type':
+        $sort[0] = 'g.type';
+        break;
+    }
+
+    $query->addOrderBy($sort[0] . ' ' . $sort[1]);
+  }
 }

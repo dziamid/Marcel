@@ -27,7 +27,7 @@ class ItemTable extends Doctrine_Table
     public function getGroupedByMenuItem($query)
     {
       $q = $this->createQuery('i')
-        ->select('i.*,m.*')
+        ->select('i.*,m.*,g.*')
         ->addSelect('SUM(i.quantity) as total_quantity')
         ->addSelect('SUM(i.quantity * i.price) as total_sum')
         ->groupBy('i.menu_item_id, i.price')
