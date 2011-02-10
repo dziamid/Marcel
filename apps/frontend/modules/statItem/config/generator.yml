@@ -30,6 +30,8 @@ generator:
         object_actions: []
         batch_actions: []
         actions: []
+          #save_report action is overriden in indexSuccess (to make it a post link)
+          #save_report: {label: Сохранить отчет}
         max_per_page: 0
         sort: ['total_sum','desc']
       filter:

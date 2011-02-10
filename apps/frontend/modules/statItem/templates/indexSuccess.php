@@ -30,6 +30,10 @@
     <ul class="sf_admin_actions">
       <?php include_partial('statItem/list_batch_actions', array('helper' => $helper)) ?>
       <?php include_partial('statItem/list_actions', array('helper' => $helper)) ?>
+      <li class="sf_admin_action_save_report">
+        <?php echo link_to(__('Сохранить отчет', array(), 'messages'), 'statItem/ListSaveReport', array('method'=>'post')) ?>
+      </li>
+
     </ul>
   </div>
 

@@ -40,4 +40,19 @@ class statItemActions extends autoStatItemActions
     $this->total_kitchen = $total_kitchen;
     $this->totalsum = $totalsum;
   }
+  
+  public function executeListSaveReport(sfWebRequest $request)
+  {
+    parent::executeIndex($request);
+
+    $report = new statReport();
+    $data = $this->pager->getCountQuery()->execute();
+    $report->create($data);
+    $file = 'report.xlsx';
+    $folder = sfConfig::get('sf_web_dir').'/uploads';
+    $report->save(sprintf('%s/%s', $folder, $file));
+    $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), false);
+    $this->redirect('statItem/index');
+  }
+  
 }
