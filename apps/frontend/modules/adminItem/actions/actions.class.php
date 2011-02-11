@@ -38,5 +38,36 @@ class adminItemActions extends autoAdminItemActions
     $this->total_kitchen = $total_kitchen;
     $this->totalsum = $totalsum;
   }
+  
+  /* Overrides auto to enable sort by custom fields */
+  protected function isValidSortColumn($column)
+  {
+    return true;
+  }
+
+  /* Overrides auto to enable sort by custom fields  */
+  protected function addSortQuery($query)
+  {
+    if (array(null, null) == ($sort = $this->getSort()))
+    {
+      return;
+    }
+
+    if (!in_array(strtolower($sort[1]), array('asc', 'desc')))
+    {
+      $sort[1] = 'asc';
+    }
+    
+    switch ($sort[0]) {
+      case 'MenuItem':
+        $sort[0] = 'm.name';
+        break;
+      case 'Bill':
+        $sort[0] = 'b.number';
+        break;
+    }
+
+    $query->addOrderBy($sort[0] . ' ' . $sort[1]);
+  }
 
 }

@@ -19,6 +19,8 @@ class ItemTable extends Doctrine_Table
     public function getItems($query)
     {
       $q = $this->createQuery('i')
+        ->select('i.*, m.*, g.*, b.*')
+        ->addSelect('(i.price * i.quantity) as total')
         ->leftJoin('i.MenuItem m')
         ->leftJoin('m.Group g')
         ->leftJoin('i.Bill b');

@@ -33,6 +33,10 @@ class Item extends BaseItem
     $this->setQuantity($this->getQuantity() + 1);
     $this->save();
   }
+  /**
+   * Calculate total sum of an item: alternative to sql in ItemTable::getItems()
+   *
+   */
   public function getTotal()
   {
     return $this->getPrice() * $this->getQuantity();
