@@ -5,13 +5,13 @@
           <th></th>
           <td class='error'><?php echo $form['username']->renderError() ?></td>
         </tr>
-        <tr>
-          <th>Логин:</th>
+        <tr class='username'>
+          <th></th>
           <td>
             <?php echo $form['username'] ?>
           </td>
         </tr>
-        <tr>
+        <tr class='password'>
           <th>Пароль:</th>
           <td>
             <?php echo $form['password'] ?>

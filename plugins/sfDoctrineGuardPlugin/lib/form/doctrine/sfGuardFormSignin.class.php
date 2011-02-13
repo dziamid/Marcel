@@ -16,5 +16,12 @@ class sfGuardFormSignin extends BasesfGuardFormSignin
   public function configure()
   {
     unset($this['remember']);
+    $this->setWidget('username', new sfWidgetFormDoctrineChoice(array(
+      'model' => 'sfGuardUser',
+      'key_method' => 'getUsername',
+      'expanded' => true,
+      'multiple' => false,
+      'default' => Doctrine::getTable('sfGuardUser')->findOneByGroupName('waiter')->getUsername()
+    )));
   }
 }
