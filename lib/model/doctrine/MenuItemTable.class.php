@@ -37,6 +37,6 @@ class MenuItemTable extends Doctrine_Table
    */
   public function getForAdmin(Doctrine_Query $q)
   {
-    $q->leftJoin(sprintf('%s.Group',$q->getRootAlias()));
+    $q->leftJoin(sprintf('%s.Group g',$q->getRootAlias()));
   }
 }

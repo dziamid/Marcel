@@ -57,4 +57,31 @@ class MenuItemActions extends autoMenuItemActions
     }
     return $this->renderText(true);
   }
+
+  /* Overrides auto to enable sort by custom fields */
+  protected function isValidSortColumn($column)
+  {
+    return true;
+  }
+  /* Overrides auto to enable sort by custom fields  */
+  protected function addSortQuery($query)
+  {
+    if (array(null, null) == ($sort = $this->getSort()))
+    {
+      return;
+    }
+
+    if (!in_array(strtolower($sort[1]), array('asc', 'desc')))
+    {
+      $sort[1] = 'asc';
+    }
+    
+    switch ($sort[0]) {
+      case 'Group':
+        $sort[0] = 'g.name';
+        break;
+    }
+
+    $query->addOrderBy($sort[0] . ' ' . $sort[1]);
+  }
 }
