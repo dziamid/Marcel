@@ -405,6 +405,11 @@ class PHPExcel_Writer_Excel2007 implements PHPExcel_Writer_IWriter
 				}
 				@unlink($pFilename);
 			}
+			
+			// change file permissions for a SAVED file... a DOWNLOADED file doesn't need this 
+			if (file_exists($originalFilename) and chmod($originalFilename, 0666) === false) {
+					throw new Exception("Could not change file permissions for $originalFilename.");
+			}
 		} else {
 			throw new Exception("PHPExcel object unassigned.");
 		}

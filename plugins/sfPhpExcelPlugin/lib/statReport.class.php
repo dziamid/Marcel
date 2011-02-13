@@ -17,26 +17,20 @@ class statReport extends sfPhpExcel
     $sheet = $workbook->getActiveSheet();
     $sheet->getColumnDimension('A')->setWidth(30);
     $sheet->setCellValue('A1', 'Наименование');
-    $sheet->setCellValue('B1', 'Сумма');
+    $sheet->setCellValue('B1', 'Кухня/бар');
+    $sheet->setCellValue('C1', 'Цена');
+    $sheet->setCellValue('D1', 'Кол-во');
+    $sheet->setCellValue('E1', 'Сумма');
     $offset = 3;
     foreach ($data as $i => $item)
     {
       $sheet->setCellValue(sprintf('A%s',$i+$offset), $item->getMenuItem()->getName());
-      
-      $sheet->setCellValue(sprintf('B%s',$i+$offset), $item->getTotalSum());
+      $sheet->setCellValue(sprintf('B%s',$i+$offset), $item->getMenuItem()->getGroup()->getTypeString());
+      $sheet->setCellValue(sprintf('C%s',$i+$offset), $item->getPrice());
+      $sheet->setCellValue(sprintf('D%s',$i+$offset), $item->getTotalQuantity());
+      $sheet->setCellValue(sprintf('E%s',$i+$offset), $item->getTotalSum());
     }
-    
-    // Add a drawing to the worksheet
-    $objDrawing = new PHPExcel_Worksheet_Drawing();
-    $objDrawing->setName('Logo');
-    $objDrawing->setDescription('Logo');
-    $objDrawing->setPath('/home/dziamid/dev/marcel/plugins/sfPhpExcelPlugin/examples_1_2/images/phpexcel_logo.gif');
-    $objDrawing->setHeight(36);
-    $objDrawing->setCoordinates('G1');
-    $objDrawing->setWorksheet($workbook->getActiveSheet());
-
-    // Set active sheet index to the first sheet, so Excel opens this as the first sheet
-    
+    $sheet->setCellValue(sprintf('E%s',$i+$offset+1), sprintf('=SUM(E%s:E%s)',$offset,$i+$offset));
     $this->workbook = $workbook;
     
   }
