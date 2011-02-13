@@ -23,4 +23,32 @@ class adminBillActions extends autoAdminBillActions
       $bill->save();
     }
   }
+
+  /* Overrides auto to enable sort by custom fields */
+  protected function isValidSortColumn($column)
+  {
+    return $column != 'total';
+  }
+
+  /* Overrides auto to enable sort by custom fields  */
+  protected function addSortQuery($query)
+  {
+    if (array(null, null) == ($sort = $this->getSort()))
+    {
+      return;
+    }
+
+    if (!in_array(strtolower($sort[1]), array('asc', 'desc')))
+    {
+      $sort[1] = 'asc';
+    }
+    
+    switch ($sort[0]) {
+      case 'Desk':
+        $sort[0] = 'd.id';
+        break;
+    }
+
+    $query->addOrderBy($sort[0] . ' ' . $sort[1]);
+  }
 }
