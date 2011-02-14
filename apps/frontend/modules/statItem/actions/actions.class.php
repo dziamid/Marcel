@@ -55,6 +55,21 @@ class statItemActions extends autoStatItemActions
     $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), true);
     $this->redirect('statItem/index');
   }
+
+  public function executeListSaveDayReport(sfWebRequest $request)
+  {
+    parent::executeIndex($request);
+    
+    $folder = sfConfig::get('sf_web_dir').'/uploads';
+    $report = new statDayReport($folder.'/template.xlsx');
+    $data = $this->pager->getCountQuery()->execute();
+    $report->create($data);
+    $date = new DateTime();
+    $file = sprintf('dayreport_%s.xlsx',$date->format('Y-m-d'));
+    $report->save(sprintf('%s/%s', $folder, $file));
+    $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), true);
+    $this->redirect('statItem/index');
+  }
   
   /* Overrides auto to enable sort by custom fields */
   protected function isValidSortColumn($column)

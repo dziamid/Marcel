@@ -33,6 +33,10 @@
       <li class="sf_admin_action_save_report">
         <?php echo link_to(__('Сохранить отчет', array(), 'messages'), 'statItem/ListSaveReport', array('method'=>'post')) ?>
       </li>
+      <li class="sf_admin_action_save_day_report">
+        <?php echo link_to(__('Сохранить отчет за день', array(), 'messages'), 'statItem/ListSaveDayReport', array('method'=>'post')) ?>
+      </li>
+
 
     </ul>
   </div>
