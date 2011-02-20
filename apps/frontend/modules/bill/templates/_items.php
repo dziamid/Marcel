@@ -1,8 +1,14 @@
 <?php foreach ($items as $index => $item): ?>
 <tr>
   <td class="index"><?php echo $index + 1 ?></td>
-  <td class='name'><?php echo $item->getMenuItem()->getName() ?></td>
-  <td class='price'><?php echo $item->getMenuItem()->getPrice() ?></td>
+  <td class='name'>
+    <?php if ($item->getBill()->getWithDiscount() && $item->getMenuItem()->getDiscount()): ?>
+      <?php echo sprintf('%s (-%s%%)', $item->getMenuItem()->getName(), $item->getMenuItem()->getDiscount()) ?>
+    <?php else: ?>
+      <?php echo $item->getMenuItem()->getName() ?>      
+    <?php endif; ?>
+  </td>
+  <td class='price'><?php echo $item->getPrice() ?></td>
   <td class='quantity'><?php echo $item->getQuantity() ?></td>
   <td class='total'><?php echo $item->getTotal() ?></td>
   <td class="tools">

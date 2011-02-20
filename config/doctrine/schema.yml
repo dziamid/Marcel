@@ -17,6 +17,9 @@ Bill:
     is_hidden:
       type: boolean
       default: false
+    with_discount:
+      type: boolean
+      default: false
   relations:
     Item:
       local: id
@@ -51,7 +54,7 @@ Desk:
     Timestampable: ~
   columns:
     number:
-      type: integer
+      type: string(20)
       unique: true
     
 MenuItem:
@@ -66,6 +69,7 @@ MenuItem:
     is_active:
       type: boolean
       default: true
+    discount: integer(3)
 
 MenuGroup:
   actAs:

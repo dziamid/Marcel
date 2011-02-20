@@ -93,7 +93,19 @@ class billActions extends sfActions
     {
       return $this->renderText($bill->getIsPrinted());
     }
-    $this->redirect('desk', $bill->getDesk());
+    $this->redirect('desk_show', $bill->getDesk());
 
+  }
+  
+  /**
+   * Toggle bill discount state
+   */
+  public function executeDiscount(sfWebRequest $request)
+  {
+    $bill = $this->getRoute()->getObject();
+    $bill->toggleDiscount();
+    $bill->recalculate();
+    $bill->save();
+    $this->redirect('desk_show', $bill->getDesk());
   }
 }

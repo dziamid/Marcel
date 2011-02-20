@@ -16,4 +16,9 @@ class MenuItem extends BaseMenuItem
   {
     return (string)$this->getName();
   }
+  public function getDiscountPrice()
+  {
+    $discount = $this->getDiscount() ? $this->getDiscount() : 0;
+    return $this->getPrice() * (100 - $this->getDiscount()) / 100;
+  }
 }

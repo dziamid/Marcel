@@ -44,7 +44,8 @@ class Bill extends BaseBill
       $item = new Item();
       $item->setMenuItem($menu_item);
       $item->setQuantity($quantity);
-      $item->setPrice($menu_item->getPrice());
+      $price = $this->getWithDiscount() ? $menu_item->getDiscountPrice() : $menu_item->getPrice();
+      $item->setPrice(round($price,-1));
       $item->setBill($this);
     }
     $item->save();
@@ -102,5 +103,37 @@ class Bill extends BaseBill
   {
     $this->setOpen(false);
     $this->save();
+  }
+  /**
+   * Toggle bill discount state
+   */
+  public function toggleDiscount()
+  {
+    if ($this->getWithDiscount())
+    {
+      $this->setWithDiscount(false);
+    }
+    else
+    {
+      $this->setWithDiscount(true);
+    }
+  }
+  
+  /**
+   * Recalculate bill items
+   *
+   * Recalculates bill item prices (according to with_discount setting)
+   *
+   */
+  public function recalculate()
+  {
+    foreach ($this->getItems() as $item)
+    {
+      $menu_item = $item->getMenuItem();
+      $price = $this->getWithDiscount() ? $menu_item->getDiscountPrice() : $menu_item->getPrice();
+      $item->setPrice(round($price,-1));
+      $item->save();
+    }
+    //$this->refresh();
   }
 }

@@ -318,6 +318,9 @@ div.tools div.close {
 div.tools div.delete {
   background: url('/images/trash.png') no-repeat left center;
 }
+div.tools div.discount {
+  background: url('/images/discount.gif') no-repeat left center;
+}
 div.tools .is_printed {
   color: red;
 }

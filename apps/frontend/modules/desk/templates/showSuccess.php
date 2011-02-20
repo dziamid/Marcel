@@ -44,7 +44,10 @@
         <div class='icon delete'><?php echo link_to('Удалить счёт', 'bill_delete', $bill, array(
           'method'=>'delete',
           'confirm'=>sprintf('Удалить счёт #%s?', $bill->getNumber())
-        )) ?></div>        
+        )) ?></div>
+        <div class="icon discount">
+          <?php echo link_to('Счёт со скидкой', 'bill_discount', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getWithDiscount() ? "checked='checked'" : "" ?> ?>
+        </div>
       </div>
     </div>
   <?php endforeach; ?>

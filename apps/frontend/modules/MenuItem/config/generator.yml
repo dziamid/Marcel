@@ -21,9 +21,10 @@ generator:
         updated_at: {date_format: dd/MM/yyyy HH:mm, label: Дата изменения }
         index: {label: Индекс }
         is_active: {label: Есть в наличии? }
+        discount: {label: Скидка }
 
       list:
-        display: [index, name, is_active, price, Group, created_at]
+        display: [index, Group, name, is_active, price, _discount, created_at]
         title: Список блюд
         max_per_page: 0
         actions:
@@ -33,7 +34,8 @@ generator:
         sort: ['index','asc']
       filter:
         display: [name, menu_group_id]
-      form: ~
+      form:
+        display: [name, menu_group_id, price, discount, is_active]
       edit:
         title: Редактирование блюда "%%name%%"
       new:
