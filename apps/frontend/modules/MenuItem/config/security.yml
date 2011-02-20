@@ -4,3 +4,6 @@
 default:
   is_secure: true
   credentials: admin
+
+select:
+  is_secure: false
