@@ -24,6 +24,17 @@ class adminBillActions extends autoAdminBillActions
     }
   }
 
+  public function executeBatchShow(sfWebRequest $request)
+  {
+    $ids = $request->getParameter('ids');
+    foreach ($ids as $id)
+    {
+      $bill = Doctrine::getTable('Bill')->find($id);
+      $bill->setIsHidden(false);
+      $bill->save();
+    }
+  }
+
   /* Overrides auto to enable sort by custom fields */
   protected function isValidSortColumn($column)
   {

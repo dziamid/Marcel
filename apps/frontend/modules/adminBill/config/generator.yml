@@ -31,6 +31,7 @@ generator:
         table_method: getForAdminBill
         batch_actions:
           hide: {label: Скрыть счета }
+          show: {label: Показать счета }
       filter:
         display: [number, desk_id, open, created_at]
       form:    ~
