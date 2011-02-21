@@ -14,13 +14,18 @@ generator:
     config:
       actions: ~
       fields:
-        number: {label: Номер}
+        number: {label: Название}
         created_at: {date_format: dd/MM/yyyy HH:mm, label: Дата создания }
         updated_at: {date_format: dd/MM/yyyy HH:mm, label: Дата изменения }
+        index: {label: Индекс }
+
       list:
-        display: [number, created_at, updated_at]
+        display: [index, number, created_at, updated_at]
         title: Список столов
-        max_per_page: 10
+        max_per_page: 0
+        actions:
+          _new: ~
+          save_order: {label: Сохранить индекс }
       filter:
         display: [number]
       form:    ~

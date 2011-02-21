@@ -20,7 +20,7 @@ class DeskTable extends Doctrine_Table
   {
     $q = $this->createQuery('d')
       ->leftJoin('d.Bills b')
-      ->orderBy('d.number');
+      ->orderBy('d.index');
       
     return $q->execute();
   }

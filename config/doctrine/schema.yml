@@ -53,6 +53,7 @@ Desk:
   actAs:
     Timestampable: ~
   columns:
+    index: integer
     number:
       type: string(20)
       unique: true

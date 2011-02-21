@@ -13,4 +13,25 @@ require_once dirname(__FILE__).'/../lib/adminDeskGeneratorHelper.class.php';
  */
 class adminDeskActions extends autoAdminDeskActions
 {
+  /**
+   * Save order of desks (ajax)
+   */
+  public function executeListSaveOrder(sfWebRequest $request)
+  {
+    if ($request->isXmlHttpRequest())
+    {
+      $ids = $request->getParameter('sf_admin_list_table');
+      foreach ($ids as $index => $id)
+      {
+        if (empty($id))
+        {
+          continue;
+        }
+        $desk = Doctrine::getTable('Desk')->findOneById($id);
+        $desk->setIndex($index);
+        $desk->save();
+      }
+    }
+    return $this->renderText(true);
+  }
 }
