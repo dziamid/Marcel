@@ -166,7 +166,7 @@ div.area {
 /* desk list */
 div.desk {
   height: 80px;
-  width: 100px;
+  min-width: 100px;
   border: 1px solid #333;
   background-color: #ccc;
 
