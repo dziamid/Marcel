@@ -12,7 +12,8 @@
 #sf_admin_bar {
   z-index: 1010;
   position: fixed;
-  right: 0;
+  right: 10px;
+  bottom: 0;
 }
 #sf_admin_bar div.totalsum {
   background-color: white;
