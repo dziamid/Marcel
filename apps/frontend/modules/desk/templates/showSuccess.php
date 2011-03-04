@@ -41,15 +41,18 @@
         <div class='icon print'><a href="<?php echo url_for('bill_print', $bill) ?>" class="print <?php echo $bill->getIsPrinted() ? 'is_printed':'' ?>">Распечатать счёт</a></div>
         <div class='icon open'><?php echo link_to('Открыть ещё счёт', 'desk_open', $desk, array('method'=>'post')) ?></div>
         <div class='icon close'><?php echo link_to('Закрыть счёт', 'bill_close', $bill, array('method'=>'post')) ?></div>
-        <div class='icon delete'><?php echo link_to('Удалить счёт', 'bill_delete', $bill, array(
-          'method'=>'delete',
-          'confirm'=>sprintf('Удалить счёт #%s?', $bill->getNumber())
-        )) ?></div>
-        <div class="icon discount">
-          <?php echo link_to('Счёт со скидкой', 'bill_discount', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getWithDiscount() ? "checked='checked'" : "" ?> ?>
-        </div>
-        <div class="icon hidden">
-          <?php echo link_to('Скрытый счёт', 'bill_toggleHidden', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getIsHidden() ? "checked='checked'" : "" ?> ?>
+        <div class='icon more'><span class="more link">Дополнительно</span></div>
+        <div class='more' style='display:none'>
+          <div class='icon delete'><?php echo link_to('Удалить счёт', 'bill_delete', $bill, array(
+            'method'=>'delete',
+            'confirm'=>sprintf('Удалить счёт #%s?', $bill->getNumber())
+          )) ?></div>
+          <div class="icon discount">
+            <?php echo link_to('Счёт со скидкой', 'bill_discount', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getWithDiscount() ? "checked='checked'" : "" ?> ?>
+          </div>
+          <div class="icon hidden">
+            <?php echo link_to('Скрытый счёт', 'bill_toggleHidden', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getIsHidden() ? "checked='checked'" : "" ?> ?>
+          </div>
         </div>
       </div>
     </div>

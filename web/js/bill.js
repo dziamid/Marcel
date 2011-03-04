@@ -27,6 +27,14 @@ $(document).ready(function(){
     {
       printBill(e);
     }
+    else if (target.closest('span.more').length)
+    {
+      showMore(e);
+    }
+    else if (target.closest('input[type=checkbox]').length)
+    {
+      e.preventDefault();
+    }
   });
 
   function unselectBillItem(e) {
@@ -56,5 +64,12 @@ $(document).ready(function(){
         $('div.tools a.print').addClass('is_printed');
       }
     });    
+  }
+  function showMore(e) {
+    e.preventDefault();
+    var target = $(e.target);
+    var parent = target.parents('div.tools');
+    parent.children('div.icon.more').remove();
+    parent.children('div.more').show();
   }
 });
