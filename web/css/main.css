@@ -324,3 +324,6 @@ div.tools div.discount {
 div.tools .is_printed {
   color: red;
 }
+div.tools div.hidden {
+  background: url('/images/hidden.png') no-repeat left center;
+}

@@ -108,4 +108,16 @@ class billActions extends sfActions
     $bill->save();
     $this->redirect('desk_show', $bill->getDesk());
   }
+  
+  /**
+   * Toggle bill is_hidden state
+   */
+  public function executeToggleHidden(sfWebRequest $request)
+  {
+    $bill = $this->getRoute()->getObject();
+    $bill->toggleHidden();
+    $bill->save();
+    $this->redirect('desk_show', $bill->getDesk());    
+  }
+
 }

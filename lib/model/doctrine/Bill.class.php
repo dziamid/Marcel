@@ -136,4 +136,19 @@ class Bill extends BaseBill
     }
     //$this->refresh();
   }
+
+  /**
+   * Toggle is_hidden state
+   */
+  public function toggleHidden()
+  {
+    if ($this->getIsHidden())
+    {
+      $this->setIsHidden(false);
+    }
+    else
+    {
+      $this->setIsHidden(true);
+    }
+  }
 }

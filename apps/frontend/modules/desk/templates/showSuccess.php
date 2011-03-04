@@ -48,6 +48,9 @@
         <div class="icon discount">
           <?php echo link_to('Счёт со скидкой', 'bill_discount', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getWithDiscount() ? "checked='checked'" : "" ?> ?>
         </div>
+        <div class="icon hidden">
+          <?php echo link_to('Скрытый счёт', 'bill_toggleHidden', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getIsHidden() ? "checked='checked'" : "" ?> ?>
+        </div>
       </div>
     </div>
   <?php endforeach; ?>
