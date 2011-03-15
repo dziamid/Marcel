@@ -26,8 +26,8 @@
   </div>
   <div class="area items">
     <?php foreach($items as $item): ?>
-      <li data-parent='<?php echo $item['Group']['id'] ?>' class="button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
-          <span class='ui-button-text'><?php echo $item['name'] ?></span>        
+      <li data-parent='<?php echo $item['Group']['id'] ?>' data-href='<?php echo url_for ('menu_item_select', array('id'=>$item['id'])) ?>' class="item ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+        <span class='ui-button-text'><?php echo $item['name'] ?></span>    
       </li>
     <?php endforeach; ?>
   </div>

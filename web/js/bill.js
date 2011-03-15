@@ -2,7 +2,7 @@ $(document).ready(function(){
   //select links in menu
   $('#menu').bind('click',function(e){
     e.preventDefault();
-    var target = $(e.target).closest('div.item.active');
+    var target = $(e.target).closest('.item');
     var bill_id = $('#bills .ui-tabs-selected').attr('data-id');
     if (target.length)
     {

@@ -207,6 +207,13 @@ ul.list li a {
 #menu {
   position: relative;
 }
+#menu .items {
+  -moz-column-count: 3;
+}
+#menu .item {
+  width: 200px;
+  margin-bottom: 5px;
+}
 .tree .node.level_0 {
   left: 0;
 }
