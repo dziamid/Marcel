@@ -1,21 +1,34 @@
-<script>
-$(function() {
-  $( "#menu" ).tabs();
-});
-</script>
-<div id='menu'>
-	<ul>
-    <?php foreach ($groups as $k => $group): ?>
-  		<li class='<?php echo $group->getTypeClassname() ?>'><a href="<?php echo sprintf('#tabs-%s',$k) ?>"><?php echo $group->getName() ?></a></li>
-    <?php endforeach; ?>
-  </ul>
-  <?php foreach ($groups as $k => $group): ?>
-    <div id='<?php echo sprintf('tabs-%s',$k) ?>' class='container'>
-      <?php foreach ($group->getItems() as $menu_item): ?>
-        <div class='item <?php echo $menu_item->getIsActive() ? 'active':'inactive'?>' data-href='<?php echo url_for ('menu_item_select', $menu_item) ?>'>
-          <div><?php echo $menu_item->getName() ?></div>
-        </div>
-      <?php endforeach; ?>
+<?php function echoNode($subtree, $parent=null, $level=0) { ?>
+  <div class="node <?php echo sprintf('level_%s', $level) ?>" data-parent='<?php echo $parent['id'] ?>'>
+    <div class="content">
+      <ul>
+      <?php foreach ($subtree as $cat): ?>
+        <li data-id='<?php echo $cat['id'] ?>' class="button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+          <span class='ui-button-text'><?php echo $cat['name'] ?></span>
+        </li>
+      <?php endforeach; ?>       
+      </ul>       
     </div>
-  <?php endforeach; ?>
+    <?php foreach ($subtree as $cat): ?>
+  
+    <?php if (count($cat['__children']) > 0): ?>
+      <?php echo echoNode($cat['__children'], $cat, $level + 1) ?>
+    <?php endif; ?>
+    
+    <?php endforeach; ?>
+  </div>
+
+<?php } ?>
+
+<div id="menu">
+  <div class="area tree">
+    <?php echo echoNode($tree) ?>    
+  </div>
+  <div class="area items">
+    <?php foreach($items as $item): ?>
+      <li data-parent='<?php echo $item['Group']['id'] ?>' class="button ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only">
+          <span class='ui-button-text'><?php echo $item['name'] ?></span>        
+      </li>
+    <?php endforeach; ?>
+  </div>
 </div>

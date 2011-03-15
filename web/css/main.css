@@ -162,6 +162,7 @@ div.area {
   min-height: 200px;
   background: url("images/ui-bg_highlight-soft_100_eeeeee_1x100.png") repeat-x scroll 50% top #EEEEEE;
   border: 1px solid #DDDDDD;
+  overflow: hidden;
 }
 /* desk list */
 div.desk {
@@ -203,42 +204,31 @@ ul.list li a {
   min-height: 200px;
   overflow: hidden;
 }
-#menu h1 {
-  background: none;
+#menu {
+  position: relative;
 }
-#menu .item {
-  -moz-border-radius: 4px;
-  border-radius: 4px;
-  background-color: #176F94;
-  color: white;
-  font-size: large;
-  text-align: center;
-  margin: 5px;
-  padding: 3px 5px;
+.tree .node.level_0 {
+  left: 0;
+}
+.tree .node {
+  position:absolute;
+  top: 0;
+  left: 200px;
   width: 200px;
-  height: 50px;
-  /*float: left;*/
-  cursor: pointer;
-  display: table;
-  overflow: hidden;
-}
-#menu .item.inactive {
-  color: grey;
-  cursor: default;
-}
-#menu .item div {
-  display: table-cell;
-  vertical-align: middle;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
 }
 
-#menu li.bar a {
-  color: red;
+.tree .content {
+  margin: 2px;
 }
-#menu li.bar.ui-state-active a {
-  color: #EB8F00;
+.tree ul {
+  padding: 0;
 }
-#menu div.container {
-  -moz-column-count: 3;
+.tree li {
+  display: block;
+  margin-bottom: 4px;
 }
 /* desk show */
 #bills {

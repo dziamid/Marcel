@@ -12,6 +12,7 @@ class deskComponents extends sfComponents
 {
   public function executeList(sfWebRequest $request)
   {
-    $this->groups = Doctrine::getTable('MenuGroup')->getForList();
+    $this->tree = Doctrine::getTable('MenuGroup')->getMenuTree();
+    $this->items = Doctrine::getTable('MenuItem')->getMenuItems();
   }
 }

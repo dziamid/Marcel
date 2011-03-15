@@ -39,4 +39,17 @@ class MenuItemTable extends Doctrine_Table
   {
     $q->leftJoin(sprintf('%s.Group g',$q->getRootAlias()));
   }
+  
+  /**
+   *  Get MenuItems for menu component
+   *
+   */
+  public function getMenuItems()
+  {
+    $q = $this->createQuery('i')
+      ->leftJoin('i.Group g');
+      
+    return $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY);
+
+  }
 }

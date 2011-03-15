@@ -16,19 +16,32 @@ class MenuGroupTable extends Doctrine_Table
   {
     return Doctrine_Core::getTable('MenuGroup');
   }
-  public function getForList()
+  public function getMenuTree()
   {
-    //don't show soft deleted groups and items
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
-    $return = $this->createQuery('g')
-      ->leftJoin('g.Items i')
-      ->orderBy('g.type, g.index, i.index')
-      ->execute();
-      
-    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
 
-    return $return;
+    $q = $this->createQuery('g')
+      ->orderBy('g.root_id')
+      ->addOrderBy('g.lft')
+      ->where('g.root_id NOT NULL');
+
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
+      
+    return $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY_HIERARCHY);
   }
+  //public function getForList()
+  //{
+  //  //don't show soft deleted groups and items
+  //  Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
+  //  $return = $this->createQuery('g')
+  //    ->leftJoin('g.Items i')
+  //    ->orderBy('g.type, g.index, i.index')
+  //    ->execute();
+  //    
+  //  Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
+  //
+  //  return $return;
+  //}
   /**
    * Efficiency query
    *
