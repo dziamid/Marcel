@@ -22,6 +22,13 @@ class Bill extends BaseBill
     {
       $this->setNumber($this->getTable()->getMaxNumber());
     }
+    //pass new Bill created_at and updated_at dates to related Items:
+    $items = $this->getItems();
+    foreach ($items as $item)
+    {
+      $item->setCreatedAt($this->getCreatedAt());
+      $item->setUpdatedAt($this->getUpdatedAt());
+    }
     return parent::save($conn);
   }
   public function getTotal()
