@@ -33,3 +33,23 @@
 #sf_admin_content table .sf_admin_list_td_index {
   cursor: move;
 }
+
+/* nested set, MenuGroup */
+.nested_set .level_1 {
+  padding-left: 10px;
+}
+.nested_set .level_2 {
+  padding-left: 20px;
+}
+.nested_set .level_3 {
+  padding-left: 30px;
+}
+.nested_set .level_4 {
+  padding-left: 40px;
+}
+.nested_set .level_5 {
+  padding-left: 50px;
+}
+.nested_set .level_6 {
+  padding-left: 60px;
+}

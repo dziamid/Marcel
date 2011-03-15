@@ -33,9 +33,12 @@ class MenuGroupTable extends Doctrine_Table
    * Efficiency query
    *
    */
-  public function getForAdmin(Doctrine_Query $q)
+  public function getForAdmin()
   {
-    $alias = $q->getRootAlias();
-    $q->leftJoin($alias.'.Items i');
+      $q = $this->createQuery('m')
+        ->orderBy('m.root_id')
+        ->addOrderBy('m.lft');
+        
+      return $q;
   }
 }

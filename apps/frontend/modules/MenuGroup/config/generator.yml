@@ -22,14 +22,12 @@ generator:
 
       list:
         title: Разделы меню
-        display: [index, name, _type, items_total]
+        display: [name]
         batch_actions: []
         max_per_page: 0
         actions:
           _new: ~
-          save_order: {label: Сохранить индекс }
         table_method: getForAdmin
-        sort: ['index', 'asc']
 
       filter:
         display: [name, type]
