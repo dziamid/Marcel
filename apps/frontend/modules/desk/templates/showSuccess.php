@@ -25,7 +25,7 @@
         <p><span><?php echo sfConfig::get('app_billheader_cafe') ?></span></p>
         <h1>CЧЁТ # <span><?php echo $bill->getNumber() ?></span></h1>
         <p>Стол: #<span><?php echo $desk ?></span></p>
-        <p>Дата: <span><?php echo $bill_date->format('d/m/Y H:i') ?></span></p>  
+        <p>Дата: <span><?php echo $bill->getDateTimeObject('created_at')->format('d/m/Y H:i') ?></span></p>  
         <p>Официант (бармен): <span><?php echo sfConfig::get('app_billheader_waiter') ?></span></p>
       </div>
       

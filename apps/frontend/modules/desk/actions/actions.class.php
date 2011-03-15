@@ -20,7 +20,6 @@ class deskActions extends sfActions
   {
     $this->desk = $this->getRoute()->getObject();
     $this->bills = $this->desk->getOpenBills();
-    $this->bill_date = new DateTime();
   }
 
   public function executeNew(sfWebRequest $request)
