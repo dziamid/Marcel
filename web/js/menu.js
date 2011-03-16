@@ -15,6 +15,7 @@ $(document).ready(function(){
     if (target.length)
     {
       toggleNodes(target);
+      adjustContainer();
       refreshItems(target);
     }
   });
@@ -43,6 +44,19 @@ $(document).ready(function(){
     
   }
   
+  function adjustContainer(target)
+  {
+    //minimum heigth of a .area container
+    var max_height = 200;
+    $('.node').not(':hidden').each(function(i,node){
+      var height = $(node).height();
+      if (height > max_height)
+      {
+        max_height = height;
+      }
+    });
+    $('.tree').height(max_height);
+  }
 
 
 });
