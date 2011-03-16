@@ -47,7 +47,8 @@ class MenuItemTable extends Doctrine_Table
   public function getMenuItems()
   {
     $q = $this->createQuery('i')
-      ->leftJoin('i.Group g');
+      ->leftJoin('i.Group g')
+      ->where('i.is_active = ?', true);
       
     return $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY);
 

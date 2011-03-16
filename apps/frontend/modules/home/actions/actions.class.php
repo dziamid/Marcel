@@ -27,18 +27,4 @@ class homeActions extends sfActions
   {
     $this->redirect('stat_item');
   }
-  public function executePrivate(sfWebRequest $request)
-  {
-    $treeObject = Doctrine_Core::getTable('MenuGroup')->getTree();
-
-    $groups = Doctrine::getTable('MenuGroup')->findAll();
-    foreach ($groups as $group)
-    {
-    }
-    $category = new MenuGroup();
-    $category->name = 'Бар';
-    $category->save();
-    
-    $treeObject->createRoot($category);
-  }
 }
