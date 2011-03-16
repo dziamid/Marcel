@@ -64,6 +64,7 @@ class MenuGroupForm extends BaseMenuGroupForm
     if ($this->getValue('parent'))
     {
       $parent = $this->getObject()->getTable()->findOneById($this->getValue('parent'));
+      //set parent_id
       $this->getObject()->setParentId($parent->getId());
       if ($this->isNew())
       {
@@ -78,6 +79,9 @@ class MenuGroupForm extends BaseMenuGroupForm
     else
     {
       $tree = $this->getObject()->getTable()->getTree();
+      //clear parent_id
+      $this->getObject()->setParentId(Null);
+
       if ($this->isNew())
       {
         $tree->createRoot($this->getObject());

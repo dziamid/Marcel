@@ -24,10 +24,11 @@ class MenuGroupTable extends Doctrine_Table
       ->orderBy('g.root_id')
       ->addOrderBy('g.lft')
       ->where('g.root_id NOT NULL');
+    $tree = $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY_HIERARCHY);
 
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
       
-    return $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY_HIERARCHY);
+    return $tree;
   }
   //public function getForList()
   //{
@@ -48,9 +49,9 @@ class MenuGroupTable extends Doctrine_Table
    */
   public function getForAdmin()
   {
-      $q = $this->createQuery('m')
-        ->orderBy('m.root_id')
-        ->addOrderBy('m.lft');
+      $q = $this->createQuery('g')
+        ->addOrderBy('g.root_id')
+        ->addOrderBy('g.lft');
         
       return $q;
   }
