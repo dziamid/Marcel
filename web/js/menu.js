@@ -1,24 +1,30 @@
 $(document).ready(function(){
-  //initially only show first level
-  $('.tree .node').not('.level_0').hide();
-  //hide all items
-  $('.items li').hide();
-  $('.tree').click(function(e){
-    var target = $(e.target).closest('li.button');
-    if (target.length)
-    {
-      target.addClass('ui-state-focus');
-    }
-  });
   $('.tree .node').bind('click', function(e){
     var target = $(e.target).closest('li');
     if (target.length)
     {
-      toggleNodes(target);
-      adjustContainer();
-      refreshItems(target);
+      onNodeClick(target);
     }
   });
+
+  //initially only show first level
+  $('.tree .node').not('.level_0').hide();
+  
+  //hide all items
+  $('.items li').hide();
+  
+  //and click first item in list
+  var first_root = $('.tree .level_0 li.button')[0];
+  onNodeClick(first_root);
+});
+  
+  function onNodeClick(target)
+  {
+    target = $(target);
+    toggleNodes(target);
+    adjustContainer();
+    refreshItems(target);
+  }
   
   function toggleNodes(target)
   {
@@ -26,8 +32,9 @@ $(document).ready(function(){
     var parent_node = target.closest('.node');
     //hide all descendants
     parent_node.find('.node').hide();
-    //make all descendants button inactive
+    //make all descendants button inactive and current - active
     parent_node.find('li.button').removeClass('ui-state-focus');
+    target.addClass('ui-state-focus');
     //show all related children
     parent_node.children('.node').filter(function(){
       return parseInt($(this).attr('data-parent')) == id;
@@ -57,6 +64,3 @@ $(document).ready(function(){
     });
     $('.tree').height(max_height);
   }
-
-
-});
