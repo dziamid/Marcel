@@ -46,12 +46,17 @@ class MenuItemTable extends Doctrine_Table
    */
   public function getMenuItems()
   {
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
+
     $q = $this->createQuery('i')
       ->leftJoin('i.Group g')
       ->where('i.is_active = ?', true)
       ->orderBy('i.index asc');
       
-    return $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY);
-
+    $return = $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY);
+    
+    Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
+    
+    return $return;
   }
 }
