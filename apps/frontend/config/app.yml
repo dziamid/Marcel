@@ -18,7 +18,7 @@ all:
         admin:
           label:   Администрирование
           route:   admin
-          credentials: [admin]
+          #credentials: [admin]
           children:
             bill:
               label:   Счета
@@ -36,7 +36,7 @@ all:
         stat:
           label: Статистика
           route: stat
-          credentials: [admin]
+          #credentials: [admin]
           children:
             admin_item:
               label: Общая
