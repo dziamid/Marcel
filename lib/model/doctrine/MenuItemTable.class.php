@@ -48,7 +48,8 @@ class MenuItemTable extends Doctrine_Table
   {
     $q = $this->createQuery('i')
       ->leftJoin('i.Group g')
-      ->where('i.is_active = ?', true);
+      ->where('i.is_active = ?', true)
+      ->orderBy('i.index asc');
       
     return $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY);
 
