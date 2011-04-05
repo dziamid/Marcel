@@ -36,7 +36,7 @@ all:
     check_lock:             true
     standard_helpers:       [Partial, I18N]
     i18n:                   true
-    default_culture:        ru
+    default_culture:        ru_RU
     charset:                utf-8
     enabled_modules:        [default, sfGuardAuth]
 

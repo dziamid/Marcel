@@ -16,7 +16,6 @@ class MenuGroupActions extends autoMenuGroupActions
   public function preExecute()
   {
     parent::preExecute();
-    $this->getUser()->setCulture('ru');
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, true);
 
   }
