@@ -49,7 +49,7 @@ class statItemActions extends autoStatItemActions
     $data = $this->pager->getCountQuery()->execute();
     $report->create($data);
     $date = new DateTime();
-    $file = sprintf('Отчет %s.xlsx',$date->format('Y-m-d H:i:s'));
+    $file = sprintf('Report %s.xlsx',$date->format('Y-m-d H_i_s'));
     $folder = sfConfig::get('sf_web_dir').'/uploads';
     $report->save(sprintf('%s/%s', $folder, $file));
     $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), true);
@@ -65,7 +65,7 @@ class statItemActions extends autoStatItemActions
     $data = $this->pager->getCountQuery()->execute();
     $report->create($data);
     $date = new DateTime();
-    $file = sprintf('Отчет за день %s.xlsx',$date->format('Y-m-d H:i:s'));
+    $file = sprintf('Day report %s.xlsx',$date->format('Y-m-d H_i_s'));
     $report->save(sprintf('%s/%s', $folder, $file));
     $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), true);
     $this->redirect('statItem/index');
