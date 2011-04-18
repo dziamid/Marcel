@@ -7,7 +7,7 @@ desk:
   options:
     model: Desk
     module: desk
-    object_actions: {open: post}
+    object_actions: {open: post, close: post}
 
 bill:
   class: sfDoctrineRouteCollection

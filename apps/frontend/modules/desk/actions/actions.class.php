@@ -65,6 +65,16 @@ class deskActions extends sfActions
 
     $this->redirect('@desk');
   }
+  
+  public function executeClose(sfWebRequest $request)
+  {
+    $desk = $this->getRoute()->getObject();
+    foreach ($desk->getOpenBills() as $bill)
+    {
+      $bill->close();
+    }
+    $this->redirect('desk');
+  }
 
   protected function processForm(sfWebRequest $request, sfForm $form)
   {

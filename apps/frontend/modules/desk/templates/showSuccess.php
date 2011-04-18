@@ -53,6 +53,9 @@
           <div class="icon hidden">
             <?php echo link_to('Скрытый счёт', 'bill_toggleHidden', $bill, array('method'=>'post')) ?> <input type="checkbox" <?php echo $bill->getIsHidden() ? "checked='checked'" : "" ?> ?>
           </div>
+          <div class='icon close'>
+            <?php echo link_to('Закрыть все счёта', 'desk_close', $desk, array('method'=>'post')) ?>
+          </div>
         </div>
       </div>
     </div>
