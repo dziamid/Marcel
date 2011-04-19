@@ -213,14 +213,15 @@ ul.list li a {
   width: 200px;
   margin-bottom: 5px;
 }
+#menu .tree {
+  min-height: 100px;
+}
 .tree .node.level_0 {
-  left: 0;
+  top: 0;
 }
 .tree .node {
   position:absolute;
-  top: 0;
-  left: 200px;
-  width: 200px;
+  top: 55px;
   margin: 0px;
   padding: 0px;
   border: 0px;
@@ -233,8 +234,13 @@ ul.list li a {
   padding: 0;
 }
 .tree li {
-  display: block;
   margin-bottom: 4px;
+  display: block;
+  float: left;
+  height: 55px;
+}
+.tree li span.ui-button-text {
+  max-width: 120px;
 }
 /* desk show */
 #bills {

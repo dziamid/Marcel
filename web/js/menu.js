@@ -1,9 +1,11 @@
+
 $(document).ready(function(){
   $('.tree .node').bind('click', function(e){
     var target = $(e.target).closest('li');
     if (target.length)
     {
       onNodeClick(target);
+      e.stopPropagation();
     }
   });
 
@@ -22,7 +24,6 @@ $(document).ready(function(){
   {
     target = $(target);
     toggleNodes(target);
-    adjustContainer();
     refreshItems(target);
   }
   
@@ -36,9 +37,18 @@ $(document).ready(function(){
     parent_node.find('li.button').removeClass('ui-state-focus');
     target.addClass('ui-state-focus');
     //show all related children
-    parent_node.children('.node').filter(function(){
+    var child_node = parent_node.children('.node').filter(function(){
       return parseInt($(this).attr('data-parent')) == id;
-    }).show(); 
+    });
+    //fix children positioning
+    var position = parent_node.css('height');
+    child_node.show().css('top',position);
+    //fix container height
+    var container_height = child_node.height() + parent_node.height();
+    $(parent_node).parents('.node').each(function(){
+      container_height += $(this).height();
+    });
+    $('.tree').height(container_height);
   }
   
   function refreshItems(target)
@@ -49,18 +59,4 @@ $(document).ready(function(){
     items.show();
     items.not('[data-parent='+id+']').hide();
     
-  }
-  
-  function adjustContainer(target)
-  {
-    //minimum heigth of a .area container
-    var max_height = 200;
-    $('.node').not(':hidden').each(function(i,node){
-      var height = $(node).height();
-      if (height > max_height)
-      {
-        max_height = height;
-      }
-    });
-    $('.tree').height(max_height);
   }
