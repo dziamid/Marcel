@@ -234,13 +234,14 @@ ul.list li a {
   padding: 0;
 }
 .tree li {
+  overflow: hidden;
   margin-bottom: 4px;
   display: block;
   float: left;
   height: 55px;
 }
 .tree li span.ui-button-text {
-  max-width: 120px;
+  max-width: 130px;
 }
 /* desk show */
 #bills {
