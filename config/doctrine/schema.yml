@@ -17,6 +17,10 @@ Bill:
     is_hidden:
       type: boolean
       default: false
+    is_paperless:
+      type: boolean
+      default: false
+      notnull: true
     with_discount:
       type: boolean
       default: false
