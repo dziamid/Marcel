@@ -22,6 +22,7 @@ generator:
         menu_group: {label: Раздел }
         type: {label: Кухня/бар }
         bill_is_hidden: {label: Для бухгалтера }
+        bill_is_paperless: {label: Безнал }
 
       list:
         title: Статистика по наименованию
@@ -35,7 +36,7 @@ generator:
         max_per_page: 0
         sort: ['total_sum','desc']
       filter:
-        display: [~filterToday, type, menu_group, menu_item_id, bill_is_hidden]
+        display: [~filterToday, type, menu_group, menu_item_id, bill_is_hidden, bill_is_paperless]
       form:    ~
       edit:    ~
       new:     ~
