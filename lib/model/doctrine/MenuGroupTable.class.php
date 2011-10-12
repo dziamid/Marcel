@@ -23,7 +23,7 @@ class MenuGroupTable extends Doctrine_Table
     $q = $this->createQuery('g')
       ->orderBy('g.root_id')
       ->addOrderBy('g.lft')
-      ->where('g.root_id NOT NULL');
+      ->where('g.root_id IS NOT NULL');
     $tree = $q->execute(array(),  Doctrine_Core::HYDRATE_ARRAY_HIERARCHY);
 
     Doctrine_Manager::getInstance()->setAttribute(Doctrine_Core::ATTR_USE_DQL_CALLBACKS, false);
