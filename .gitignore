@@ -13,16 +13,6 @@ data/db/*
 data/sql/*
 data/fixtures/*
 
-# ignore custom base classes
-lib/filter/doctrine/base/*
-lib/form/doctrine/base/*
-lib/model/doctrine/base/*
-
-#ignore plugin base classes
-lib/filter/doctrine/*/base/*
-lib/form/doctrine/*/base/*
-lib/model/doctrine/*/base/*
-
 # [ide]
 *.komodoproject
 *.kpf
