@@ -158,4 +158,9 @@ class Bill extends BaseBill
       $this->setIsHidden(true);
     }
   }
+  
+  public function togglePaperless()
+  {
+    $this->is_paperless = !$this->is_paperless;
+  }
 }

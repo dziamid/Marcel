@@ -324,6 +324,9 @@ div.tools div.delete {
 div.tools div.discount {
   background: url('/images/discount.gif') no-repeat left center;
 }
+div.tools div.paperless {
+  background: url('/images/paperless.png') no-repeat left center;
+}
 div.tools .is_printed {
   color: red;
 }

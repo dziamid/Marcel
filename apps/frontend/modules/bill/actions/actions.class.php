@@ -120,4 +120,15 @@ class billActions extends sfActions
     $this->redirect('desk_show', $bill->getDesk());    
   }
 
+  
+  /**
+   * Toggle bill is_paperless state
+   */
+  public function executeTogglePaperless(sfWebRequest $request)
+  {
+    $bill = $this->getRoute()->getObject();
+    $bill->togglePaperless();
+    $bill->save();
+    $this->redirect('desk_show', $bill->getDesk());    
+  }
 }
