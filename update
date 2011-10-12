@@ -1,4 +1,5 @@
 cd /c/marseille;
+git checkout .;
 ./s cc;
 git pull origin master;
-./s doctrine:build --all-classes;
+./s doctrine:migrate;
