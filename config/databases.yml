@@ -2,6 +2,7 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: <?php echo sprintf('sqlite:%s/../data/db/sqlite.db',dirname(__FILE__))."\n" ?>
+      #dsn: <?php echo sprintf('sqlite:%s/../data/db/sqlite.db',dirname(__FILE__))."\n" ?>
+      dsn: mysql:host=localhost;dbname=marcel
       username: root
       password: null

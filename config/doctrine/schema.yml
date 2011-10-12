@@ -64,7 +64,7 @@ MenuItem:
     SoftDelete: ~
   columns:
     name: string(255)
-    price: intger(10)
+    price: integer(10)
     menu_group_id: integer
     index: integer
     is_active:
