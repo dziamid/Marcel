@@ -1,5 +1,5 @@
 cd /c/marseille;
-git checkout .;
-./s cc;
+git stash;
 git pull origin master;
 ./s doctrine:migrate;
+./s cc;
