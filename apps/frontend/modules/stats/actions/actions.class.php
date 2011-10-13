@@ -22,7 +22,7 @@ class statsActions extends sfActions
   {
     if ($request->hasParameter('_reset'))
     {
-      $this->setFilters($this->configuration->getFilterDefaults());
+      $this->setFilters(array());
 
       $this->redirect('@stats');
     }
@@ -107,7 +107,7 @@ class statsActions extends sfActions
   {
     if (null === $this->filters)
     {
-      $this->filters = new ItemFormFilter();
+      $this->filters = new ItemFormFilter($this->getFilters());
     }
 
     $this->filters->setQuery($this->getListQuery());

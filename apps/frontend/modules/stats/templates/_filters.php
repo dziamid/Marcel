@@ -25,6 +25,13 @@
           <?php echo $form['menu_item_id'] ?>
         </td>
       </tr>
+      <tr>
+        <th><?php echo $form['menu_group']->renderLabel() ?></th>
+        <td>
+          <?php echo $form['menu_group']->renderError() ?>
+          <?php echo $form['menu_group'] ?>
+        </td>
+      </tr>
       </tbody>
     </table>
   </form>

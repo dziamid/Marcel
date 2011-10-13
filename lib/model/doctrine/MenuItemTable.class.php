@@ -19,17 +19,11 @@ class MenuItemTable extends Doctrine_Table
   public function getChoices()
   {
     $q = $this->createQuery('i')
-      ->innerJoin('i.Group g');
+      ->select('i.name, i.menu_group_id')
+      ->orderBy('i.name');
       
-    $items = $q->execute();
-    $empty = array('label'=>'','data-group'=>'');
-    $choices = array();
-    $choices[''] = $empty;
-    foreach ($items as $item)
-    {
-      $choices[$item->getId()] = array('label'=>(string)$item,'data-group'=>$item->getGroup()->getId());
-    }
-    return $choices;
+    return $q->execute(array(), Doctrine::HYDRATE_ARRAY);
+
   }
   /**
    * Efficiency query
