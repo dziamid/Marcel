@@ -17,7 +17,7 @@ $(document).ready(function(){
   $('#item_filters_menu_group').change(function(e){
     onMenuGroupChange($(e.target));
   });
-  onMenuGroupChange('#item_filters_menu_group');
+  //onMenuGroupChange('#item_filters_menu_group');
 
   /* sort menu item table rows */
   if ($('#sf_admin_content table .sf_admin_list_td_index').length)

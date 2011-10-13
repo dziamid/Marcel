@@ -22,3 +22,6 @@
 </table>
 
   <a href="<?php echo url_for('stats_new') ?>">New</a>
+  
+    <?php include_partial('stats/filters', array('form' => $filters)) ?>
+
