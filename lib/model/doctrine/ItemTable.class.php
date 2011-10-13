@@ -26,16 +26,26 @@ class ItemTable extends Doctrine_Table
         ->leftJoin('i.Bill b');
       return $q;
     }
-    public function getGroupedByMenuItem($query)
+    public function getGroupedByMenuItem()
     {
       $q = $this->createQuery('i')
-        ->select('i.*,m.*,g.*')
+        ->select('i.*')
         ->addSelect('SUM(i.quantity) as total_quantity')
         ->addSelect('SUM(i.quantity * i.price) as total_sum')
+        ->addSelect('g.type as type')
+        ->addSelect('m.name as name')
         ->groupBy('i.menu_item_id, i.price')
         ->leftJoin('i.MenuItem m')
         ->leftJoin('m.Group g')
         ->leftJoin('i.Bill b');
+
+      return $q;
+    }
+    
+    public function getGroupedByMenuItemCount($query)
+    {
+      $q = $this->createQuery('i')
+        ->groupBy('i.menu_item_id, i.price');
 
       return $q;
     }

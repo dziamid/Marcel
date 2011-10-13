@@ -15,27 +15,29 @@ class statItemActions extends autoStatItemActions
 {
   public function executeIndex(sfWebRequest $request)
   {
+    //sfConfig::set('sf_escaping_strategy', false);
+    
     parent::executeIndex($request);
-
-    $results = $this->pager->getCountQuery()->execute();
+    
+    //$results = $this->pager->getCountQuery()->execute();
     $totalsum = 0;
     $total_kitchen = 0;
     $total_bar = 0;
-    foreach ($results as $res)
-    {
-      //can't use Item::getTotal here because $res is not an item (it's a group of items)
-      //here total_sum refers to sql alias for a SUM, see ItemTable::getGroupedByMenuItem
-      $totalsum += $res->getTotalSum();
-      $type = $res->getMenuItem()->getGroup()->getType();
-      if ($type == 1)
-      {
-        $total_kitchen += $res->getTotalSum();
-      }
-      else if ($type == 2)
-      {
-        $total_bar += $res->getTotalSum();
-      }
-    }
+    //foreach ($results as $res)
+    //{
+    //  //can't use Item::getTotal here because $res is not an item (it's a group of items)
+    //  //here total_sum refers to sql alias for a SUM, see ItemTable::getGroupedByMenuItem
+    //  $totalsum += $res->getTotalSum();
+    //  $type = $res->getMenuItem()->getGroup()->getType();
+    //  if ($type == 1)
+    //  {
+    //    $total_kitchen += $res->getTotalSum();
+    //  }
+    //  else if ($type == 2)
+    //  {
+    //    $total_bar += $res->getTotalSum();
+    //  }
+    //}
     $this->total_bar = $total_bar;
     $this->total_kitchen = $total_kitchen;
     $this->totalsum = $totalsum;
