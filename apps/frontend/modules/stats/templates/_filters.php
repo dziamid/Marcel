@@ -18,21 +18,33 @@
         </tr>
       </tfoot>
       <tbody>
-      <tr>
-        <th><?php echo $form['menu_item_id']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['menu_item_id']->renderError() ?>
-          <?php echo $form['menu_item_id'] ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['menu_group']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['menu_group']->renderError() ?>
-          <?php echo $form['menu_group'] ?>
-        </td>
-      </tr>
+      <?php echo $form['menu_item_id']->renderRow() ?>
+      <?php echo $form['menu_group']->renderRow() ?>
+      <?php include_component('stats', 'filterDate', array('form' => $form)) ?>
       </tbody>
     </table>
   </form>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+ 
+  $('#item_filters_menu_group').change(function(e){
+    onMenuGroupChange($(e.target));
+  });
+  onMenuGroupChange('#item_filters_menu_group');
+});
+
+function onMenuGroupChange(target)
+{
+  var group = $(target).attr('value');
+  var all_options = $('#item_filters_menu_item_id option');
+  all_options.show();
+  if (group != '')
+  {
+    //hide all group unrelated items
+    var options = $('#item_filters_menu_item_id option[data-group!='+group+']');
+    options.hide();  
+  }    
+}
+</script>
