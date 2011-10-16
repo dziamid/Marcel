@@ -1,6 +1,6 @@
 <tr class="sf_admin_form_row sf_admin_date sf_admin_filter_field_created_at">
   <th>
-    <?php echo $form['created_at']->renderLabel() ?>
+    <label>Дата</label>
   </th>
   <td>
     <?php echo $form['created_at']->renderError() ?>

@@ -18,9 +18,42 @@
         </tr>
       </tfoot>
       <tbody>
-      <?php echo $form['menu_item_id']->renderRow() ?>
-      <?php echo $form['menu_group']->renderRow() ?>
+      <tr>
+        <th><label>Кухня / бар</label></th>
+        <td>
+          <?php echo $form['type']->renderError() ?>
+          <?php echo $form['type'] ?>
+        </td>
+      </tr>
+      <tr>
+        <th><label>Раздел</label></th>
+        <td>
+          <?php echo $form['menu_group']->renderError() ?>
+          <?php echo $form['menu_group'] ?>
+        </td>
+      </tr>
+      <tr>
+        <th><label>Наименование</label></th>
+        <td>
+          <?php echo $form['menu_item_id']->renderError() ?>
+          <?php echo $form['menu_item_id'] ?>
+        </td>
+      </tr>
       <?php include_component('stats', 'filterDate', array('form' => $form)) ?>
+      <tr>
+        <th><label>Скрытый счёт?</label></th>
+        <td>
+          <?php echo $form['bill_is_hidden']->renderError() ?>
+          <?php echo $form['bill_is_hidden'] ?>
+        </td>
+      </tr>
+      <tr>
+        <th><label>Безналичный счёт?</label></th>
+        <td>
+          <?php echo $form['bill_is_paperless']->renderError() ?>
+          <?php echo $form['bill_is_paperless'] ?>
+        </td>
+      </tr>
       </tbody>
     </table>
   </form>

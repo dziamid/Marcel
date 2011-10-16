@@ -47,7 +47,7 @@ class ItemFormFilter extends BaseItemFormFilter
     
     $this->setWidget('bill_is_paperless', new sfWidgetFormInputCheckbox());
     $this->setValidator('bill_is_paperless', new sfValidatorPass());
-
+    
   }
   
   public function getFields()

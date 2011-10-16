@@ -42,4 +42,8 @@ class MenuGroup extends BaseMenuGroup
   {
     return self::$type_string;
   }
+  public static function getTypeName($key)
+  {
+    return isset(self::$type_string[$key]) ? self::$type_string[$key] : false;
+  }
 }

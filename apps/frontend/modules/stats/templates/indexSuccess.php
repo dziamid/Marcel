@@ -14,6 +14,7 @@
       <thead>
         <tr>
           <th>Name</th>
+          <th>Type</th>
           <th>Price</th>
           <th>Total quantity</th>
           <th>Total sum</th>
@@ -22,10 +23,11 @@
       <tbody>
         <?php foreach ($items as $i => $item): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?>
         <tr class="sf_admin_row <?php echo $odd ?>">
-          <td class="sf_admin_text"><?php echo $item['name'] ?></td>
-          <td><?php echo $item['price'] ?></td>
-          <td><?php echo $item['total_quantity'] ?></td>
-          <td><?php echo $item['total_sum'] ?></td>
+          <td class="name"><?php echo $item['name'] ?></td>
+          <td class="type"><?php echo MenuGroup::getTypeName($item['type']) ?></td>
+          <td class="price"><?php echo $item['price'] ?></td>
+          <td class="quantity"><?php echo $item['total_quantity'] ?></td>
+          <td class="sum"><?php echo $item['total_sum'] ?></td>
         </tr>
         <?php endforeach; ?>
       </tbody>
@@ -33,3 +35,12 @@
   </div>
   
 </div>
+
+<style type="text/css">
+  #sf_admin_content .price,
+  #sf_admin_content .quantity,
+  #sf_admin_content .sum {
+    text-align: right;
+  }
+  
+</style>
