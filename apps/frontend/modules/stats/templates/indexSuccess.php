@@ -1,3 +1,5 @@
+<?php use_helper('Number') ?>
+
 <?php use_stylesheet('/sfDoctrinePlugin/css/global.css', 'first') ?> 
 <?php use_stylesheet('/sfDoctrinePlugin/css/default.css', 'first') ?> 
 
@@ -6,6 +8,22 @@
   <h1>Статистика по наименованию</h1>
   
   <div id="sf_admin_bar">
+    <table class="totals">
+      <tbody>
+        <tr>
+          <th><label>Бар:</label></th>
+          <td><?php echo format_number($totals[MenuGroup::TYPE_BAR]) ?></td>
+        </tr>
+        <tr>
+          <th><label>Кухня:</label></th>
+          <td><?php echo format_number($totals[MenuGroup::TYPE_KITCHEN]) ?></td>
+        </tr>
+        <tr>
+          <th><label>Всего:</label></th>
+          <td><?php echo format_number($totals[MenuGroup::TYPE_BAR] + $totals[MenuGroup::TYPE_KITCHEN]) ?></td>
+        </tr>
+      </tbody>
+    </table>
     <?php include_partial('stats/filters', array('form' => $filters)) ?>
   </div>
   
@@ -37,9 +55,10 @@
 </div>
 
 <style type="text/css">
-  #sf_admin_content .price,
-  #sf_admin_content .quantity,
-  #sf_admin_content .sum {
+  #sf_admin_bar .totals td,
+  #sf_admin_bar .price,
+  #sf_admin_bar .quantity,
+  #sf_admin_bar .sum {
     text-align: right;
   }
   

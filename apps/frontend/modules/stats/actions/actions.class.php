@@ -15,6 +15,15 @@ class statsActions extends sfActions
     $query = $this->buildQuery();
     $items = $query->execute(array(), Doctrine::HYDRATE_ARRAY);
     $this->items = $items;
+    $totals = array(
+      MenuGroup::TYPE_BAR => 0,
+      MenuGroup::TYPE_KITCHEN => 0,
+    );
+    foreach ($items as $item)
+    {
+      $totals[$item['type']] += $item['total_sum'];
+    }
+    $this->totals = $totals;
   }
   
 

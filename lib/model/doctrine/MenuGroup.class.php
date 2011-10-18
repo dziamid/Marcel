@@ -12,6 +12,9 @@
  */
 class MenuGroup extends BaseMenuGroup
 {
+  const TYPE_KITCHEN = 1;
+  const TYPE_BAR = 2;
+  
   protected static
     $type_string = array(
       1 => 'Кухня',
