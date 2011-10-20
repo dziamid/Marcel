@@ -33,7 +33,7 @@ class myWidgetFormSelectItem extends sfWidgetFormSelect
       }
     }
 
-    $choices = Doctrine::getTable('MenuItem')->getChoices();
+    $choices = $this->getOption('choices')->call();
     
     //
 
@@ -64,7 +64,11 @@ class myWidgetFormSelectItem extends sfWidgetFormSelect
     $options = array();
     foreach ($choices as $key => $option)
     {
-      $attributes = array('value' => self::escapeOnce($key), 'data-group'=>$option['data-group']);
+      $attributes = array('value' => self::escapeOnce($key));
+      if (isset ($option['data-group']))
+      {
+        $attributes['data-group'] = $option['data-group'];
+      }
       if (isset($value_set[strval($key)]))
       {
         $attributes['selected'] = 'selected';

@@ -22,16 +22,14 @@ class ItemFormFilter extends BaseItemFormFilter
       'with_empty' => false
     )));
     // menu group custom filter
-    $this->setWidget('menu_group', new sfWidgetFormDoctrineChoice(array(
-      'model' => 'MenuGroup',
-      'add_empty' => true
+    $this->setWidget('menu_group', new sfWidgetFormChoice(array(
+      'choices' => array('' => 'any') + MenuGroupTable::getInstance()->getChoices(),
     )));
     $this->setValidator('menu_group', new sfValidatorPass());
-    // menu item custom filter (show only those of a chosen group (jquery filter))
     
-    $this->setWidget('menu_item_id', new sfWidgetFormDoctrineChoice(array(
-      'model' => 'MenuItem',
-      'add_empty' => true,
+    // menu item custom filter (show only those of a chosen group (jquery filter))
+    $this->setWidget('menu_item_id', new sfWidgetFormChoice(array(
+      'choices' => $this->getMenuItemChoices(true),
       'renderer_class' => 'myWidgetFormSelectItem'
     )));
     
@@ -49,7 +47,7 @@ class ItemFormFilter extends BaseItemFormFilter
     
     $this->setWidget('bill_is_paperless', new sfWidgetFormInputCheckbox());
     $this->setValidator('bill_is_paperless', new sfValidatorPass());
-
+    
   }
   
   public function getFields()
@@ -98,5 +96,21 @@ class ItemFormFilter extends BaseItemFormFilter
     {
       $query->addWhere('g.type = ?', $value);      
     }
+  }
+  
+  protected function getMenuItemChoices($addEmpty = false)
+  {
+    $items = MenuItemTable::getInstance()->getChoices();
+    
+    $choices = array();
+    if ($addEmpty)
+    {
+      $choices[''] = array('label'=>'any', 'data-group'=>'');
+    }
+    foreach ($items as $item)
+    {
+      $choices[$item['id']] = array('label'=>$item['name'], 'data-group'=>$item['menu_group_id']);
+    }
+    return $choices;
   }
 }

@@ -12,6 +12,9 @@
  */
 class MenuGroup extends BaseMenuGroup
 {
+  const TYPE_KITCHEN = 1;
+  const TYPE_BAR = 2;
+  
   protected static
     $type_string = array(
       1 => 'Кухня',
@@ -41,5 +44,9 @@ class MenuGroup extends BaseMenuGroup
   public static function getTypes()
   {
     return self::$type_string;
+  }
+  public static function getTypeName($key)
+  {
+    return isset(self::$type_string[$key]) ? self::$type_string[$key] : false;
   }
 }

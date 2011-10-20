@@ -35,18 +35,7 @@ all:
               route:   menu_group
         stat:
           label: Статистика
-          route: stat
-          #credentials: [admin]
-          children:
-            admin_item:
-              label: Общая
-              route: admin_item
-            stat_item:
-              label: По наименованию
-              route: stat_item
-            #stat_group:
-            #  label: По разделам
-            #  route: stat_group
+          route: stats
           
   use_ajax: true
 

@@ -55,4 +55,20 @@ class MenuGroupTable extends Doctrine_Table
         
       return $q;
   }
+  
+  public function getChoices()
+  {
+    $q = $this->createQuery('g')
+      ->innerJoin('g.Items')
+      ->select('g.name')
+      ->orderBy('g.name');
+
+      
+    $groups = $q->execute(array(), Doctrine::HYDRATE_ARRAY);
+    foreach ($groups as $group)
+    {
+      $choices[$group['id']] = $group['name'];
+    }
+    return $choices;
+  }
 }

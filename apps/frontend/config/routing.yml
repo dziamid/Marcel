@@ -75,6 +75,14 @@ stat_item:
     module: statItem
     prefix_path: /stat/item
     with_wildcard_routes: true
+    
+stats:
+  class: sfDoctrineRouteCollection
+  options:
+    model: Item
+    module: stats
+    prefix_path: /stats
+    with_wildcard_routes: true
 
 stat_group:
   class: sfDoctrineRouteCollection
