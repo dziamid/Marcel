@@ -28,6 +28,15 @@
   </div>
   
   <div id="sf_admin_content">
+    <ul class="sf_admin_actions">
+      <li class="sf_admin_action_save_report">
+        <?php echo link_to(__('Сохранить отчет', array(), 'messages'), 'stats/ListSaveReport', array('method'=>'post')) ?>
+      </li>
+      <li class="sf_admin_action_save_day_report">
+        <?php echo link_to(__('Сохранить отчет за день', array(), 'messages'), 'stats/ListSaveDayReport', array('method'=>'post')) ?>
+      </li>
+    </ul>
+    
     <table>
       <thead>
         <tr>

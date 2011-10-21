@@ -26,7 +26,37 @@ class statsActions extends sfActions
     $this->totals = $totals;
   }
   
+  public function executeListSaveReport(sfWebRequest $request)
+  {
+    $query = $this->buildQuery();
+    $items = $query->execute(array(), Doctrine::HYDRATE_ARRAY);
+    
+    $report = new statReport();
+    $report->create($items);
+    
+    $date = new DateTime();
+    $file = sprintf('Report %s.xlsx',$date->format('Y-m-d H_i_s'));
+    $folder = sfConfig::get('sf_web_dir').'/uploads';
+    $report->save(sprintf('%s/%s', $folder, $file));
+    $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), true);
+    $this->redirect('stats/index');
+  }
 
+  public function executeListSaveDayReport(sfWebRequest $request)
+  {
+    $query = $this->buildQuery();
+    $items = $query->execute(array(), Doctrine::HYDRATE_ARRAY);
+    
+    $folder = sfConfig::get('sf_web_dir').'/uploads';
+    $report = new statDayReport();
+    $report->create($items);
+    $date = new DateTime();
+    $file = sprintf('Day report %s.xlsx',$date->format('Y-m-d H_i_s'));
+    $report->save(sprintf('%s/%s', $folder, $file));
+    $this->getUser()->setFlash('notice', sprintf("Отчет '%s' сохранён в папке '%s'",$file, $folder), true);
+    $this->redirect('stats/index');
+  }
+  
   public function executeFilter(sfWebRequest $request)
   {
     if ($request->hasParameter('_reset'))
