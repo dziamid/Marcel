@@ -11,25 +11,25 @@
  * @property integer $index
  * @property boolean $is_active
  * @property integer $discount
- * @property Item $Item
+ * @property Doctrine_Collection $Items
  * @property MenuGroup $Group
  * 
- * @method string    getName()          Returns the current record's "name" value
- * @method integer   getPrice()         Returns the current record's "price" value
- * @method integer   getMenuGroupId()   Returns the current record's "menu_group_id" value
- * @method integer   getIndex()         Returns the current record's "index" value
- * @method boolean   getIsActive()      Returns the current record's "is_active" value
- * @method integer   getDiscount()      Returns the current record's "discount" value
- * @method Item      getItem()          Returns the current record's "Item" value
- * @method MenuGroup getGroup()         Returns the current record's "Group" value
- * @method MenuItem  setName()          Sets the current record's "name" value
- * @method MenuItem  setPrice()         Sets the current record's "price" value
- * @method MenuItem  setMenuGroupId()   Sets the current record's "menu_group_id" value
- * @method MenuItem  setIndex()         Sets the current record's "index" value
- * @method MenuItem  setIsActive()      Sets the current record's "is_active" value
- * @method MenuItem  setDiscount()      Sets the current record's "discount" value
- * @method MenuItem  setItem()          Sets the current record's "Item" value
- * @method MenuItem  setGroup()         Sets the current record's "Group" value
+ * @method string              getName()          Returns the current record's "name" value
+ * @method integer             getPrice()         Returns the current record's "price" value
+ * @method integer             getMenuGroupId()   Returns the current record's "menu_group_id" value
+ * @method integer             getIndex()         Returns the current record's "index" value
+ * @method boolean             getIsActive()      Returns the current record's "is_active" value
+ * @method integer             getDiscount()      Returns the current record's "discount" value
+ * @method Doctrine_Collection getItems()         Returns the current record's "Items" collection
+ * @method MenuGroup           getGroup()         Returns the current record's "Group" value
+ * @method MenuItem            setName()          Sets the current record's "name" value
+ * @method MenuItem            setPrice()         Sets the current record's "price" value
+ * @method MenuItem            setMenuGroupId()   Sets the current record's "menu_group_id" value
+ * @method MenuItem            setIndex()         Sets the current record's "index" value
+ * @method MenuItem            setIsActive()      Sets the current record's "is_active" value
+ * @method MenuItem            setDiscount()      Sets the current record's "discount" value
+ * @method MenuItem            setItems()         Sets the current record's "Items" collection
+ * @method MenuItem            setGroup()         Sets the current record's "Group" value
  * 
  * @package    marcel
  * @subpackage model
@@ -68,7 +68,7 @@ abstract class BaseMenuItem extends sfDoctrineRecord
     public function setUp()
     {
         parent::setUp();
-        $this->hasOne('Item', array(
+        $this->hasMany('Item as Items', array(
              'local' => 'id',
              'foreign' => 'menu_item_id'));
 

@@ -35,9 +35,9 @@ class ItemTable extends Doctrine_Table
         ->addSelect('g.type as type')
         ->addSelect('m.name as name')
         ->groupBy('i.menu_item_id, i.price')
-        ->leftJoin('i.MenuItem m')
-        ->leftJoin('m.Group g')
-        ->leftJoin('i.Bill b');
+        ->innerJoin('i.MenuItem m')
+        ->innerJoin('m.Group g')
+        ->innerJoin('i.Bill b');
 
       return $q;
     }

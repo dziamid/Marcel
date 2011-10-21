@@ -50,8 +50,7 @@ Item:
     MenuItem:
       local: menu_item_id
       foreign: id
-      type: one
-      foreignType: one
+      foreignAlias: Items
 
 Desk:
   actAs:
