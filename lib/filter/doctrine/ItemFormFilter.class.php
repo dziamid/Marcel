@@ -42,8 +42,8 @@ class ItemFormFilter extends BaseItemFormFilter
     $this->setWidget('bill_id', new sfWidgetFormInput());
     $this->setValidator('bill_id', new sfValidatorPass());
     
-    $this->setWidget('bill_is_hidden', new sfWidgetFormInputCheckbox());
-    $this->setValidator('bill_is_hidden', new sfValidatorPass());
+    $this->setWidget('bill_not_hidden', new sfWidgetFormInputCheckbox());
+    $this->setValidator('bill_not_hidden', new sfValidatorPass());
     
     $this->setWidget('bill_is_paperless', new sfWidgetFormInputCheckbox());
     $this->setValidator('bill_is_paperless', new sfValidatorPass());
@@ -64,14 +64,14 @@ class ItemFormFilter extends BaseItemFormFilter
     $query->
       addWhere('b.number = ?', $value);
   }
-  public function addBillIsHiddenColumnQuery($query, $field, $value)
+  public function addBillNotHiddenColumnQuery($query, $field, $value)
   {
     //assume that query is left joined on Bill as b
     //see ItemTable::getItems
     if ($value == 'on')
     {
       //show all that are not hidden
-      $query->addWhere('b.is_hidden = ?', true);      
+      $query->addWhere('b.is_hidden = ?', false);      
     }
   }
   public function addBillIsPaperlessColumnQuery($query, $field, $value)

@@ -41,10 +41,10 @@
       </tr>
       <?php include_component('stats', 'filterDate', array('form' => $form)) ?>
       <tr>
-        <th><label>Скрытый счёт?</label></th>
+        <th><label>Для бухгалтера?</label></th>
         <td>
-          <?php echo $form['bill_is_hidden']->renderError() ?>
-          <?php echo $form['bill_is_hidden'] ?>
+          <?php echo $form['bill_not_hidden']->renderError() ?>
+          <?php echo $form['bill_not_hidden'] ?>
         </td>
       </tr>
       <tr>
