@@ -24,11 +24,11 @@ class statReport extends sfPhpExcel
     $offset = 3;
     foreach ($data as $i => $item)
     {
-      $sheet->setCellValue(sprintf('A%s',$i+$offset), $item->getMenuItem()->getName());
-      $sheet->setCellValue(sprintf('B%s',$i+$offset), $item->getMenuItem()->getGroup()->getTypeString());
-      $sheet->setCellValue(sprintf('C%s',$i+$offset), $item->getPrice());
-      $sheet->setCellValue(sprintf('D%s',$i+$offset), $item->getTotalQuantity());
-      $sheet->setCellValue(sprintf('E%s',$i+$offset), $item->getTotalSum());
+      $sheet->setCellValue(sprintf('A%s',$i+$offset), $item['name']);
+      $sheet->setCellValue(sprintf('B%s',$i+$offset), MenuGroup::getTypeName($item['type']));
+      $sheet->setCellValue(sprintf('C%s',$i+$offset), $item['price']);
+      $sheet->setCellValue(sprintf('D%s',$i+$offset), $item['total_quantity']);
+      $sheet->setCellValue(sprintf('E%s',$i+$offset), $item['total_sum']);
     }
     $sheet->setCellValue(sprintf('E%s',$i+$offset+1), sprintf('=SUM(E%s:E%s)',$offset,$i+$offset));
     $this->workbook = $workbook;
