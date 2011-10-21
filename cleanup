@@ -1,0 +1,3 @@
+cd /c/marseille;
+mysqldump -u root marcel > /c/marseille/data/db/marcel.sql;
+./s marcel:clean;
