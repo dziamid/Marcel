@@ -24,13 +24,22 @@ class MarcelCleanTask extends sfBaseTask
     $connection = $databaseManager->getDatabase($options['connection'])->getConnection();
     $months = $arguments['months'];
     $date = strtotime($months.' months ago');
-    //clean up Items
-    $q = ItemTable::getInstance()->createQuery('i')
-      ->delete()
-      ->where('i.created_at < ?', date('Y-m-d', $date));
+    //clean up Bills and Items
+    $q = BillTable::getInstance()->createQuery('b')
+      ->leftJoin('b.Items i')
+      ->where('b.created_at < ?', date('Y-m-d', $date));
       
-    $res = $q->execute();
-    $this->log(sprintf('Cleaned up %s items', $res));
+    $bills = $q->execute();
+    $count = $bills->count();
+
+    Doctrine_Manager::connection()->beginTransaction();
+    foreach ($bills as $bill)
+    {
+      $bill->delete();
+    }
+    Doctrine_Manager::connection()->commit();
+
+    $this->log(sprintf('Cleaned up %s bills', $count));
     //clean up MenuItems
     //remove old MenuItems that are NOT used by any existing Items
     $q = MenuItemTable::getInstance()->createQuery('m')
