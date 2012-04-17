@@ -57,6 +57,40 @@ class MenuItemActions extends autoMenuItemActions
     return $this->renderText(true);
   }
 
+  public function executeBatchActivate(sfWebRequest $request)
+  {
+    $ids = (array)$request->getParameter('ids');
+    if (count($ids) > 0) {
+      $items = MenuItemTable::getInstance()->createQuery('i')
+        ->whereIn('i.id', $ids)
+        ->execute();
+      foreach ($items as $item) {
+        $item->setIsActive(true);
+        $item->save();
+      }
+    }
+    $this->redirect('menu_item');
+
+  }
+
+  public function executeBatchDeactivate(sfWebRequest $request)
+    {
+      $ids = (array)$request->getParameter('ids');
+      if (count($ids) > 0) {
+        $items = MenuItemTable::getInstance()->createQuery('i')
+          ->whereIn('i.id', $ids)
+          ->execute();
+        foreach ($items as $item) {
+          $item->setIsActive(false);
+          $item->save();
+        }
+      }
+
+      $this->redirect('menu_item');
+
+    }
+
+
   /* Overrides auto to enable sort by custom fields */
   protected function isValidSortColumn($column)
   {
@@ -83,4 +117,6 @@ class MenuItemActions extends autoMenuItemActions
 
     $query->addOrderBy($sort[0] . ' ' . $sort[1]);
   }
+
+
 }
