@@ -9,7 +9,9 @@
     <?php endif; ?>
   </td>
   <td class='price'><?php echo $item->getPrice() ?></td>
-  <td class='quantity'><?php echo $item->getQuantity() ?></td>
+  <td class='quantity'>
+    <a class="set-quantity" href="<?php echo url_for('item_updateQuantity', $item) ?>"><?php echo $item->getQuantity() ?></a>
+  </td>
   <td class='total'><?php echo $item->getTotal() ?></td>
   <td class="tools">
       <a class="unselect" href="<?php echo url_for('item_unselect', $item) ?>"><?php echo image_tag('delete_24.png') ?></a>

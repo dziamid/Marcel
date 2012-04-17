@@ -31,10 +31,15 @@ $(document).ready(function(){
     {
       showMore(e);
     }
+    else if (target.closest('a.set-quantity').length)
+    {
+      setBillItemQuantity(e);
+    }
     else if (target.closest('input[type=checkbox]').length)
     {
       e.preventDefault();
     }
+
   });
 
   function unselectBillItem(e) {
@@ -53,6 +58,20 @@ $(document).ready(function(){
       $('#bill-'+bill_id+' div.body').html(data);      
     });
   }
+
+  function setBillItemQuantity(e) {
+    e.preventDefault();
+    var quantity = parseInt(prompt('Надоело кликать? Вводи количество'));
+    if (quantity >= 0) {
+      var item = $(e.target).closest('a.set-quantity');
+      $.post(item.attr('href'), {quantity: quantity}, function(data) {
+        var bill_id = $('#bills .ui-tabs-selected').attr('data-id');
+        $('#bill-'+bill_id+' div.body').html(data);
+      });
+    }
+
+  }
+
   function printBill(e) {
     e.preventDefault();
     target = $(e.target);

@@ -97,4 +97,24 @@ class itemActions extends sfActions
     }
     $this->redirect('desk_show', $item->getBill()->getDesk());
   }
+
+  public function executeUpdateQuantity(sfWebRequest $request)
+  {
+    $item = $this->getRoute()->getObject();
+    $bill = $item->getBill();
+
+    $quantity = (int)$this->getRequestParameter('quantity');
+
+    if ($quantity > 0) {
+      $item->setQuantity($quantity);
+      $item->save();
+    } else {
+      $item->delete();
+    }
+
+    return $this->renderPartial('bill/show', array(
+      'bill' => $bill
+    ));
+
+  }
 }
