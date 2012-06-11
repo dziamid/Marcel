@@ -18,12 +18,8 @@ class BillTable extends Doctrine_Table
   }
   public function getMaxNumber()
   {
-    $date = new DateTime();
-    $date->setDate($date->format('Y'), 1, 1)->setTime(0,0,0);
-    
     $max = $this->createQuery('b')
       ->select('b.number')
-      ->where('b.created_at > ?', $date->format('Y-m-d H:i:s'))
       ->orderBy('b.number DESC')
       ->limit(1)
       ->fetchOne(array(),Doctrine_Core::HYDRATE_SINGLE_SCALAR);
